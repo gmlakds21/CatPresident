@@ -1,90 +1,94 @@
 <%@ page pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
-<header id="header" class="col-9 Header">  <!-- 헤더 -->
 
-    <span class="HD_Logo">
-        <a href="/"> <img src="/img/Header_Logo.jpg"></a> <!-- 로고는 이미지파일로 교체 필요. -->
-    </span>
+<div>
+    <div class="hd_lists marginCenter">
 
-    <div class="input-group HD_Search">
-        <input type="text" class="form-control" placeholder="3만원 이상 구매 시, 무료배송">
-        <div class="input-group-append">
-            <button class="btn" type="button">
-                <i class="bi bi-search"></i></button>
+        <%-- 고양이 대통령 로고를 담는 공간 --%>
+        <div class="hd_list1">
+            <a class="marginCenter" href="/"><img src="/img/Header_Logo.jpg"></a>
         </div>
-    </div> <!-- 검색 -->
 
-    <ul class="HD_Three">
-        <li><!-- 알림 -->
-            <button type="button" class="dropdown HD_Three_Icon" data-toggle="dropdown">
+        <%-- 알람, 마이페이지, 장바구니 --%>
+        <div class="hd_list2">
+            <button type="button" class="dropdown" data-toggle="dropdown">
                 <span class="bi bi-bell">
-                <span class="HD_Three_txt">알&nbsp;림</span></span>
-            </button>
-            <c:if test="${empty UID}">
-                <div class="dropdown-menu">
-                    <a class="dropdown-item HD_Three_Href" href="/members/sign-in">로그인</a></button>
-                    <a class="dropdown-item HD_Three_Href" href="/members/agree">회원가입</a></button>
-                </div>
-            </c:if>
-            <c:if test="${not empty UID}">
-                <div class="dropdown-menu">
-                    <a class="dropdown-item HD_Three_Href" href="/members/logout">로그아웃</a></button>
-                </div>
-            </c:if>
-        </li>
-
-        <li> <!-- 마이페이지 -->
-            <button type="button" class="dropdown HD_Three_Icon" data-toggle="dropdown">
-                <span class="bi bi-person">
-                    <span class="HD_Three_txt">M&nbsp;&nbsp;Y</span>
-                </span>
-            </button>
-            <c:if test="${empty UID}">
-                <div class="dropdown-menu">
-                    <a class="dropdown-item HD_Three_Href" data-target="#">최근 본</a>
-                    <a class="dropdown-item HD_Three_Href" data-target="#">주문조회</a>
-                    <a class="dropdown-item HD_Three_Href" data-target="#">배송취소</a>
-                    <a class="dropdown-item HD_Three_Href" data-target="#">교환하기</a>
-                    <a class="dropdown-item HD_Three_Href" data-target="#">반품하기</a>
-                    <a class="dropdown-item HD_Three_Href" data-target="#">고객센터</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item HD_Three_Href" href="/members/sign-in">로그인</a></button>
-                    <a class="dropdown-item HD_Three_Href" href="/members/agree">회원가입</a></button>
-                </div>
-            </c:if>
-            <c:if test="${not empty UID}">
-                <div class="dropdown-menu">
-                    <a class="dropdown-item HD_Three_Href" data-target="#">자주구매</a>
-                    <a class="dropdown-item HD_Three_Href" data-target="#">관심</a>
-                    <a class="dropdown-item HD_Three_Href" data-target="#">최근본</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item HD_Three_Href" data-target="#">주문배송</a>
-                    <a class="dropdown-item HD_Three_Href" data-target="#">주문취소</a>
-                    <a class="dropdown-item HD_Three_Href" data-target="#">교환하기</a>
-                    <a class="dropdown-item HD_Three_Href" data-target="#">반품하기</a>
-                    <a class="dropdown-item HD_Three_Href" data-target="#">구매후기</a>
-                    <a class="dropdown-item HD_Three_Href" data-target="#">고객센터</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item HD_Three_Href" data-target="#">스티커</a>
-                    <a class="dropdown-item HD_Three_Href" data-target="#">보유현금</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item HD_Three_Href" href="/members/logout">로그아웃</a></button>
-                </div>
-            </c:if>
-        </li>
-
-        <li> <!-- 장바구니 -->
-            <button type="button" class="dropdown HD_Three_Icon" data-toggle="dropdown">
-                <span class="bi bi-cart3">
-                    <span class="HD_Three_txt">장바구니</span>
+                    <span class="hd_list2_txt">알 림</span>
                 </span>
             </button>
             <div class="dropdown-menu">
-                <a class="dropdown-item" data-target="#">장바구니에 상품이 없습니다.</a>
+                <c:if test="${empty UID}">
+                    <a class="dropdown-item" href="/members/sign-in">로그인</a></button>
+                    <a class="dropdown-item" href="/members/agree">회원가입</a></button>
+                </c:if>
+                <c:if test="${not empty UID}">
+                    <a class="dropdown-item" href="/members/logout">로그아웃</a></button>
+                </c:if>
             </div>
-        </li>
-    </ul> <!-- 알림 / MY / 장바구니 -->
+            <button type="button" class="dropdown" data-toggle="dropdown">
+                <span class="bi bi-person">
+                    <span class="hd_list2_txt">M Y</span>
+                </span>
+            </button>
+            <div class="dropdown-menu">
+                <c:if test="${empty UID}">
+                    <a class="dropdown-item" href="#">최근 본</a>
+                    <a class="dropdown-item" href="#">주문조회</a>
+                    <a class="dropdown-item" href="#">배송취소</a>
+                    <a class="dropdown-item" href="#">교환하기</a>
+                    <a class="dropdown-item" href="#">반품하기</a>
+                    <a class="dropdown-item" href="#">고객센터</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/members/sign-in">로그인</a></button>
+                    <a class="dropdown-item" href="/members/agree">회원가입</a></button>
+                </c:if>
+                <c:if test="${not empty UID}">
+                    <a class="dropdown-item" href="#">자주구매</a>
+                    <a class="dropdown-item" href="#">관심</a>
+                    <a class="dropdown-item" href="#">최근본</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">주문배송</a>
+                    <a class="dropdown-item" href="#">주문취소</a>
+                    <a class="dropdown-item" href="#">교환하기</a>
+                    <a class="dropdown-item" href="#">반품하기</a>
+                    <a class="dropdown-item" href="#">구매후기</a>
+                    <a class="dropdown-item" href="#">고객센터</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">스티커</a>
+                    <a class="dropdown-item" href="#">보유현금</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/members/logout">로그아웃</a></button>
+                </c:if>
+            </div>
+            <button type="button" href="">
+                <span class="bi bi-cart3">
+                    <span class="hd_list2_txt">장바구니</span>
+                </span>
+            </button>
+        </div>
+
+
+        <div class="hd_list3"></div>
+
+
+            <div class="input-group HD_Search">
+                <input type="text" class="form-control" placeholder="3만원 이상 구매 시, 무료배송">
+                <div class="input-group-append">
+                    <button class="btn" type="button">
+                        <i class="bi bi-search"></i></button>
+                </div>
+            </div> <!-- 검색 -->
+        <div class="hd_list4"></div>
+        <div class="hd_list5"></div>
+    </div>
+</div>
+
+<div class="RESET"></div>
+
+
+
+<header id="header" class="col-9 Header">  <!-- 헤더 -->
 
     <ul class="nav nav-tabs HD_Category" role="tablist">
         <li class="dropdown HD_Category_1st" id="HD_Category"> <!-- 카테고리 드롭다운 -->
