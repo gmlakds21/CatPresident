@@ -1,0 +1,220 @@
+/* 주문결제 관련 */
+.OR_main {
+    border: 1px solid rgba(235, 235, 235, 1);
+    clear: both;
+}
+
+.OR_bottom {
+    border-bottom: 2px solid #d3d3d3;
+}
+
+.order_nav {
+    margin: -20px 0 10px 0;
+    float: right;
+}
+.order_nav span {
+    font-weight: bold;
+    font-size: 20px;
+    color: #d3d3d3;
+}
+
+.order_nav span:nth-child(3) {
+    color: #a200c7;
+}
+
+._span {
+    font-weight: bold;
+    font-size: 20px;
+    color: #000000;
+    padding-bottom: 12px;
+}
+
+
+.OR_btn {
+    border: 1px solid #a200c7;
+    background: #ffffff;
+    color:  #a200c7;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.OR_btn2 {
+    background: #d3d3d3;
+    color: #808080;
+}
+
+.OR_btn:hover {
+    color: #a200c7;
+}
+
+.OR_btn2:hover {
+    color: #a200c7;
+}
+
+.OR_hr {
+    border: 1px solid #454545;
+}
+
+.OR_marginTop30 {
+    margin-top: 30px;
+}
+
+.OR_marginTop15 {
+    margin-top: 15px;
+}
+
+.OR_list_title {
+    width: 100%;
+    margin-left: 0;
+}
+
+.OR_list_box {
+    padding: 20px;
+    background: rgba(244, 244, 245, 1);
+}
+
+.OR_bold {
+    font-weight: bold;
+}
+
+.OR_color {
+    color: #a200c7;
+}
+
+.OR_drag {
+    margin-top: -16px
+}
+
+.OR_img {
+    width: 200px;
+    height: 200px;
+    margin-right: 20px;
+}
+
+.OR_list {
+    margin-left: 0;
+}
+
+.OR_product p:nth-child(2) {
+    color: #808080;
+}
+
+.OR_attr {
+    border-left: 2px solid rgba(235, 235, 235, 1);
+}
+
+.OR_attr span {
+    font-weight: bold;
+    font-size: 1.5em;
+    position:absolute;
+    left:50%;
+    top:50%;
+    margin-left: -50px;
+    margin-top: -20px;
+}
+
+.OR_list div {
+    padding: 16px;
+    border-bottom: 2px solid rgba(235, 235, 235, 1);
+}
+
+.cpbtn {
+    margin-left: 5px;
+    border: 1px solid lightgrey;
+}
+
+.OR_fontDrag button {
+    margin-top: -5px;
+}
+
+.OR_frame {
+    border-top: 3px solid #454545;
+    border-bottom: 2px solid #d3d3d3;
+    padding: 20px 0;
+}
+
+.OR_cash span:nth-child(2) {
+    margin-right: 80px;
+}
+
+.OR_cash div:nth-child(2) {
+    margin-top: 20px;
+}
+
+.OR_pay {
+    border-top: 3px solid #454545;
+    border-bottom: 2px solid #d3d3d3;
+}
+
+.OR_pay_first {
+    background: rgba(244, 244, 245, 1);
+    font-weight: bold;
+    padding: 20px 0 20px 10px;
+    border-left: 2px solid rgba(235, 235, 235, 1);
+    border-bottom: 2px solid rgba(235, 235, 235, 1);
+}
+
+.OR_pay_secon {
+    font-weight: bold;
+    padding: 20px 0 20px 10px;
+    border-bottom: 2px solid rgba(235, 235, 235, 1);
+}
+
+.OR_pay_font {
+    font-size: 1.2em;
+    border: none;
+}
+
+.OR_payment {
+    padding: 10px;
+}
+
+.OR_payment img {
+    margin-left: 10px;
+    margin-top: -5px;
+    width: 25px;
+    height: 25px;
+}
+
+.OR_payment_font {
+    margin-left: 10px;
+    color: #a200c7;
+    font-weight: bold;
+}
+
+.OR_payment span{
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+.OR_footer_attr {
+    font-weight: bold;
+    padding: 15px;
+}
+
+.OR_payokBtn {
+    width: 500px;
+    height: 50px;
+    border: 1px solid #a200c7;
+    background: #a200c7;
+    color: white;
+    font-weight: bold;
+}
+
+.OR_payokBtn:hover {
+    color: white;
+}
+
+.OR_footer {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.OR_marginbottom {
+    margin-bottom: 30px
+}
+
+.OR_textarea {
+    border-color: lightgrey;
+
+}

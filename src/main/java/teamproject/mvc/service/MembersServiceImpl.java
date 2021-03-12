@@ -1,0 +1,107 @@
+package teamproject.mvc.service;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import teamproject.mvc.dao.MembersDAO;
+import teamproject.mvc.vo.CatSpeciesVO;
+import teamproject.mvc.vo.CatVO;
+import teamproject.mvc.vo.MembersVO;
+
+import javax.servlet.http.HttpSession;
+import java.util.List;
+
+@Service("mbsrv")
+public class MembersServiceImpl implements MembersService {
+
+    @Autowired
+    private MembersDAO mbdao;
+
+
+    // 1 - 현우
+    @Override
+    public String newMember(MembersVO mvo) {
+        String result = "회원가입 실패";
+        int cnt = mbdao.insertMember(mvo);
+        if (cnt > 0) result = "회원가입 성공";
+        return result;
+    }
+
+    @Override
+    public String checkUserid(String email) {
+        String isOk = "0";
+        int cnt = mbdao.selectOneUserid(email);
+        if (cnt > 0) isOk = "1";
+
+        return isOk;
+    }
+
+
+    @Override
+    public String findZipCode(String dong) {
+        ObjectMapper mapper = new ObjectMapper();
+        String json = "";
+        dong = dong + "%";
+        try {
+            json = mapper.writeValueAsString(mbdao.selectZipCode(dong));
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+        return json;
+    }
+
+    @Override
+    public String newCatMember(CatVO cvo) {
+        String result = "회원가입 실패";
+        int cnt = mbdao.insertCatMember(cvo);
+        if (cnt > 0) result = "회원가입 성공";
+        return result;
+    }
+
+    @Override
+    public String findUserId(String email) {
+        ObjectMapper mapper = new ObjectMapper();
+        String json = "";
+        email = email + "%";
+        try {
+            json = mapper.writeValueAsString(mbdao.selectUserId(email));
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+
+        return json;
+    }
+
+    @Override
+    public boolean checkLogin(MembersVO mvo, HttpSession sess) {
+        boolean isLogin = false;
+
+        mvo = mbdao.selectLogin(mvo);
+        if (Integer.parseInt(mvo.getUno()) > 0) {
+            sess.setAttribute("UID", mvo);
+            isLogin = true;
+        }
+        return isLogin;
+    }
+
+    @Override
+    public boolean modifyUser(MembersVO mvo) {
+        boolean isOk = false;
+        int cnt = mbdao.updateUser(mvo);
+        if (cnt > 0) {
+            isOk = true;
+            System.out.println("[" + cnt + "]");
+            System.out.println("[" + isOk + "]");
+        }
+        return isOk;
+    }
+
+
+    @Override
+    public List<CatSpeciesVO> readSpecies() {
+        return mbdao.selectCateList();
+    }
+
+
+}

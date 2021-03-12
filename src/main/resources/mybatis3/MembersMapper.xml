@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Members">
+
+    <!-- 1 - 현우 -->
+
+    <insert id="insertMember" statementType="PREPARED"
+            parameterType="teamproject.mvc.vo.MembersVO">
+        insert into Members (username, email, passwd, zipcode, addr, alarm)
+        values (#{username}, #{email}, #{passwd}, #{zipcode}, #{addr},#{agrcheck});
+    </insert>
+
+    <select id="zipcode" statementType="PREPARED" parameterType="String" resultType="teamproject.mvc.vo.ZipCodeVO">
+        select zipcode, sido, gugun, dong, ri, bunji from zipcode where dong like #{mydong};
+    </select>
+
+    <insert id="insertCatMember" statementType="PREPARED"
+            parameterType="teamproject.mvc.vo.CatVO">
+        insert into Cat (catname,uno,catkind,catyear,catmonth,catgender,catweight,prima)
+        values (#{catname},#{uno},#{catkind},#{catyear},#{catmonth},#{catgender},#{catweight},#{prima});
+    </insert>
+
+    <select id="getuserid" statementType="PREPARED" parameterType="String"
+            resultType="teamproject.mvc.vo.MembersVO">
+        select uno from Members where email like #{emforaddcat};
+    </select>
+
+    <select id="checkuid" statementType="PREPARED" parameterType="String" resultType="int">
+        select count(email) cnt from Members where email like #{email};
+    </select>
+
+    <select id="checklogin" statementType="PREPARED" parameterType="teamproject.mvc.vo.MembersVO"
+            resultType="teamproject.mvc.vo.MembersVO">
+        select * from Members where email = #{email} and passwd = #{passwd};
+    </select>
+
+    <update id="modifyuser" statementType="PREPARED" parameterType="teamproject.mvc.vo.MembersVO">
+        update Members set phone = #{phone}, passwd = #{passwd} where uno = #{uno};
+    </update>
+
+
+
+    <!-- 2 - 창욱 -->
+<!--    <select id=""></select>-->
+<!--    <select id=""></select>-->
+
+    <!-- Step 3 -->
+<!--    <select id=""></select>-->
+
+
+    <!-- 승희 -->
+    <select id="speciesList" statementType="PREPARED"
+            resultType="teamproject.mvc.vo.CatSpeciesVO">
+        select catkind from Catspecies;
+    </select>
+</mapper>

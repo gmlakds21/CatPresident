@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Products">
+
+    <!-- 제품 목록 불러오기 -->
+    <select id="ProductsList" statementType="PREPARED"
+            parameterType="Map"
+            resultType="teamproject.mvc.vo.ProductsVO">
+        select pno, pname, price, disco, totprice from Products
+            ${target} limit ${snum}, 30;
+     </select>
+
+    <!-- 제품 하나 불러오기 -->
+    <select id="ProductsOne" statementType="PREPARED"
+            parameterType="String"
+            resultType="teamproject.mvc.vo.ProductsVO">
+        select * from Products where pno = ${pno}
+    </select>
+
+    <!-- 제품 갯수 불러오기 -->
+    <select id="countProducts" statementType="PREPARED"
+            parameterType="String"
+            resultType="int">
+        select count(pno) from Products ${target}
+    </select>
+
+    <!-- 카테고리 대분류 불러오기 -->
+    <select id="cateList" statementType="PREPARED"
+            resultType="teamproject.mvc.vo.CategoryVO">
+        select ctno, catename from Category
+            where ctno like '%00'
+                order by ctno;
+    </select>
+
+    <!-- 카테고리 전체 불러오기 -->
+    <select id="cateAll" statementType="PREPARED"
+            resultType="teamproject.mvc.vo.CategoryVO">
+        select ctno, catename from Category
+            order by ctno;
+    </select>
+
+    <!-- 카테고리 타이틀 불러오기 -->
+    <select id="cateName" statementType="PREPARED"
+            parameterType="String"
+            resultType="String">
+        select catename from Category where ctno = ${target}
+    </select>
+
+
+    <!-- 5 - 재선 -->
+    <select id="plannedList" statementType="PREPARED"
+            resultType="teamproject.mvc.vo.BoardVO">
+        select bno, title, contents,imgthum from Board where bgroup = 1 order by bno desc;
+    </select>
+
+    <select id="knowhowList" statementType="PREPARED" resultType="teamproject.mvc.vo.BoardVO">
+        select bno, title, contents,imgthum,tag from Board where bgroup = 2 order by bno;
+    </select>
+
+    <select id="EventView" statementType="PREPARED" resultType="teamproject.mvc.vo.BoardVO"
+            parameterType="String">
+        select * from Board where bno = ${bno};
+    </select>
+
+    <select id="countEvent" statementType="PREPARED" resultType="int" parameterType="String">
+        select count(pno) cnt from Products where event = ${bno};
+    </select>
+
+    <select id="eventList" statementType="PREPARED" resultType="teamproject.mvc.vo.ProductsVO"
+    parameterType="String">
+        select pno, brand, pname, totprice,filename from Products where event = ${bno} order by pname;
+
+    </select>
+
+
+    <!-- Step 3 검색하기
+    <select id="findSelectList" statementType="PREPARED"
+            parameterType="map"
+            resultType="seunghee.spring.mvc.Board.Board_VO">
+        select bno, title, userid, regdate, thumbs, views from Board
+
+        <if test="findType != 'ticon'">
+            where ${findType} like concat('%',#{findKey},'%')
+                order by bno desc limit #{startnum}, 10; </if>
+        <if test="findType == 'ticon'">
+            where title like concat('%',#{findKey},'%') or contents like concat('%',#{findKey},'%')
+                order by bno desc limit #{startnum}, 10; </if>
+    </select>
+
+    <select id="findCountBoard" statementType="PREPARED"
+            parameterType="map"
+            resultType="int">
+        select count(bno) from Board
+        <if test="findType != 'ticon'">
+            where ${findType} like concat('%',#{findKey},'%');
+        </if>
+        <if test="findType == 'ticon'">
+            where title like concat('%',#{findKey},'%') or contents like concat('%',#{findKey},'%');
+        </if>
+    </select>
+     -->
+
+</mapper>

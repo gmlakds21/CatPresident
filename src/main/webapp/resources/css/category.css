@@ -1,0 +1,132 @@
+.CT_page {
+    margin: 0 auto 50px auto;
+    display: flex;
+    padding: 10px 20px;
+    flex-wrap: wrap;
+    max-width: 1432px;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+.CT_page li {
+    width: 20%;
+    margin: 0;
+    padding: 10px;
+    list-style: none;
+}
+.CT_page img {
+    margin: auto;
+    display: block;
+    max-width: 100%;
+    width: 98px;
+    height: 98px;
+}
+.CT_page a {
+    width: 100%;
+    border: 1px solid rgba(235, 235, 235, 1);
+    height: 160px;
+    display: block;
+    outline: 0;
+    padding: 12px 6px 8px;
+    position: relative;
+    box-sizing: border-box;
+    text-align: center;
+    border-radius: 8px !important;
+    text-decoration: none;
+    background-color: #fff;
+}
+.CT_page a:hover {
+    border: 2px solid rgba(162, 0, 199, 1);
+    padding: 11px 6px 7px;
+    background-color: #fff;
+}
+.CT_page a:hover {
+    color: rgba(162, 0, 199, 1);
+}
+.CT_page span {
+    color: rgba(60, 60, 67, 0.6);
+    height: 30px;
+    display: flex;
+    font-size: 18px;
+    align-items: center;
+    font-weight: 400;
+    line-height: 1.2;
+    justify-content: center;
+}
+
+
+
+
+/* 카테고리 리스트 */
+.CT_cate {
+    width: 200px;
+    margin : 20px 0 0 -30px;
+    float: left;
+}
+.CT_cate_title {
+    color: #393939;
+    margin : 10px 0 20px 5px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.CT_cate_text {
+    margin-left: 5px;
+    color: #878787;
+    font-size: 15px;
+}
+.CT_cate ul {
+    width: 200px;
+    display: block;
+    overflow: hidden;
+}
+.CT_cate li {
+    list-style: none;
+    margin: 5px 0 3px 0;
+}
+.CT_lead {
+    width: 150px;
+    cursor: pointer;
+    padding: 5px;
+    border-bottom: 1px solid #c7c7c7 ;
+    background-color: white;
+    outline: none;
+}
+.CT_lead img{
+    float: right;
+    width: 8px;
+    height: 8px;
+
+    -moz-transition: transform 1s;
+    -webkit-transition: transform 1s;
+    transition: transform 1s;
+}
+.CT_imgflip {
+    transform: rotate(-180deg);
+}
+
+.CT_sub {
+    display: none;
+    outline: none;
+}
+.CT_subbtn {
+    border: 0px;
+    outline: none;
+    margin: 3px 0 3px 5px;
+    background: none;
+}
+.CT_sub a{
+    display: block;
+    position: relative;
+}
+
+.CT_Line {
+    width: 5px;
+    height: 500px;
+    background: black;
+    color: black;
+}
+
+.CT_list {
+    width: 1200px;
+    float: left;
+    padding-left: 10px;
+}

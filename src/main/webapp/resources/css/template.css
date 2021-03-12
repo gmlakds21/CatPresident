@@ -1,0 +1,312 @@
+/* template, header, footer 에서 사용하는 css입니다. */
+
+/* 베이스 */
+.marginCenter {
+    margin : 0 auto;
+}
+
+/* 헤더 로고 */
+.Header {
+    height: 140px;
+    margin: 40px auto 0 auto
+}
+.HD_Logo{
+    float: left;
+    margin-left: 5px;
+}
+.Header img {
+    width: 180px;
+    height: 50px;
+}
+
+/* 헤더 검색대 */
+.HD_Search {
+    float: left;
+    border: none;
+    border-radius: 25px;
+    width: 550px;
+    margin-left: 20px;
+}
+.HD_Search:focus {
+    border-radius: 7px;
+    border: none;
+    outline: none;
+}
+.HD_Search:hover {
+    border-radius: 7px;
+    border: none;
+    outline: none;
+}
+.HD_Search input {
+    border-width: 2px;
+    border-color: #a200C7;
+    height: 45px;
+}
+.HD_Search button {
+    background: #a200c7;
+    outline: none;
+}
+.HD_Search button:hover {
+    border-radius: 7px;
+    border: none;
+    outline: none;
+    background: #a200c7;
+}
+.HD_Search button:focus {
+    border-radius: 7px;
+    border: none;
+    outline: none;
+    background: #a200c7;
+}
+.HD_Search i {
+    color: white;
+}
+
+/* 알림 / my / 장바구니 */
+.HD_Three {
+    list-style: none;
+    float: right;
+    margin-top: -25px;
+}
+.HD_Three li {
+    float: left;
+    padding: 5px;
+    margin-left: 20px;
+    display: flex;
+    text-align: center;
+}
+.HD_Three_Icon {
+    width: 60px;
+    height: 60px;
+    font-size: 35px;
+    border: none;
+    outline: none;
+    background: none;
+}
+.HD_Three_Icon:focus {
+    outline: none;
+}
+.HD_Three_txt {
+    width: 50px;
+    height: 22px;
+    display: block;
+    position: relative;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 110%;
+}
+.HD_Three_Href {
+    color: #a200c7;
+    text-decoration: none;
+    text-align: center;
+}
+.HD_Three_Href:hover {
+    color: #a200c7;
+    text-decoration: none;
+}
+
+
+/* 헤더 카테고리 */
+.HD_Category {
+    list-style: none;
+    float: left;
+    clear: both;
+    margin-top: 20px;
+    width: 70%;
+    border-bottom: none;
+    background: none;
+}
+.HD_Category li {
+    float: left;
+    margin-left: 5px;
+}
+.HD_Category_1st:link {
+}
+.HD_Category_1st:hover .HD_Category_Cate {
+    display: block;
+    margin-top: 0px;
+}
+/*
+.HD_Category_sub {
+    position: relative;
+    top : -50px;
+    right : 100px;
+}
+.HD_Category_Cate:hover .HD_Category_sub {
+    display: block;
+    margin-top: 0px;
+}
+*/
+.HD_Category a:hover {
+    border: none;
+}
+.HD_Category a:active {
+    border: none;
+}
+.HD_Category_1st a {
+    font-size: 25px;
+    visibility: visible;
+    color: black;
+}
+.HD_Category_1st a:hover{
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+.HD_Category_1st span {
+    font-size: 22px;
+    font-weight: bolder;
+}
+.HD_Category_txt {
+    font-size: 18px;
+    color: #636161;
+    font-weight: bold;
+}
+.HD_Category_Cate a{
+    font-size: 15px;
+    margin-top: 5px;
+}
+.HD_Category_Cate a:hover{
+    color: #a200c7;
+    font-weight: bold;
+}
+
+/* 헤더 알림메시지 */
+.HD_Notify {
+    float : right;
+}
+.HD_Notify button {
+    border-radius: 20px;
+    margin-top: 28px;
+    border: 1px solid #adadad;
+    width: 350px;
+    background-color: white;
+    font-size: 14px;
+    font-weight: bold;
+    color: #a0a0a0;
+}
+.HD_Notify img {
+    width: 20px; height: 20px; margin-bottom: 3px;
+}
+.HD_Notify span {
+    color:#3B9F00;
+}
+/* 헤더 끝 */
+
+
+
+/* 푸터 */
+.FT_Nav {
+    background-color: #A200C7;
+    height: 120px;
+}
+.FT_Nav ul {
+    background-color: #A200C7;
+}
+.FT_Nav li {
+    margin-top: 20px;
+}
+.FT_Li_Span {
+    content: "";
+    width : 1px;
+    height: 60px;
+    margin: 20px 70px 0 70px;
+    background-color: white;
+}
+.FT_Text {
+    color: white;
+    font-size: 15px;
+    margin-top: 8px;
+    margin-left: 15px;
+}
+
+
+/* 약관 및 어플 */
+.FT2 {
+    margin: 40px auto;
+}
+.FT2 ul {
+    margin-left: -40px;
+    list-style: none;
+    float: left;
+}
+.FT2 li {
+    float: left;
+    margin: 0px 5px 0px 12px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #4e4e4e;
+}
+.FT2 li:last-child {
+    color: black;
+}
+.FT_Li_Span2 {
+    width : 2px;
+    height: 10px;
+    margin: 0 10px;
+    background-color: black;
+}
+.FT_Snsbtn {
+    float: right;
+    width: 40px;
+    border: none;
+    outline: none;
+    background: none;
+    margin-top: -20px;
+    margin-left: 5px;
+}
+.FT_Snsbtn:focus {
+    outline: none;
+}
+.FT_Snsbtn i {
+    font-size : 25px;
+}
+.FT_Br {
+    clear: both;
+    margin-bottom: 10px;
+}
+
+
+
+/* 상호 및 나머지 */
+.FT3 {
+    float: left;
+    margin-top: 30px;
+}
+.FT3 i {
+    font-size : 25px;
+}
+.FT3 span {
+    font-size: 25px;
+}
+.FT3 button {
+    width: 100px;
+    height: 30px;
+    font-size: 13px;
+    border: 1px solid #a200c7;
+    border-radius: 5px;
+    background: #a200c7;
+    outline: none;
+    color: white;
+    margin-top: -5px;
+}
+.FT3 button:active {
+    outline: none;
+}
+.FT3 p {
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+
+.FT_License {
+    float: right;
+    text-align: right;
+}
+.FT_License img {
+    width: 135px;
+    height: 35px;
+}
+.FT_License p {
+    font-size: 11px;
+}

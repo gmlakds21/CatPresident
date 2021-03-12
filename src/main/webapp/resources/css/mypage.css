@@ -1,0 +1,231 @@
+
+.MY_pad0mgn0 {
+    padding: 0;
+    margin: 0 auto;
+}
+
+
+.MY_roundbox {
+    border-radius: 7px;
+    border: 1px solid #dee2e6;
+}
+
+.MY_noborder {
+    outline: none;
+    box-shadow: none;
+}
+
+.MY_noborder:hover {
+    outline: none;
+    box-shadow: none;
+}
+
+.MY_noborder:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.MY_head {
+    min-height: 100px;
+}
+
+.MY_hdmenu {
+    float: right;
+    padding: 20px 0 0 0;
+    margin: 0 0 0 -20px;
+    position: relative;
+}
+
+
+.MY_maincont {
+    float: right;
+    min-height: 550px;
+    padding: 15px 0 0 30px
+}
+
+
+/* 헤더 버튼들 */
+
+.MY_hmbtn {
+    padding: 0;
+    text-align: left;
+    border: none;
+    outline: none;
+    background: none;
+}
+
+.MY_hmbtn:focus {
+    border: none;
+    outline: none;
+}
+
+.MY_hmbtn:active {
+    border: none;
+    outline: none;
+}
+
+.MY_hmbtntxt {
+    width: 78px;
+    height: 32px;
+    display: block;
+    position: relative;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 110%;
+}
+
+
+/* 마이페이지 메인 */
+
+.MY_ordlstNON {
+    background: #dee2e6;
+    padding:15%;
+    text-align:center;
+    position:relative;
+    color: #95999c;
+}
+
+
+.MY_conttitle {
+    font-weight: bold;
+    margin: 0 0 30px 0;
+    padding: 0;
+}
+
+
+/* 사이드바 */
+
+.MY_mainsidebr {
+    float: left;
+    min-height: 550px;
+    padding: 15px 0 0 0;
+}
+
+
+.MY_chevron {
+    font-size: 14px;
+    font-weight: bolder;
+    float: right;
+}
+
+.MY_here {
+    color: #a200c7;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.MY_nothere {
+    color: #adb5bd;
+}
+
+.MY_li {
+    text-align: left;
+    list-style: none;
+    color: #adb5bd;
+    padding: 15px 0 15px 0;
+}
+
+.MY_li :hover, .MY_li :focus {
+    color: #a200c7;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.MY_li :active {
+    color: #a200c7;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+
+/* 구매후기 */
+
+.MY_reviewbox {
+    text-align: left;
+    list-style: none;
+    padding: 15px 0 15px 0;
+}
+
+.MY_revfnt {
+    color: black;
+    padding: 0 5px 0 10px;
+}
+
+.MY_revfnt:focus, .MY_revfnt:hover {
+    color: black;
+    text-decoration: none;
+}
+
+
+.MY_revcnt {
+    font-size: 16px;
+    color: #a200c7;
+    font-weight: bolder;
+    float: right;
+    padding-right: 10px;
+}
+
+
+/*고객센터*/
+
+.MY_csboxtxt {
+    padding: 20%;
+    text-align: center;
+    position: relative;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.MY_cssrch {
+    height: fit-content;
+    border-radius: 7px;
+    background: #adb5bd;
+}
+
+.MY_cssrchbtn {
+    background: #6c757d;
+    color: white;
+}
+
+.MY_cssrchbtn:hover, .MY_cssrchbtn:focus {
+    background: #6c757d;
+    color: white;
+}
+
+
+.MY_csslctbtn {
+    background: none;
+    border: 1px solid #adb5bd;
+    border-radius: 7px;
+    margin-left: 5px;
+}
+
+.MY_csslctbtn:hover, .MY_csslctbtn:focus, .MY_csslctbtn:active {
+    border: 1px solid #a200c7;
+    outline: none;
+    box-shadow: none;
+    background: #a200c7;
+}
+.MY_pdupdw10{
+    padding: 10px 0 10px 0;
+}
+
+.MY_pdrglf10 {
+    padding: 0 10px 0 10px;
+}
+
+
+/*회원정보수정*/
+
+.MY_usrupdbtn {
+    border: 1px solid #a200c7;
+    border-radius: 7px;
+    background: #a200c7;
+    color: white;
+}
+
+.MY_usrupdbtn:focus, .MY_usrupdbtn:hover {
+    outline: none;
+    box-shadow: none;
+    text-decoration: none;
+}

@@ -1,0 +1,353 @@
+/* join 경로 내 jsp파일들이 사용하는 css입니다. */
+
+
+/* 네비 */
+.MB_title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 23px;
+    margin-top : 50px;
+}
+.MB_text {
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 50px;
+}
+
+
+
+/* Agree 이용약관 */
+.AG_form {
+    margin : 40px 0;
+}
+.AG_title {
+    margin-left: 35px;
+    font-weight: bold;
+    font-size: 23px;
+}
+.AG_text {
+    border-radius: 5px;
+    border: 1px solid #acacac;
+    width : 1300px;
+    padding: 0 10px;
+    margin: 30px auto;
+    background : #dedede;
+}
+.AG_check {
+    text-align: right;
+    margin-right: 50px;
+}
+.AG_btn {
+    text-align: center;
+    margin: 40px 0 60px 0;
+}
+.AG_btn button {
+    border-radius: 5px;
+    border: none;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    margin: 0 20px;
+    padding: 5px 10px;
+}
+.AG_okbtn {
+    background: #6060ff;
+}
+.AG_nobtn {
+    background: #ff6060;
+}
+.AG_okbtn:hover {
+    color: black;
+}
+.AG_okbtn:focus {
+    color: black;
+}
+.AG_nobtn:hover {
+    color: black;
+}
+.AG_nobtn:focus {
+    color: black;
+}
+
+
+
+
+/* joinme 회원가입 */
+.JM_form {
+    background: none;
+    border: none;
+    width: 450px;
+    margin: 50px auto;
+}
+.JM_text {
+    margin-bottom : -10px;
+}
+.JM_input {
+    width: 450px;
+    height: 50px;
+    font-size: 15px;
+    border-radius: 5px;
+    border: 1px solid #adb5bd;
+    padding-left: 15px;
+}
+.JM_redStar {
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0 5px;
+}
+.JM_zipInput {
+    clear: both;
+    background: #f3f3f3;
+    width: 150px;
+    height: 40px;
+    font-size: 15px;
+    border-radius: 5px;
+    border: 1px solid #adb5bd;
+    text-align: center;
+}
+.JM_zipSpan {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin : 0 10px;
+}
+.JM_zipbtn {
+    background: #a200c7;
+    border-radius: 5px;
+    width: 90px;
+    height: 40px;
+    border: none;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    margin-left: 15px;
+    text-align: center;
+}
+.JM_alarm {
+    margin : 30px 0 0 10px;
+    color: grey;
+}
+.JM_alarm input {
+    margin-right : 5px;
+}
+.JM_btn {
+    text-align: center;
+    margin : 40px auto 60px auto;
+}
+.JM_okbtn {
+    border-radius: 5px;
+    border: none;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    padding: 5px 10px;
+    background: #A200C7;
+}
+.JM_okbtn:active {
+    outline: none;
+}
+
+
+
+
+/* Zip modal */
+.ZIP_closebtn {
+    font-size: 30px;
+    margin : -10px;
+}
+.ZIP_findtext {
+    font-size: 14px;
+    color: #007BFF;
+    text-align: center;
+    margin-top: -20px;
+}
+.ZIP_list {
+    margin-top: 30px;
+}
+
+
+
+
+
+/* 가입완료 */
+.JO_body {
+    margin: 150px 0 200px 250px;
+    width : 700px;
+    float : left;
+}
+.JO_btns {
+    float : left;
+    margin-left: 50px;
+    margin-top: 135px;
+}
+.JO_btns button {
+    background: #a200c7;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    width: 150px;
+    height: 35px;
+    margin-top: 10px;
+}
+.JO_btns button:focus {
+    outline: none;
+}
+.JO_btns i {
+    position: relative;
+    top: -2px;
+    margin-right: 5px;
+}
+
+
+
+/* 고양이 등록*/
+.AP_pic {
+    text-align: center;
+}
+.AP_picInput[type="file"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+.AP_form {
+    background: none;
+    border: none;
+    width: 450px;
+    margin: 50px auto;
+}
+.AP_text {
+    margin-bottom: -10px;
+}
+.AP_input {
+    width: 450px;
+    height: 50px;
+    font-size: 15px;
+    border-radius: 5px;
+    border: 1px solid #adb5bd;
+    padding-left: 15px;
+}
+.AP_detail{
+    float: left;
+}
+.AP_birthInput {
+    /*clear: both;*/
+    background: #f3f3f3;
+    padding-left: 15px;
+    font-size: 15px;
+    border-radius: 5px;
+    border: 1px solid #adb5bd;
+    text-align: center;
+    clear: both;
+    width: 150px;
+    height: 50px;
+    margin-right: 10px;
+}
+.AP_genderInput input{
+    margin-left: 10px;
+}
+.clear {
+    clear:both;
+}
+.AP_check {
+    text-align: center;
+    margin : 20px 0;
+    color : grey;
+}
+
+.AP_btn {
+    text-align: center;
+    margin: 10px 20px 60px 0;
+}
+.AP_btn button {
+    border-radius: 5px;
+    border: none;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    margin: 0 20px;
+    padding: 5px 10px;
+}
+.AP_okbtn {
+    background: #6060ff;
+}
+.AP_nobtn {
+    background: #ff6060;
+}
+.AP_okbtn:hover {
+    color: black;
+}
+.AP_okbtn:focus {
+    color: black;
+}
+.AP_nobtn:hover {
+    color: black;
+}
+.AP_nobtn:focus {
+    color: black;
+}
+
+
+/* 로그인 */
+.LI_form {
+    background: none;
+    border: none;
+    width: 450px;
+    margin: 50px auto;
+}
+.LI_text {
+    margin-bottom : -10px;
+}
+.LI_input {
+    width: 450px;
+    height: 50px;
+    font-size: 15px;
+    border-radius: 5px;
+    border: 1px solid #adb5bd;
+    padding-left: 15px;
+}
+.LI_check {
+    text-align: center;
+    margin : 20px 0;
+    color : grey;
+}
+.LI_btn {
+    text-align: center;
+    margin: 40px 0 60px 0;
+}
+.LI_btn button {
+    border-radius: 5px;
+    border: none;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    margin: 0 20px;
+    padding: 5px 10px;
+}
+.LI_okbtn {
+    background: #6060ff;
+}
+.LI_nobtn {
+    background: #ff6060;
+}
+.LI_okbtn:hover {
+    color: black;
+}
+.LI_okbtn:focus {
+    color: black;
+}
+.LI_nobtn:hover {
+    color: black;
+}
+.LI_nobtn:focus {
+    color: black;
+}

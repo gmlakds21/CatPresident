@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Orders">
+
+    <!-- 장바구니 목록 불러오기 -->
+    <select id="downbuylist" statementType="PREPARED"
+            parameterType="String"
+            resultType="teamproject.mvc.vo.MembersVO">
+        select uno, buylist, buyamounts from Members
+            where uno = ${uno};
+    </select>
+
+    <!-- 수정된 장바구니 업로드 하기 -->
+    <update id="upbuylist" statementType="PREPARED"
+            parameterType="teamproject.mvc.vo.MembersVO">
+        update Members set buylist = ${mvo.buylist}, buyamounts =${mvo.buyamount}
+            where uno = ${mvo.uno};
+    </update>
+
+    <select id="cateList" statementType="PREPARED" resultType="teamproject.mvc.vo.CategoryVO">
+        select ctno from Category;
+    </select>
+
+    <select id="brandList" statementType="PREPARED" resultType="teamproject.mvc.vo.ProductsVO">
+        select brand from Brand;
+    </select>
+
+</mapper>

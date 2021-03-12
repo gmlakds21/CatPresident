@@ -1,0 +1,31 @@
+.basket_h2 {
+    margin: 0;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.basket_order {
+    bottom: 32px;
+    margin-bottom: -20px;
+    margin: 20px auto;
+    text-align: right;
+    padding-top: 0px;
+}
+
+.basket_order_span1 {
+    font-weight: bold;
+    font-size: 16px;
+    color: #A200C7;
+}
+
+.basket_order_span2 {
+
+    font-weight: bold;
+    font-size: 16px;
+    color: #95999c
+}
+
+
+.basket_icon{
+    font-size: 60px;
+}
