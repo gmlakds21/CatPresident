@@ -113,42 +113,13 @@
             </div>
         </div>
         <span class="hd_pdlist">
-            <ul class="nav nav-tabs HD_Category" role="tablist">
-                <li class="nav-item">
-                    <a class="nav-link" href="/Today-Deals/list?cp=1">
-                        <span class="HD_Category_txt"> 오늘의딜 </span>
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="/Best-Products/list?cp=1">
-                        <span class="HD_Category_txt"> 랭킹 </span>
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="/Recent-Product/list?cp=1">
-                        <span class="HD_Category_txt"> 신상품 </span>
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="/Planned/list">
-                        <span class="HD_Category_txt"> 기획전 </span>
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="/Knowhow/list">
-                        <span class="HD_Category_txt"> 노하우 </span>
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="/StickerShop/list?cp=1">
-                        <span class="HD_Category_txt"> 스티커샵 </span>
-                    </a>
-                </li>
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item"><a class="nav-link" href="/Today-Deals/list?cp=1">오늘의딜</a></li>
+                <li class="nav-item"><a class="nav-link" href="/Best-Products/list?cp=1">랭킹</a></li>
+                <li class="nav-item"><a class="nav-link" href="/Recent-Product/list?cp=1">신상품</a></li>
+                <li class="nav-item"><a class="nav-link" href="/Planned/list">기획전</a></li>
+                <li class="nav-item"><a class="nav-link" href="/Knowhow/list">노하우</a></li>
+                <li class="nav-item"><a class="nav-link" href="/StickerShop/list?cp=1">스티커샵</a></li>
             </ul>
         </span>
     </div>

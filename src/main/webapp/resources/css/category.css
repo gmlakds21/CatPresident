@@ -1,48 +1,47 @@
-.CT_page {
-    margin: 0 auto 50px auto;
+.ct_page {
+    width: 1400px;
+    margin: 10px auto 70px auto;
+}
+.ct_page ul {
     display: flex;
-    padding: 10px 20px;
     flex-wrap: wrap;
-    max-width: 1432px;
-    box-sizing: border-box;
-    background-color: #fff;
+    padding: 0;
+    width: 1400px;
+    background-color: white;
 }
-.CT_page li {
-    width: 20%;
-    margin: 0;
-    padding: 10px;
-    list-style: none;
-}
-.CT_page img {
-    margin: auto;
-    display: block;
-    max-width: 100%;
-    width: 98px;
-    height: 98px;
-}
-.CT_page a {
-    width: 100%;
-    border: 1px solid rgba(235, 235, 235, 1);
+.ct_page li {
+    width: 260px;
     height: 160px;
-    display: block;
-    outline: 0;
-    padding: 12px 6px 8px;
-    position: relative;
-    box-sizing: border-box;
+    margin: 10px;
+    list-style: none;
     text-align: center;
-    border-radius: 8px !important;
+}
+.ct_page a {
+    width: 260px;
+    height:160px;
+    border-radius: 8px;
+    border: 1px solid #EBEBEB;
+    display: block;
+    padding: 12px;
     text-decoration: none;
+}
+.ct_page img {
+    margin: auto;
+    width: 100px;
+    height: 100px;
+
+    border: 1px solid black;
+}
+.ct_page a:hover {
+    border: 2px solid #A200C7;
+    padding: 11px;
+    /*padding: 11px 6px 7px;*/
     background-color: #fff;
 }
-.CT_page a:hover {
-    border: 2px solid rgba(162, 0, 199, 1);
-    padding: 11px 6px 7px;
-    background-color: #fff;
+.ct_page a:hover {
+    color: #A200C7;
 }
-.CT_page a:hover {
-    color: rgba(162, 0, 199, 1);
-}
-.CT_page span {
+.ct_page span {
     color: rgba(60, 60, 67, 0.6);
     height: 30px;
     display: flex;

@@ -157,8 +157,72 @@
 .hd_list5 a:active {
     border: none;
 }
-.hd_pdlist span {
+.hd_pdlist a:hover {  /* 마우스를 갖다댔을때 움직이지 않게 */
+    padding-left: 17px;
+    padding-top:9px;
+    padding-right: 17px;
+}
+.hd_pdlist a {
     font-size: 18px;
     color: #636161;
     font-weight: bold;
+}
+
+
+/* 모든 페이지의 header 부분 */
+.page_header {
+    background-color: #f4f4f5;
+    clear: both;
+}
+
+.page_nav {
+    padding: 10px 0;
+    width: 1400px;
+    margin: 0 auto;
+}
+.page_nav span {
+    color: #717171;
+    font-size: 12px;
+}
+.page_nav_bi {
+    position: relative;
+    top: -2px;
+}
+
+.page_title {
+    margin: 20px auto;
+}
+.page_title span {
+    font-weight: bold;
+    margin: 0 10px;
+    font-size: 23px;
+}
+
+
+/* 삭제 될 부분 */
+.list_header {
+    background-color: #f4f4f5;
+    clear: both;
+}
+
+.list_nav {
+    padding: 10px;
+    margin: 0 auto;
+}
+.list_nav span {
+    color: #717171;
+    font-size: 12px;
+}
+.list_nav_bi {
+    position: relative;
+    top: -2px;
+}
+
+.list_title {
+    margin: 20px auto;
+}
+.list_title span {
+    font-weight: bold;
+    margin: 0 10px;
+    font-size: 23px;
 }
