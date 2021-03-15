@@ -20,6 +20,13 @@ public class ProductsController {
         return "products/MainPage.tiles";
     }
 
+    @GetMapping("/CategoryPage") // 카테고리 페이지
+    public ModelAndView Category(ModelAndView mv) {
+        mv.setViewName("products/CategoryPage.tiles");
+        mv.addObject("cates", pdsrv.readCategory());
+        return mv;
+    }
+
     @GetMapping("/Today-Deals/list") // 오늘의 딜 리스트
     public ModelAndView TodayDealsList(ModelAndView mv, String cp) {
         mv.setViewName("products/List_TodayDeals.tiles");
@@ -53,13 +60,6 @@ public class ProductsController {
         mv.addObject("cates", pdsrv.readCategory());
         mv.addObject("PPs", pdsrv.readProductsList(cp, "order by pno desc"));
         mv.addObject("PPcnt", pdsrv.countProducts(""));
-        return mv;
-    }
-
-    @GetMapping("/CategoryPage") // 카테고리 페이지
-    public ModelAndView Category(ModelAndView mv) {
-        mv.setViewName("products/CategoryPage.tiles");
-        mv.addObject("cates", pdsrv.readCategory());
         return mv;
     }
 

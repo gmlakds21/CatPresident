@@ -3,22 +3,22 @@
 <div class="ft_nav">
     <div class="ft_navBodies">
         <div class="ft_navBody">
-            <img src="/img/Footer_nav1.jpg">
+            <img src="/img/template/Footer_nav1.jpg">
             <span>고양이대통령이 추구하는<br><b>일곱 가지</b> 가치</span>
         </div>
         <div class="ft_navDivider"></div>
         <div class="ft_navBody">
-            <img src="/img/Footer_nav2.jpg">
+            <img src="/img/template/Footer_nav2.jpg">
             <span>신선한 사료&간식<br><b>유통기한 100%</b> 책임제</span>
         </div>
         <div class="ft_navDivider"></div>
         <div class="ft_navBody">
-            <img src="/img/Footer_nav3.jpg">
+            <img src="/img/template/Footer_nav3.jpg">
             <span>저녁 6시 이전<br>주문시 <b>오늘 출발</b></span>
         </div>
         <div class="ft_navDivider"></div>
         <div class="ft_navBody">
-            <img src="/img/Footer_nav4.jpg">
+            <img src="/img/template/Footer_nav4.jpg">
             <span>3만원 이상 구매시<br><b>무료배송</b></span>
         </div>
     </div>

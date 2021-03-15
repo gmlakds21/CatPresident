@@ -104,19 +104,23 @@
 .hdNcategory {
     float: left;
 }
-.hdNcategory button {
-    font-size: 20px;
-    font-weight: bold;
-    border: none;
-    background: none;
+.hdNcategory a {
+    color: black;
+    text-decoration: none;
 }
-.hdNcategory button:focus {
+.hdNcategory a:focus {
     outline: none;
 }
 .hdNcategory i {
     font-size: 25px;
     position: relative;
     top: -2px;
+}
+.hdNcategory span {
+    font-size: 20px;
+    font-weight: bold;
+    /*border: none;*/
+    /*background: none;*/
 }
 .hdNcategory:hover .hdNcatelist {
     display: block;

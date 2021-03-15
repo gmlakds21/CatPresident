@@ -91,10 +91,10 @@
     <%-- 카테고리 --%>
     <div class="hd_list5">
         <div class="dropdown hdNcategory">
-            <button type="button" data-toggle="dropdown" href="/CategoryPage">
+            <a href="/CategoryPage/">
                 <i class="bi bi-justify"></i>
                 <span>카테고리</span>
-            </button>
+            </a>
             <div class="dropdown-menu hdNcatelist">
                 <a class="dropdown-item" href="/Category/list?cate=0100&cp=1">사료</a>
                 <a class="dropdown-item" href="/Category/list?cate=0200&cp=1">간식</a>
