@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="/css/template.css">
+    <link rel="stylesheet" href="/css/template/header.css">
+    <link rel="stylesheet" href="/css/template/footer.css">
     <link rel="stylesheet" href="/css/register.css">
     <link rel="stylesheet" href="/css/list.css">
     <link rel="stylesheet" href="/css/category.css">
@@ -23,7 +24,7 @@
     <title>TeamProject</title>
 </head>
 <body>
-<div class="container col-12">
+<div>
 
     <tiles:insertAttribute name="header"/>
 
@@ -38,6 +39,5 @@
 <script src="/js/category.js"></script>
 <script src="/js/planKnow.js"></script>
 <script src="/js/order.js"></script>
-<%--<script src="/js/.js"></script>--%>
 </body>
 </html>

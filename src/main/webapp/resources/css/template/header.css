@@ -1,15 +1,8 @@
-/* 베이스 */
-.marginCenter {
-    margin: 0 auto;
-}
-
-/* col-9 or 1400px */
 .hd_lists {
     width: 1400px;
     margin-top: 50px;
+    margin: 0 auto;
     padding: 0;
-
-    /*border: 1px solid black;*/
 }
 
 /* 고양이 대통령 로고 */
@@ -21,6 +14,7 @@
     text-align: center;
     margin-right: 20px;
 }
+
 
 /* 알림 / 마이페이지 / 장바구니 */
 .hd_list2 {
@@ -139,7 +133,6 @@
 }
 
 
-
 /* 제품 리스트 목록 */
 .hd_pdlist ul {
     list-style: none;
@@ -164,125 +157,4 @@
     font-size: 18px;
     color: #636161;
     font-weight: bold;
-}
-
-
-
-
-
-
-/* 푸터 */
-.FT_Nav {
-    background-color: #A200C7;
-    height: 120px;
-}
-.FT_Nav ul {
-    background-color: #A200C7;
-}
-.FT_Nav li {
-    margin-top: 20px;
-}
-.FT_Li_Span {
-    content: "";
-    width : 1px;
-    height: 60px;
-    margin: 20px 70px 0 70px;
-    background-color: white;
-}
-.FT_Text {
-    color: white;
-    font-size: 15px;
-    margin-top: 8px;
-    margin-left: 15px;
-}
-
-
-/* 약관 및 어플 */
-.FT2 {
-    margin: 40px auto;
-}
-.FT2 ul {
-    margin-left: -40px;
-    list-style: none;
-    float: left;
-}
-.FT2 li {
-    float: left;
-    margin: 0px 5px 0px 12px;
-    font-size: 14px;
-    font-weight: bold;
-    color: #4e4e4e;
-}
-.FT2 li:last-child {
-    color: black;
-}
-.FT_Li_Span2 {
-    width : 2px;
-    height: 10px;
-    margin: 0 10px;
-    background-color: black;
-}
-.FT_Snsbtn {
-    float: right;
-    width: 40px;
-    border: none;
-    outline: none;
-    background: none;
-    margin-top: -20px;
-    margin-left: 5px;
-}
-.FT_Snsbtn:focus {
-    outline: none;
-}
-.FT_Snsbtn i {
-    font-size : 25px;
-}
-.FT_Br {
-    clear: both;
-    margin-bottom: 10px;
-}
-
-
-
-/* 상호 및 나머지 */
-.FT3 {
-    float: left;
-    margin-top: 30px;
-}
-.FT3 i {
-    font-size : 25px;
-}
-.FT3 span {
-    font-size: 25px;
-}
-.FT3 button {
-    width: 100px;
-    height: 30px;
-    font-size: 13px;
-    border: 1px solid #a200c7;
-    border-radius: 5px;
-    background: #a200c7;
-    outline: none;
-    color: white;
-    margin-top: -5px;
-}
-.FT3 button:active {
-    outline: none;
-}
-.FT3 p {
-    margin-top: 5px;
-    font-size: 14px;
-}
-
-
-.FT_License {
-    float: right;
-    text-align: right;
-}
-.FT_License img {
-    width: 135px;
-    height: 35px;
-}
-.FT_License p {
-    font-size: 11px;
 }

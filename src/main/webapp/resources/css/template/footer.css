@@ -1,0 +1,162 @@
+.ft_nav {
+    background: #A200C7;
+    height: 120px;
+}
+.ft_navBodies {
+    width: 1400px;
+    margin: 0 auto;
+}
+.ft_navBody {
+    float: left;
+    height: 120px;
+    padding: 30px 10px;
+}
+.ft_navBody img {
+    float: left;
+}
+.ft_navBody span {
+    float: left;
+    color: white;
+    margin-top: 5px;
+    margin-left: 15px;
+    font-size: 17px;
+}
+.ft_navDivider {
+    float: left;
+    width: 1px;
+    height: 60px;
+    margin: 30px 66px;
+    background: white;
+}
+
+
+/* 밑에 목록들 */
+.ft_lists1 {
+    width: 1400px;
+    margin: 0 auto;
+    height: 80px;
+}
+
+
+/* 이용약관 */
+.ft_list1 {
+    float: left;
+    width: 700px;
+    height: 80px;
+    padding: 26px 0;
+
+    border: 1px solid orange;
+}
+.ft_list1txt {
+    float: left;
+    font-size: 14px;
+    padding: 0 7px;
+    border: 1px solid red;
+}
+.ft_list1 div:last-child {
+    font-weight: bold;
+}
+/* 왜 float:left 안되지 나중에 해야지 */
+ft_list1Divider {
+    float: left;
+    width: 5px;
+    height: 10px;
+    margin: 0 10px;
+    background: black;
+}
+
+
+/* 어플목록 */
+.ft_list2 {
+    float: right;
+    width: 300px;
+    height: 80px;
+    padding : 13px 0;
+}
+.ft_sns {
+    float: right;
+    width: 50px;
+    height: 50px;
+    outline: none;
+    background: none;
+    margin: 0 10px;
+}
+.ft_list2 button:focus {
+    outline: none;
+}
+.ft_sns i {
+    font-size : 25px;
+    position: relative;
+    top: -5px;
+    right: -1px;
+}
+
+
+.ft_listsDivider {
+    height:1px;
+    width: 100%;
+    background: #c4c4c4;
+    clear: both;
+}
+
+
+.ft_lists2 {
+    width: 1400px;
+    margin: 0 auto 150px auto;
+    height: 140px;
+}
+
+
+/* 고객문의 */
+.ft_list3 {
+    float: left;
+    width: 300px;
+    height: 140px;
+    padding: 30px 0;
+}
+.ft_list3 i {
+    font-size : 25px;
+}
+.ft_list3 span {
+    font-size: 27px;
+    margin: 0 2px;
+    position: relative;
+    top: 4px;
+}
+.ft_list3 button {
+    width: 100px;
+    height: 30px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    background: #a200c7;
+    outline: none;
+    color: white;
+    margin-top: -5px;
+}
+.ft_list3 button:active {
+    outline: none;
+}
+.ft_list3 p {
+    margin-top: 5px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+/* 상호 및 나머지 */
+.ft_list4 {
+    float: right;
+    width: 600px;
+    height: 140px;
+    padding: 20px 0;
+    text-align: right;
+}
+.ft_list4 img {
+    width: 135px;
+    height: 35px;
+}
+.ft_list4 p {
+    font-size: 12px;
+    color: #acacac;
+}

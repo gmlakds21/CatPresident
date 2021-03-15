@@ -2,7 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
 
-<div class="hd_lists marginCenter">
+<div class="hd_lists">
 
     <%-- 고양이 대통령 로고를 담는 공간 --%>
     <div class="hd_list1">
@@ -166,8 +166,8 @@
                         </c:if>
                     </div>
                 </c:forEach>
---%>
-<%--
+
+
                     <div class="dropdown-menu HD_Category_sub">
                         <a class="dropdown-item" href="/Category/list?cate=0100">전체</a>
                         <a class="dropdown-item" href="/Category/list?cate=0101">건식사료</a>
@@ -176,8 +176,8 @@
                         <a class="dropdown-item" href="/Category/list?cate=0104">건조생식</a>
                         <a class="dropdown-item" href="/Category/list?cate=0105">분유</a>
                    </div>
---%>
-<%--
+
+
                     <div class="dropdown-menu HD_Category_sub">
                         <a class="dropdown-item" href="/Category/list?cate=0200">전체</a>
                         <a class="dropdown-item" href="/Category/list?cate=0201">캔</a>
