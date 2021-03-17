@@ -4,6 +4,23 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
 <fmt:parseNumber var="cp" value="${param.cp}"/>
+<%--
+ PageVO 만들어서
+
+ pg.pp = 30
+ pg.tp = PDcnt/30
+ if(tp > 0)  tp = tp + 1
+
+ pg.sp = ((cp-1)/30)*10+1
+ pg.ep = sp+9
+ pg.snum = PDcont - (cp-1)*30
+
+ cp = choosePage
+ tp = totalPage
+ sp = startPage
+ ep = endPage
+ snum = 현 페이지 starNumber
+ --%>
 <fmt:parseNumber var="pp" value="30"/>
 
 <fmt:parseNumber var="tp" value="${PDcnt/pp}" integerOnly="true"/>
@@ -15,14 +32,32 @@
 <fmt:parseNumber var="sp" value="${sp*10+1}"/>
 <fmt:parseNumber var="ep" value="${sp+9}"/>
 
-<c:set var="navlink" value="/Best-Products/list?cp=" />
+<fmt:parseNumber var="snum" integerOnly="true" value="${(cp-1) * pp}"/>
+<%--  --%>
+
+<c:set var="navlink" value="/Best-Products/list?" />
 <c:if test="${not empty param.findKey}">
     <c:set var="navlink"
            value="/Best-Products/find?findType=${param.findType}&findKey=${param.findKey}&cp=">
     </c:set>
 </c:if>
+<%--
+param 의 where, order 을 navlink 에 담아서 하단 네비를 눌렀을 때 가도록
 
-<fmt:parseNumber var="snum" integerOnly="true" value="${PDcnt - (cp-1) * pp}"/>
+<c:if test="${not empty param.where}">
+    <c:set var="navlink"
+           value="${navlink}where=${param.where}}&">
+    </c:set>
+</c:if>
+
+<c:if test="${not empty param.order}">
+    <c:set var="navlink"
+           value="${navlink}order=${param.order}}&">
+    </c:set>
+</c:if>
+
+--%>
+
 
 <div>
     <div class="page_header">
@@ -90,7 +125,7 @@
     <%-- list card --%>
     <div class="pd_list">
         <ul>
-            <c:set var="i" value="#{(cp-1)*30+1}"/>
+            <c:set var="i" value="#{snum+1}"/>
             <c:forEach var="PD" items="${PDs}">
                 <li>
                     <a href="/Products/View?pno=${PD.pno}">
@@ -127,7 +162,7 @@
         <div class="col-12">
             <ul class="pagination justify-content-center">
                 <li class="page-item" <c:if test="${sp lt 10}"> disable </c:if>>
-                    <a href="${navlink}${sp-10}" class="page-link">
+                    <a href="${navlink}cp=${sp-10}" class="page-link">
                         <span class="bi bi-chevron-left"></span>
                     </a>
                 </li>
@@ -135,12 +170,12 @@
                     <c:if test="${i le tp}">
                         <li class="page-item"
                             <c:if test="${cp eq i}">active</c:if>>
-                            <a href="${navlink}${i}" class="page-link">${i}</a>
+                            <a href="${navlink}cp=${i}" class="page-link">${i}</a>
                         </li>
                     </c:if>
                 </c:forEach>
                 <li class="page-item <c:if test="${ep gt 10}"> disabled </c:if>">
-                    <a href="${navlink}${sp+10}" class="page-link">
+                    <a href="${navlink}cp=${sp+10}" class="page-link">
                         <span class="bi bi-chevron-right"></span>
                     </a>
                 </li>

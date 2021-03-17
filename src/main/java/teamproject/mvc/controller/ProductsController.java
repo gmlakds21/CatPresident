@@ -27,6 +27,26 @@ public class ProductsController {
         return mv;
     }
 
+    @GetMapping("/Category/list") // 카테고리 리스트 페이지
+    public ModelAndView CategoryList(ModelAndView mv, String cp, String cate) {
+        mv.setViewName("products/CategoryList.tiles");
+        // 왼쪽에 카테고리 목록
+        mv.addObject("cates",pdsrv.readCateAll());
+
+        // 타이틀 카테고리 명
+        mv.addObject("ct_title", pdsrv.readcatename(cate));
+
+        // 카테고리 목록
+        String target = "where ctno = "+cate+"";
+        if ((Integer.parseInt(cate) % 100) == 0) {
+            target = "where ctno like \'"+cate.substring(0,2)+"%\'";
+        }
+        mv.addObject("PDs", pdsrv.readProductsList(cp, target));
+        mv.addObject("PDcnt", pdsrv. countProducts(target));
+
+        return mv;
+    }
+
     @GetMapping("/Today-Deals/list") // 오늘의 딜 리스트
     public ModelAndView TodayDealsList(ModelAndView mv, String cp) {
         mv.setViewName("products/List_TodayDeals.tiles");
@@ -63,25 +83,6 @@ public class ProductsController {
         return mv;
     }
 
-    @GetMapping("/Category/list") // 카테고리 리스트 페이지
-    public ModelAndView CategoryList(ModelAndView mv, String cp, String cate) {
-        mv.setViewName("products/CategoryList.tiles");
-        // 왼쪽에 카테고리 목록
-        mv.addObject("cates",pdsrv.readCateAll());
-
-        // 타이틀 카테고리 명
-        mv.addObject("ct_title", pdsrv.readcatename(cate));
-
-        // 카테고리 목록
-        String target = "where ctno = "+cate+"";
-        if ((Integer.parseInt(cate) % 100) == 0) {
-            target = "where ctno like \'"+cate.substring(0,2)+"%\'";
-        }
-        mv.addObject("PPs", pdsrv.readProductsList(cp, target));
-        mv.addObject("PPcnt", pdsrv. countProducts(target));
-
-        return mv;
-    }
 
     @GetMapping("/Products/View") // 제품 뷰 페이지
     public ModelAndView ProductsView(ModelAndView mv, String pno) {
