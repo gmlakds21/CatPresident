@@ -1,9 +1,3 @@
-.list_body {
-    margin: 0 auto;
-    width: 1400px;
-}
-
-
 /* 상세 검색 */
 .list_cateNav button:focus {
     outline: none;

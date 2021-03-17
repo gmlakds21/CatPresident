@@ -2,30 +2,33 @@
 
 
 /* 네비 */
-.MB_title {
+.mb_title {
     text-align: center;
     font-weight: bold;
     font-size: 23px;
     margin-top : 50px;
 }
-.MB_text {
+.mb_text {
     text-align: center;
     font-size: 14px;
     margin-bottom: 50px;
 }
 
 
-
 /* Agree 이용약관 */
-.AG_form {
+.ag_body {
+    width: 1400px;
+    margin: 0 auto;
+}
+.ag_form {
     margin : 40px 0;
 }
-.AG_title {
+.ag_title {
     margin-left: 35px;
     font-weight: bold;
     font-size: 23px;
 }
-.AG_text {
+.ag_text {
     border-radius: 5px;
     border: 1px solid #acacac;
     width : 1300px;
@@ -33,15 +36,15 @@
     margin: 30px auto;
     background : #dedede;
 }
-.AG_check {
+.ag_check {
     text-align: right;
     margin-right: 50px;
 }
-.AG_btn {
+.ag_btn {
     text-align: center;
     margin: 40px 0 60px 0;
 }
-.AG_btn button {
+.ag_btn button {
     border-radius: 5px;
     border: none;
     font-size: 15px;
@@ -51,39 +54,31 @@
     margin: 0 20px;
     padding: 5px 10px;
 }
-.AG_okbtn {
+.ag_okbtn {
     background: #6060ff;
 }
-.AG_nobtn {
+.ag_nobtn {
     background: #ff6060;
 }
-.AG_okbtn:hover {
+.ag_btn button:hover {
     color: black;
 }
-.AG_okbtn:focus {
-    color: black;
-}
-.AG_nobtn:hover {
-    color: black;
-}
-.AG_nobtn:focus {
-    color: black;
+.ag_btn button:focus {
+    outline: none;
 }
 
 
-
-
-/* joinme 회원가입 */
-.JM_form {
+/* info 정보입력 */
+.in_form {
     background: none;
     border: none;
     width: 450px;
     margin: 50px auto;
 }
-.JM_text {
+.in_text {
     margin-bottom : -10px;
 }
-.JM_input {
+.in_input {
     width: 450px;
     height: 50px;
     font-size: 15px;
@@ -91,13 +86,13 @@
     border: 1px solid #adb5bd;
     padding-left: 15px;
 }
-.JM_redStar {
+.in_redStar {
     color: red;
     font-size: 20px;
     font-weight: bold;
     margin: 0 5px;
 }
-.JM_zipInput {
+.in_zipInput {
     clear: both;
     background: #f3f3f3;
     width: 150px;
@@ -107,13 +102,13 @@
     border: 1px solid #adb5bd;
     text-align: center;
 }
-.JM_zipSpan {
+.in_zipSpan {
     font-size: 20px;
     font-weight: bold;
     text-align: center;
     margin : 0 10px;
 }
-.JM_zipbtn {
+.in_zipbtn {
     background: #a200c7;
     border-radius: 5px;
     width: 90px;
@@ -125,18 +120,18 @@
     margin-left: 15px;
     text-align: center;
 }
-.JM_alarm {
+.in_alarm {
     margin : 30px 0 0 10px;
     color: grey;
 }
-.JM_alarm input {
+.in_alarm input {
     margin-right : 5px;
 }
-.JM_btn {
+.in_btn {
     text-align: center;
     margin : 40px auto 60px auto;
 }
-.JM_okbtn {
+.in_okbtn {
     border-radius: 5px;
     border: none;
     font-size: 15px;
@@ -146,7 +141,7 @@
     padding: 5px 10px;
     background: #A200C7;
 }
-.JM_okbtn:active {
+.in_okbtn:focus {
     outline: none;
 }
 
@@ -154,18 +149,22 @@
 
 
 /* Zip modal */
-.ZIP_closebtn {
+.zip_closeBtn {
     font-size: 30px;
     margin : -10px;
+    outline: none;
 }
-.ZIP_findtext {
+.zip_closeBtn:focus {
+    outline: none;
+}
+.zip_findText {
     font-size: 14px;
     color: #007BFF;
     text-align: center;
     margin-top: -20px;
 }
-.ZIP_list {
-    margin-top: 30px;
+.zip_list {
+    margin: 30px auto 0 auto;
 }
 
 

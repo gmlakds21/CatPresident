@@ -6,7 +6,7 @@
 
     <%-- 고양이 대통령 로고를 담는 공간 --%>
     <div class="hd_list1">
-        <a class="marginCenter" href="/"><img src="/img/template/Header_Logo.jpg"></a>
+        <a href="/"><img src="/img/template/Header_Logo.jpg"></a>
     </div>
 
 
@@ -71,7 +71,7 @@
 
 
     <%-- 검색 --%>
-    <div class="hd_list3 input-group marginCenter">
+    <div class="hd_list3 input-group">
         <input type="text" class="form-control" placeholder="3만원 이상 구매 시, 무료배송">
         <div class="input-group-append">
             <button class="btn" type="button">
@@ -83,7 +83,7 @@
     <%-- 알림 메시지 --%>
     <div class="hd_list4">
         <button type="button" disabled>
-            365일 <img src="/img/template/Header_leaf.jpg"> <span class="HD_Notify_span">신선한 사료&간식</span> 유통기한 100% 책임제
+            365일 <img src="/img/template/Header_leaf.jpg"> <span>신선한 사료&간식</span> 유통기한 100% 책임제
         </button>
     </div>
 
@@ -91,35 +91,35 @@
     <%-- 카테고리 --%>
     <div class="hd_list5">
         <div class="dropdown hdNcategory">
-            <a href="/CategoryPage/">
+            <a href="/category/page">
                 <i class="bi bi-justify"></i>
                 <span>카테고리</span>
             </a>
             <div class="dropdown-menu hdNcatelist">
-                <a class="dropdown-item" href="/Category/list?cate=0100&cp=1">사료</a>
-                <a class="dropdown-item" href="/Category/list?cate=0200&cp=1">간식</a>
-                <a class="dropdown-item" href="/Category/list?cate=0300&cp=1">건강관리</a>
-                <a class="dropdown-item" href="/Category/list?cate=0400&cp=1">모래</a>
-                <a class="dropdown-item" href="/Category/list?cate=0500&cp=1">화장실/위생</a>
-                <a class="dropdown-item" href="/Category/list?cate=0600&cp=1">미용/목욕</a>
-                <a class="dropdown-item" href="/Category/list?cate=0700&cp=1">급식기/급수기</a>
-                <a class="dropdown-item" href="/Category/list?cate=0800&cp=1">스크래쳐/캣타워</a>
-                <a class="dropdown-item" href="/Category/list?cate=0900&cp=1">하우스</a>
-                <a class="dropdown-item" href="/Category/list?cate=1000&cp=1">이동장</a>
-                <a class="dropdown-item" href="/Category/list?cate=1100&cp=1">의류/액세서리</a>
-                <a class="dropdown-item" href="/Category/list?cate=1200&cp=1">목줄/가슴줄</a>
-                <a class="dropdown-item" href="/Category/list?cate=1300&cp=1">장난감</a>
-                <a class="dropdown-item" href="/Category/list?cate=1400&cp=1">생활/가전</a>
+                <a class="dropdown-item" href="/category/list?cate=0100&cp=1">사료</a>
+                <a class="dropdown-item" href="/category/list?cate=0200&cp=1">간식</a>
+                <a class="dropdown-item" href="/category/list?cate=0300&cp=1">건강관리</a>
+                <a class="dropdown-item" href="/category/list?cate=0400&cp=1">모래</a>
+                <a class="dropdown-item" href="/category/list?cate=0500&cp=1">화장실/위생</a>
+                <a class="dropdown-item" href="/category/list?cate=0600&cp=1">미용/목욕</a>
+                <a class="dropdown-item" href="/category/list?cate=0700&cp=1">급식기/급수기</a>
+                <a class="dropdown-item" href="/category/list?cate=0800&cp=1">스크래쳐/캣타워</a>
+                <a class="dropdown-item" href="/category/list?cate=0900&cp=1">하우스</a>
+                <a class="dropdown-item" href="/category/list?cate=1000&cp=1">이동장</a>
+                <a class="dropdown-item" href="/category/list?cate=1100&cp=1">의류/액세서리</a>
+                <a class="dropdown-item" href="/category/list?cate=1200&cp=1">목줄/가슴줄</a>
+                <a class="dropdown-item" href="/category/list?cate=1300&cp=1">장난감</a>
+                <a class="dropdown-item" href="/category/list?cate=1400&cp=1">생활/가전</a>
             </div>
         </div>
         <span class="hd_pdlist">
             <ul class="nav nav-tabs" role="tablist">
-                <li class="nav-item"><a class="nav-link" href="/Today-Deals/list?cp=1">오늘의딜</a></li>
-                <li class="nav-item"><a class="nav-link" href="/Best-Products/list?cp=1">랭킹</a></li>
-                <li class="nav-item"><a class="nav-link" href="/Recent-Product/list?cp=1">신상품</a></li>
+                <li class="nav-item"><a class="nav-link" href="/today's/list?cp=1">오늘의딜</a></li>
+                <li class="nav-item"><a class="nav-link" href="/best/list?cp=1">랭킹</a></li>
+                <li class="nav-item"><a class="nav-link" href="/recent/list?cp=1">신상품</a></li>
                 <li class="nav-item"><a class="nav-link" href="/Planned/list">기획전</a></li>
                 <li class="nav-item"><a class="nav-link" href="/Knowhow/list">노하우</a></li>
-                <li class="nav-item"><a class="nav-link" href="/StickerShop/list?cp=1">스티커샵</a></li>
+                <li class="nav-item"><a class="nav-link" href="/sticker/list?cp=1">스티커샵</a></li>
             </ul>
         </span>
     </div>

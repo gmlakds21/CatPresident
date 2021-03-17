@@ -25,7 +25,57 @@ public class MembersController {
     @Autowired
     private MembersService mbsrv;
 
-    // 1 - 현우
+    // 회원가입 1
+    @GetMapping("/member/agree")
+    public String newMemberAgree() {
+        return "members/new_agree.tiles";
+    }
+
+    // 회원가입 2
+    @GetMapping("/member/info")
+    public String newMemberInfo() {
+        return "members/new_info.tiles";
+    }
+
+    // 아이디 중복검사
+    @GetMapping("/member/checkID")
+    public void checkID(String email, HttpServletResponse res) {
+        try {
+            res.getWriter().print(mbsrv.checkUserid(email)); // email은 js의 중복검사값.
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    // 주소 찾기
+    @ResponseBody
+    @GetMapping("/member/findZip")
+    public void findZip(String dong, HttpServletResponse res) {
+        try {
+            res.setContentType("application/json; charset=UTF-8");
+            res.getWriter().print(mbsrv.findZipCode(dong));
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    @PostMapping("/member/info")
+    public String newMemberInfoOK(MembersVO mvo, RedirectAttributes rds) { // 양식에서 입력받은 값들을 mvo에 저장, 서버에 전송.
+
+        String returnPage = "redirect:/member/info";
+        if(mbsrv.newMember(mvo) > 0 )
+            returnPage = "redirect:/member/joinok";
+
+        // 이게 뭘까 내일 알아보자
+        System.out.println(mvo.getZipcode());
+        rds.addFlashAttribute("mvo", mvo); // 양식에서 입력받은 값을 서버에 전송.
+
+        return returnPage;
+    }
+
+
+
+
     @GetMapping("/members/sign-in")
     public String signIn() {
         return "members/sign-in.tiles";
@@ -38,49 +88,6 @@ public class MembersController {
         sess.invalidate();
 
         return "redirect:/";
-    }
-
-    @GetMapping("/members/agree")
-    public String newMemberAgree() {
-        return "members/agree.tiles";
-    }
-
-    @GetMapping("/members/checkuid") // 아이디 중복검사
-    public void checkuid(String email, HttpServletResponse res) {
-        try {
-            res.getWriter().print(mbsrv.checkUserid(email)); // email은 js의 중복검사값.
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
-    }
-
-    @GetMapping("/members/joinme")
-    public String newJoinme() {
-        return "members/joinme.tiles";
-    }
-
-
-    @PostMapping("/members/joinme")
-    public String newJoinmeOK(MembersVO mvo, RedirectAttributes rds) { // 양식에서 입력받은 값들을 mvo에 저장, 서버에 전송.
-        System.out.println(mvo.getZipcode());
-
-        String returnPage;
-        mbsrv.newMember(mvo);
-        rds.addFlashAttribute("mvo", mvo); // 양식에서 입력받은 값을 서버에 전송.
-        returnPage = "redirect:/members/joinok";
-
-        return returnPage;
-    }
-
-    @ResponseBody
-    @GetMapping("/members/zipcode")
-    public void zipcode(String dong, HttpServletResponse res) {
-        try {
-            res.setContentType("application/json; charset=UTF-8");
-            res.getWriter().print(mbsrv.findZipCode(dong));
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
     }
 
     @GetMapping("/members/joinok")

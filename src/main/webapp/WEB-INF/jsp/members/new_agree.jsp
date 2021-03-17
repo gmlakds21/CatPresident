@@ -9,14 +9,14 @@
 </c:if>
 
 <div>
-    <div class="list_header">
-        <div class="col-9 list_nav">
+    <div class="page_header">
+        <div class="page_nav">
             <span> 홈 </span>
-            <span class="list_nav_bi bi bi-chevron-right"> </span>
+            <span class="page_nav_bi bi bi-chevron-right"> </span>
             <span> 이용약관 </span>
-            <span class="list_nav_bi bi bi-chevron-right"> </span>
+            <span class="page_nav_bi bi bi-chevron-right"> </span>
             <span> 회원가입 </span>
-            <span class="list_nav_bi bi bi-chevron-right"> </span>
+            <span class="page_nav_bi bi bi-chevron-right"> </span>
             <span> 가입완료 </span>
         </div>
     </div>
@@ -24,19 +24,18 @@
 
 
 <!-- 네비 -->
-<div class="col-9 marginCenter">
-    <div>
-        <!-- 이용약관 제작 -->
-        <p class="MB_title">사이트 약관동의</p>
-        <p class="MB_text">회원가입을 위해서 아래 사이트 이용약관개인정보 수집 및 이용에 대한 안내를 읽고 동의해 주세요.</p>
+<div class="ag_body">
+    <!-- 이용약관 제작 -->
+    <p class="mb_title">사이트 약관동의</p>
+    <p class="mb_text">회원가입을 위해서 아래 사이트 이용약관개인정보 수집 및 이용에 대한 안내를 읽고 동의해 주세요.</p>
 
-        <hr>
+    <hr>
 
-        <div class="AG_form">
-            <span class="AG_title">사이트 이용약관</span>
-            <form>
-                <div class="form-group">
-                    <textarea class="form-control AG_text" rows="10" disabled>
+    <div class="ag_form">
+        <span class="ag_title">사이트 이용약관</span>
+        <form>
+            <div class="form-group">
+                <textarea class="form-control ag_text" rows="10" disabled>
 카카오계정 약관
 
 제 1 장 환영합니다!
@@ -200,22 +199,22 @@
 
 공고일자 : 2019년 9월 6일
 시행일자 : 2019년 9월 24일
-                    </textarea>
-                </div>
-                <div class="custom-control custom-checkbox AG_check">
-                    <input type="checkbox" id="agree1" class="custom-control-input">
-                    <label for="agree1" class="custom-control-label">이용약관에 동의합니다</label>
-                </div>
-            </form>
-        </div>
+                </textarea>
+            </div>
+            <div class="custom-control custom-checkbox ag_check">
+                <input type="checkbox" id="agree1" class="custom-control-input">
+                <label for="agree1" class="custom-control-label">이용약관에 동의합니다</label>
+            </div>
+        </form>
+    </div>
 
-        <hr>
+    <hr>
 
-        <div class="AG_form">
-            <span class="AG_title">개인정보 취급 방침</span>
-            <form>
-                <div class="form-group">
-                    <textarea class="form-control AG_text" rows="10" disabled>
+    <div class="ag_form">
+        <span class="ag_title">개인정보 취급 방침</span>
+        <form>
+            <div class="form-group">
+                <textarea class="form-control ag_text" rows="10" disabled>
 카카오계정 약관
 
 제 1 장 환영합니다!
@@ -381,20 +380,19 @@
 시행일자 : 2019년 9월 24일
 
 Copyright © Kakao Corp. All rights reserved.
-                    </textarea>
-                </div>
-                <div class="custom-control custom-checkbox AG_check">
-                    <input type="checkbox" id="agree2" class="custom-control-input">
-                    <label for="agree2" class="custom-control-label">개인정보 수집 및 이용에 동의합니다</label>
-                </div>
-            </form>
-        </div>
+                </textarea>
+            </div>
+            <div class="custom-control custom-checkbox ag_check">
+                <input type="checkbox" id="agree2" class="custom-control-input">
+                <label for="agree2" class="custom-control-label">개인정보 수집 및 이용에 동의합니다</label>
+            </div>
+        </form>
+    </div>
 
-        <hr>
+    <hr>
 
-        <div class="AG_btn">
-            <button type="button" class="AG_okbtn" id="AG_okbtn">약관에 동의합니다</button>
-            <button type="button" class="AG_nobtn" id="AG_nobtn">동의하지 않습니다</button>
-        </div>
+    <div class="ag_btn">
+        <button type="button" class="ag_okbtn" id="ag_okbtn">약관에 동의합니다</button>
+        <button type="button" class="ag_nobtn" id="ag_nobtn">동의하지 않습니다</button>
     </div>
 </div>

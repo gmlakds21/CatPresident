@@ -36,7 +36,7 @@
     </div>
 </div>
 
-<div class="ct_body">
+<div class="body">
     <div class="ct_cate">
         <ul>
             <li class="ct_cate_title">

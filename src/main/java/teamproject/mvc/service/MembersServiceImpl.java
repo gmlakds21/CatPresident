@@ -19,15 +19,6 @@ public class MembersServiceImpl implements MembersService {
     private MembersDAO mbdao;
 
 
-    // 1 - 현우
-    @Override
-    public String newMember(MembersVO mvo) {
-        String result = "회원가입 실패";
-        int cnt = mbdao.insertMember(mvo);
-        if (cnt > 0) result = "회원가입 성공";
-        return result;
-    }
-
     @Override
     public String checkUserid(String email) {
         String isOk = "0";
@@ -36,7 +27,6 @@ public class MembersServiceImpl implements MembersService {
 
         return isOk;
     }
-
 
     @Override
     public String findZipCode(String dong) {
@@ -50,6 +40,16 @@ public class MembersServiceImpl implements MembersService {
         }
         return json;
     }
+
+    ///////////////////////////////////////////////////////////////////////
+
+
+    // 1 - 현우
+    @Override
+    public int newMember(MembersVO mvo) {
+        return mbdao.insertMember(mvo);
+    }
+
 
     @Override
     public String newCatMember(CatVO cvo) {

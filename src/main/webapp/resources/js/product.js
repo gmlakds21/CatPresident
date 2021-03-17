@@ -12,6 +12,6 @@ $(document).ready(function(){
 
     $(".ct_sub .ct_subbtn").click(function() {
         let param = '?cate=' + $(this).val() + '&cp=1';
-        location.href = '/Category/list' + param;
+        location.href = '/category/list' + param;
     });
 });

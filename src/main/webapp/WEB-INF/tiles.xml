@@ -20,8 +20,8 @@
 <!--        <put-attribute name="main" value="/WEB-INF/jsp/{1}.jsp"/>-->
 <!--    </definition>-->
 
-    <!-- url: join/agree.tiles -> main: /join/joinme.jsp -->
-    <!-- url: products/List_BestProduct.tiles -> main: products/List_BestProduct.jsp -->
+    <!-- url: join/agree.tiles -> main: /join/new_info.jsp -->
+    <!-- url: products/List_BestProduct.tiles -> main: products/list_best.jsp -->
     <definition extends="base" name="*/*.tiles">
         <put-attribute name="main" value="/WEB-INF/jsp/{1}/{2}.jsp"/>
     </definition>

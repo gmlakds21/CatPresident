@@ -1,116 +1,102 @@
 // agree
-$('#AG_okbtn').on('click', function () {
+$('#ag_okbtn').on('click', function () {
     if (!$('#agree1').is(':checked'))
         alert('이용약관에 동의하지 않으면 회원가입을 할 수 없습니다.');
     else if (!$('#agree2').is(':checked'))
         alert('개인정보 활용에 동의하지 않으면 회원가입을 할 수 없습니다.')
     else
-        location.href = '/members/joinme';
-}); // 동의함
-
-$('#AG_nobtn').on('click', function () {
-    location.href = '/';
-}); // 동의안함
+        location.href = '/member/info';});
+$('#ag_nobtn').on('click', function () {
+    location.href = '/';});
 
 
-// joinme
-$('#JM_nameInput').on('blur', function () {
-    let val = $('#JM_nameInput').val();
+// info
+$('#in_nameInput').on('blur', function () {
+    let val = $('#in_nameInput').val();
     if (val == '') {
-        $('#JM_name').text("이름이 입력되어 있지 않습니다.");
-        $('#JM_name').attr('style', 'color:red; margin-top: 5px; !important');
-    }
-});
-$('#JM_idInput').on('blur', function () {
-    let val = $('#JM_idInput').val();
-    checkuid();
+        $('#in_name').text("이름이 입력되어 있지 않습니다.");
+        $('#in_name').attr('style', 'color:red; margin-top: 5px; !important');
+    }});
+$('#in_idInput').on('blur', function () {
+    let val = $('#in_idInput').val();
+    checkID();
     if (val == '') {
-        $('#JM_id').text("이메일이 입력되어 있지 않습니다.");
-        $('#JM_id').attr('style', 'color:red; margin-top: 5px; !important');
-    }
-});
-$('#JM_pwInput').on('blur', function () {
-    let val = $('#JM_pwInput').val();
+        $('#in_id').text("이메일이 입력되어 있지 않습니다.");
+        $('#in_id').attr('style', 'color:red; margin-top: 5px; !important');
+    }});
+$('#in_pwInput').on('blur', function () {
+    let val = $('#in_pwInput').val();
     if (val == '') {
-        $('#JM_pw').text("비밀번호를 입력하세요.");
-        $('#JM_pw').attr('style', 'color:red; margin-top: 5px; !important');
-    }
-});
-$('#JM_rpInput').on('blur', function () {
-    let val = $('#JM_rpInput').val();
+        $('#in_pw').text("비밀번호를 입력하세요.");
+        $('#in_pw').attr('style', 'color:red; margin-top: 5px; !important');
+    }});
+$('#in_rpInput').on('blur', function () {
+    let val = $('#in_rpInput').val();
     if (val == '') {
-        $('#JM_rp').text("비밀번호를 다시 한 번 입력하세요.");
-        $('#JM_rp').attr('style', 'color:red; margin-top: 5px; !important');
-    }
-});
+        $('#in_rp').text("비밀번호를 다시 한 번 입력하세요.");
+        $('#in_rp').attr('style', 'color:red; margin-top: 5px; !important');
+    }});
 
-
-function checkuid() { // 이메일 중복검사.
-    let email = $('#JM_idInput').val();
+// 이메일 중복검사.
+function checkID() {
+    let email = $('#in_idInput').val();
     $.ajax({ // 비동기 요청 설정
-        url: '/members/checkuid',
+        url: '/member/checkID',
         type: 'GET', data: {email: email}
     })
         .done(function (data) { // 성공시
             let msg = ' 이미 가입되어 있는 E-Mail 주소입니다.';
-            $('#JM_id').attr('style', 'color:red; margin-top: 5px; !important');
+            $('#in_id').attr('style', 'color:red; margin-top: 5px; !important');
             if (data.trim() == '0') {
                 msg = ' 사용할 수 있는 E-Mail 주소입니다.';
-                $('#JM_id').attr('style', 'color:blue; margin-top: 5px; !important');
+                $('#in_id').attr('style', 'color:blue; margin-top: 5px; !important');
             }
-            $('#JM_id').text(msg);
-        })
+            $('#in_id').text(msg);})
         .fail(function (xhr, status, error) { // 실패시
-            alert(xhr.status, +"/" + error);
-        });
-}
+            alert(xhr.status, +"/" + error);});
+    }
 
-
-// 체크박스 체크여부에 따라 컬럼 alarm에 Y/N 값을 입력 (미구현)
-$('#JM_okbtn').on('click', function () {
-    if ($('#JM_nameInput').val() == "") alert('이름을 입력하세요');
-    else if ($('#JM_idInput').val() == "") alert('이메일을 입력하세요.');
-    else if ($('#JM_pwInput').val() == "") alert('비밀번호를 입력하세요');
-    else if ($('#JM_rpInput').val() == "") alert('비밀번호를 다시 한 번 입력하세요');
-    else if ($('#JM_pwInput').val() != $('#JM_rpInput').val()) alert('비밀번호가 서로 일치하지 않습니다');
-    else if ($('#zip1').val() == "" || $('#zip2').val() == "" || $('#addr1').val() == "") alert('우편번호를 검색하세요');
-    else if ($('#addr1').val() == "") alert('주소를 입력하세요');
+// 체크박스 체크여부에 따라 컬럼 alarm 에 Y/N 값을 입력
+$('#in_okbtn').on('click', function () {
+    if ($('#in_nameInput').val() == "") alert('이름을 입력하세요');
+    else if ($('#in_idInput').val() == "") alert('이메일을 입력하세요.');
+    else if ($('#in_pwInput').val() == "") alert('비밀번호를 입력하세요');
+    else if ($('#in_rpInput').val() == "") alert('비밀번호를 다시 한 번 입력하세요');
+    else if ($('#in_pwInput').val() != $('#in_rpInput').val()) alert('비밀번호가 서로 일치하지 않습니다');
+    else if ($('#zip1').val() == "" || $('#zip2').val() == "" || $('#in_adInput').val() == "") alert('우편번호를 검색하세요');
+    else if ($('#in_adInput').val() == "") alert('주소를 입력하세요');
     else if ($('#JM_check').is(":checked") == false) alert('본인은 만 14세 이상 동의를 체크하세요');
 
     else { // 양식에서 받은 데이터를 전송. 실제전송은 joinme 부분 hidden에서 이루어짐.
-        $('#username').val($('#JM_nameInput').val());
-        $('#passwd').val($('#JM_pwInput').val());
-        $('#email').val($('#JM_idInput').val());
+        $('#username').val($('#in_nameInput').val());
+        $('#passwd').val($('#in_pwInput').val());
+        $('#email').val($('#in_idInput').val());
         $('#zipcode').val($('#zip1').val() + '-' + $('#zip2').val());
-        $('#addr').val($('#addr1').val());
-        if ($('#JM_alarm').is(":checked") == true) {
+        $('#addr').val($('#in_adInput').val());
+        if ($('#in_alarm').is(":checked") == true) {
             $('#alarm').val('Y')
         } else {
             $('#alarm').val('N')
         }
-        $('#newMember').attr('action', '/members/joinme')
+        $('#newMember').attr('action', '/member/info')
         $('#newMember').attr('method', 'post')
         $('#newMember').submit();
-    }
-});
+    }});
 
-
-// ZIP modal 닫기
-$('#ZIP_modalx').on('click', function () {
+// zip modal 닫기
+$('#zip_modalX').on('click', function () {
     // 기존 검색결과 제거
-    $('#ZIP_addr').find("option").remove();
+    $('#zip_addr').find("option").remove();
     $('#dong').val('');
     // 검색창 닫음
-    $('#ZIP_modal').modal('hide');
-});
-
+    $('#zip_modal').modal('hide');});
 
 // ZIP modal 에서 검색하기  누를시
-$('#ZIP_find').on('click', function () {
+$('#zip_find').on('click', function () {
     if ($('#dong').val() == "") alert('동을 입력하세요');
     else {
         $.ajax({
-            url: '/members/zipcode',
+            url: '/member/findZip',
             type: 'GET',
             data: {dong: $('#dong').val()}
         })
@@ -124,20 +110,16 @@ $('#ZIP_find').on('click', function () {
                     opts += '<option>' + zip + '</option>'; // option 태그를 만든다.
                 });
                 // 기존 option 태그 제거
-                $('#ZIP_addr').find("option").remove();
+                $('#zip_addr').find("option").remove();
                 // 새로만든 option 태그를 추가.
-                $('#ZIP_addr').append(opts);
-            })
+                $('#zip_addr').append(opts);})
             .fail(function (xhr, status, error) {
-                alert(xhr.status, +"/" + error);
-            });
-    }
-});
-
+                alert(xhr.status, +"/" + error);});
+    }});
 
 // 우편번호 보내기
-$('#ZIP_sendbtn').on('click', function () {
-    let addr = $('#ZIP_addr option:selected').val();
+$('#zip_sendBtn').on('click', function () {
+    let addr = $('#zip_addr option:selected').val();
 
     // 주소가 선택되지 않았을 경우 예외를 처리하는 부분
     if (addr == undefined) {
@@ -150,15 +132,14 @@ $('#ZIP_sendbtn').on('click', function () {
 
     $('#zip1').val(addr1.split('-')[0]);
     $('#zip2').val(addr1.split('-')[1]);
-    $('#JM_adInput').val(addr2);
+    $('#in_adInput').val(addr2);
 
     // 기존 검색결과를 제거.
-    $('#ZIP_addr').find("option").remove();
+    $('#zip_addr').find("option").remove();
     $('#dong').val('');
 
     // 우편번호 검색창 닫음.
-    $('#ZIP_modal').modal('hide');
-});
+    $('#zip_modal').modal('hide');});
 
 
 // joinok

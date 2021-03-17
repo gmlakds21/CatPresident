@@ -1,13 +1,8 @@
 .ct_page {
-    width: 1400px;
-    margin: 10px auto 70px auto;
-}
-.ct_page ul {
+    margin: 10px 0 70px 0;
     display: flex;
     flex-wrap: wrap;
     padding: 0;
-    width: 1400px;
-    background-color: white;
 }
 .ct_page li {
     width: 260px;
@@ -46,10 +41,6 @@
 
 
 /* 카테고리 리스트 */
-.ct_body {
-    width: 1400px;
-    margin: 0 auto;
-}
 .ct_cate {
     width: 200px;
     float: left;

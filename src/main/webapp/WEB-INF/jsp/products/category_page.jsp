@@ -13,11 +13,11 @@
     </div>
 </div>
 
-<div class="ct_page">
-    <ul>
+<div class="body">
+    <ul class="ct_page">
         <c:forEach var="cate" items="${cates}">
             <li>
-                <a href="/Category/list?cate=${cate.ctno}&cp=1">
+                <a href="/category/list?cate=${cate.ctno}&cp=1">
                     <img src="/img/CateThumb/${cate.ctno}.jpg">
                     <span class="ct_pagetxt">${cate.catename}</span>
                 </a>

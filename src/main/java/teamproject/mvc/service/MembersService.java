@@ -9,12 +9,16 @@ import java.util.List;
 
 public interface MembersService {
 
-    // 1 - 현우 (회원가입)
-    String newMember(MembersVO mvo);    // 신규 회원
+    // 아이디 중복 체크
+    String checkUserid(String email);
 
-    String checkUserid(String email);  // 아이디 중복 체크
+    // 주소 찾기
+    String findZipCode(String dong);
 
-    String findZipCode(String dong);   // 주소 찾기
+    // 신규 회원 등록
+    int newMember(MembersVO mvo);
+
+
 
     String newCatMember(CatVO cvo); // 고양이 새로 등록.
 

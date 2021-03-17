@@ -15,10 +15,10 @@
 <fmt:parseNumber var="sp" value="${sp*10+1}"/>
 <fmt:parseNumber var="ep" value="${sp+9}"/>
 
-<c:set var="navlink" value="/Recent-Product/list?cp=" />
+<c:set var="navlink" value="/Today-Deals/list?cp=" />
 <c:if test="${not empty param.findKey}">
     <c:set var="navlink"
-           value="/Recent-Product/find?findType=${param.findType}&findKey=${param.findKey}&cp=">
+           value="/Today-Deals/find?findType=${param.findType}&findKey=${param.findKey}&cp=">
     </c:set>
 </c:if>
 
@@ -29,15 +29,15 @@
         <div class="page_nav">
             <span> 홈 </span>
             <span class="page_nav_bi bi bi-chevron-right"> </span>
-            <span> 신상품 </span>
+            <span> 오늘의 딜 </span>
         </div>
     </div>
     <div class="page_title">
-        <span>신상품</span>
+        <span>오늘의 딜</span>
     </div>
 </div>
 
-<div class="list_body">
+<div class="body">
 
     <%-- 상세 검색 --%>
     <div class="list_cateNav">
@@ -98,8 +98,8 @@
                             <p class="pd_title">${PD.pname}</p>
                             <c:if test="${PD.price ne PD.totprice}">
                                 <p  class="pd_price">
-                                    <span class="pd_noprice">${PP.price}원 </span>
-                                    <span class="pd_price">${PP.totprice}원 </span>
+                                    <span class="pd_noprice">${PD.price}원 </span>
+                                    <span class="pd_price">${PD.totprice}원 </span>
                                 </p>
                             </c:if>
                             <c:if test="${PD.price eq PD.totprice}">
@@ -111,7 +111,7 @@
                                 </c:forEach>
                                 <span class="pd_reply">(1000)</span>
                             </div>
-                            <span class="badge badge-info pd_badge">신상품</span>
+                            <span class="badge badge-primary pd_badge">이벤트</span>
                         </div>
                     </a>
                 </li>
@@ -119,29 +119,29 @@
         </ul>
     </div>
 
-        <%-- 페이지 정렬 --%>
-        <div class="row list_pageNav">
-            <div class="col-12">
-                <ul class="pagination justify-content-center">
-                    <li class="page-item" <c:if test="${sp lt 10}"> disable </c:if>>
-                        <a href="${navlink}${sp-10}" class="page-link">
-                            <span class="bi bi-chevron-left"></span>
-                        </a>
-                    </li>
-                    <c:forEach var="i" begin="${sp}" end="${ep}" step="1">
-                        <c:if test="${i le tp}">
-                            <li class="page-item"
-                                <c:if test="${cp eq i}">active</c:if>>
-                                <a href="${navlink}${i}" class="page-link">${i}</a>
-                            </li>
-                        </c:if>
-                    </c:forEach>
-                    <li class="page-item <c:if test="${ep gt 10}"> disabled </c:if>">
-                        <a href="${navlink}${sp+10}" class="page-link">
-                            <span class="bi bi-chevron-right"></span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+    <%-- 페이지 정렬 --%>
+    <div class="row list_pageNav">
+        <div class="col-12">
+            <ul class="pagination justify-content-center">
+                <li class="page-item" <c:if test="${sp lt 10}"> disable </c:if>>
+                    <a href="${navlink}${sp-10}" class="page-link">
+                        <span class="bi bi-chevron-left"></span>
+                    </a>
+                </li>
+                <c:forEach var="i" begin="${sp}" end="${ep}" step="1">
+                    <c:if test="${i le tp}">
+                        <li class="page-item"
+                            <c:if test="${cp eq i}">active</c:if>>
+                            <a href="${navlink}${i}" class="page-link">${i}</a>
+                        </li>
+                    </c:if>
+                </c:forEach>
+                <li class="page-item <c:if test="${ep gt 10}"> disabled </c:if>">
+                    <a href="${navlink}${sp+10}" class="page-link">
+                        <span class="bi bi-chevron-right"></span>
+                    </a>
+                </li>
+            </ul>
         </div>
+    </div>
 </div>
