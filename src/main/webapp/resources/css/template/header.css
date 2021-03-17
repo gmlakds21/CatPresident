@@ -143,8 +143,6 @@
     margin-left:25px;
     border-bottom: none;
     background: none;
-    /*width: 70%;*/
-    /*clear: both;*/
 }
 .hd_list5 li {
     float: left;
@@ -173,7 +171,6 @@
     background-color: #f4f4f5;
     clear: both;
 }
-
 .page_nav {
     padding: 10px 0;
     width: 1400px;
@@ -189,11 +186,12 @@
 }
 
 .page_title {
+    width: 1400px;
     margin: 20px auto;
 }
 .page_title span {
     font-weight: bold;
-    margin: 0 10px;
+    /*margin: 0 10px;*/
     font-size: 23px;
 }
 

@@ -31,8 +31,8 @@ public class ProductsController {
     public ModelAndView TodayDealsList(ModelAndView mv, String cp) {
         mv.setViewName("products/List_TodayDeals.tiles");
         mv.addObject("cates", pdsrv.readCategory());
-        mv.addObject("PPs", pdsrv.readProductsList(cp, "order by disco desc"));
-        mv.addObject("PPcnt", pdsrv.countProducts(""));
+        mv.addObject("PDs", pdsrv.readProductsList(cp, "order by disco desc"));
+        mv.addObject("PDcnt", pdsrv.countProducts(""));
         return mv;
     }
 
@@ -40,8 +40,8 @@ public class ProductsController {
     public ModelAndView RecentProductList(ModelAndView mv, String cp) {
         mv.setViewName("products/List_RecentProduct.tiles");
         mv.addObject("cates", pdsrv.readCategory());
-        mv.addObject("PPs", pdsrv.readProductsList(cp, "order by pno desc"));
-        mv.addObject("PPcnt", pdsrv.countProducts(""));
+        mv.addObject("PDs", pdsrv.readProductsList(cp, "order by pno desc"));
+        mv.addObject("PDcnt", pdsrv.countProducts(""));
         return mv;
     }
 
@@ -49,8 +49,8 @@ public class ProductsController {
     public ModelAndView BestProductsList(ModelAndView mv, String cp) {
         mv.setViewName("products/List_BestProduct.tiles");
         mv.addObject("cates", pdsrv.readCategory());
-        mv.addObject("PPs", pdsrv.readProductsList(cp, "order by sales desc"));
-        mv.addObject("PPcnt", pdsrv.countProducts(""));
+        mv.addObject("PDs", pdsrv.readProductsList(cp, "order by sales desc"));
+        mv.addObject("PDcnt", pdsrv.countProducts(""));
         return mv;
     }
 
@@ -58,8 +58,8 @@ public class ProductsController {
     public ModelAndView StickerShopList(ModelAndView mv, String cp) {
         mv.setViewName("products/List_StickerShop.tiles");
         mv.addObject("cates", pdsrv.readCategory());
-        mv.addObject("PPs", pdsrv.readProductsList(cp, "order by pno desc"));
-        mv.addObject("PPcnt", pdsrv.countProducts(""));
+        mv.addObject("PDs", pdsrv.readProductsList(cp, "order by pno desc"));
+        mv.addObject("PDcnt", pdsrv.countProducts(""));
         return mv;
     }
 

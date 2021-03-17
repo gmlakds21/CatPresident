@@ -19,7 +19,7 @@
             <li>
                 <a href="/Category/list?cate=${cate.ctno}&cp=1">
                     <img src="/img/CateThumb/${cate.ctno}.jpg">
-                    <span>${cate.catename}</span>
+                    <span class="ct_pagetxt">${cate.catename}</span>
                 </a>
             </li>
         </c:forEach>

@@ -28,11 +28,11 @@
 <div class="ft_lists1">
     <div class="ft_list1">
         <div class="ft_list1txt">회사소개</div>
-        <div class="ft_list1Divider">왜 float:left 안되지</div>
+        <div class="ft_list1Divider"></div>
         <div class="ft_list1txt">입점문의</div>
-        <div class="ft_list1Divider">나중에</div>
+        <div class="ft_list1Divider"></div>
         <div class="ft_list1txt">이용약관</div>
-        <div class="ft_list1Divider">해야지</div>
+        <div class="ft_list1Divider"></div>
         <div class="ft_list1txt">개인정보처리방침</div>
     </div>
 

@@ -22,60 +22,44 @@
     </c:set>
 </c:if>
 
-
-<%--   /Category/list?cate=0100&cp=1--%>
 <fmt:parseNumber var="snum" integerOnly="true" value="${PPcnt - (cp-1) * pp}"/>
 <fmt:parseNumber var="cate" value="${param.cate}"/>
 
+
 <div>
-    <div class="list_header">
-        <div class="col-9 list_nav">
+    <div class="page_header">
+        <div class="page_nav">
             <span> 홈 </span>
-            <span class="list_nav_bi bi bi-chevron-right"> </span>
+            <span class="page_nav_bi bi bi-chevron-right"> </span>
             <span> 카테고리 </span>
         </div>
     </div>
 </div>
 
-<div class="col-9 marginCenter">
-    <div class="CT_cate">
+<div class="ct_body">
+    <div class="ct_cate">
         <ul>
-<%--
-            <span class="CT_cate_title"> 카테고리 </span>
-            <hr>
-
-            <c:forEach var="cate" items="${cates}">
+            <li class="ct_cate_title">
                 <div>
-                    <span>${cate.ctno}</span>
-                    <span>${cate.catename}</span>
-                </div>
-            </c:forEach>
---%>
-<%-- 포이치 사용
---%>
-
-
-            <li>
-                <div>
-                    <span class="CT_cate_title"> 카테고리 </span>
-                    <br>
+                    <span> 카테고리 </span>
             <c:forEach var="ct" items="${cates}">
                 <c:if test="${(ct.ctno % 100) eq 0}">
                 </div>
             </li>
-            <li class="CT_cate_li">
-                <button class="CT_lead" type="button">
-                    <span class="CT_cate_text"> ${ct.catename} </span>
+            <li class="ct_cate_list">
+                <button class="ct_lead" type="button">
+                    <span class="ct_cate_text"> ${ct.catename} </span>
                     <img src="/img/CateThumb/arrow.png">
                 </button>
-                <div class="CT_sub">
+                <%-- ct_subbtn 은 js 에서 사용된다. --%>
+                <div class="ct_sub">
                     <div>
-                        <button class="CT_subbtn CT_cate_text" type="button" value="${ct.ctno}"> 전체 </button>
+                        <button class="ct_subbtn ct_cate_text" type="button" value="${ct.ctno}"> 전체 </button>
                     </div>
                 </c:if>
                 <c:if test="${(ct.ctno % 100) ne 0}">
                     <div>
-                        <button class="CT_subbtn CT_cate_text" type="button" value="${ct.ctno}"> ${ct.catename} </button>
+                        <button class="ct_subbtn ct_cate_text" type="button" value="${ct.ctno}"> ${ct.catename} </button>
                     </div>
                 </c:if>
             </c:forEach>
@@ -84,10 +68,8 @@
         </ul>
     </div>
 
-    <div class="CT_line"> </div>
-
     <%-- list 목록 --%>
-    <div class="CT_list">
+    <div class="ct_list">
         <div class="col-12 list_title">
             <span> ${ct_title} </span>
         </div>
@@ -107,7 +89,7 @@
         </div>
 
         <div class="col-12 marginCenter">
-            <ul class="list-inline">
+            <ul class="list-inline margincenter">
                 <c:forEach var="PP" items="${PPs}">
                     <li class="list-inline-item card_list">
                         <a href="/Products/View?pno=${PP.pno}">

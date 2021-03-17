@@ -6,8 +6,8 @@
 <fmt:parseNumber var="cp" value="${param.cp}"/>
 <fmt:parseNumber var="pp" value="30"/>
 
-<fmt:parseNumber var="tp" value="${PPcnt/pp}" integerOnly="true"/>
-<c:if test="${(PPcnt%pp) gt 0}">
+<fmt:parseNumber var="tp" value="${PDcnt/pp}" integerOnly="true"/>
+<c:if test="${(PDcnt%pp) gt 0}">
     <fmt:parseNumber var="tp" value="${tp + 1}"/>
 </c:if>
 
@@ -22,81 +22,98 @@
     </c:set>
 </c:if>
 
-<fmt:parseNumber var="snum" integerOnly="true" value="${PPcnt - (cp-1) * pp}"/>
+<fmt:parseNumber var="snum" integerOnly="true" value="${PDcnt - (cp-1) * pp}"/>
 
-<%-- list header --%>
 <div>
-    <div class="list_header">
-        <div class="col-9 list_nav">
+    <div class="page_header">
+        <div class="page_nav">
             <span> 홈 </span>
-            <span class="list_nav_bi bi bi-chevron-right"> </span>
+            <span class="page_nav_bi bi bi-chevron-right"> </span>
             <span> 랭킹 </span>
         </div>
     </div>
-    <div class="col-9 list_title">
+    <div class="page_title">
         <span>랭킹</span>
     </div>
 </div>
 
-<div class="col-9 marginCenter">
+<div class="list_body">
 
-    <%-- list nav --%>
-    <nav class="nav navbar-expand">
-        <ul class="nav navbar-nav">
-            <button type="button" class="rounded-circle PP_navbtn">
-                <span class="bi bi-chevron-left"></span>
+    <%-- 상세 검색 --%>
+    <div class="list_cateNav">
+        <a href="#list_cateLeft">
+            <button type="button" class="rounded-circle list_cateBtn1">
+                <i class="bi bi-chevron-left"></i>
             </button>
-            <li class="nav-item"><a href="/CategoryPage" class="nav-link">
-                <button type="button" class="btn btn-primary"> 전체 </button>
-            </a></li>
+        </a>
+        <ul>
+            <span id="list_cateLeft"></span>
+            <li>
+                <a href="#">
+                    <button type="button" class="list_cateBtn2">전체</button>
+                </a>
+            </li>
             <c:forEach var="cate" items="${cates}">
-                <li class="nav-item"><a href="/Category/list?cate=${cate.ctno}&cp=1" class="nav-link">
-                    <button type="button" class="btn btn-light text-muted"> ${cate.catename} </button>
-                </a></li>
+            <li>
+                <a href="#${cate.ctno}">
+                    <button type="button" class="list_cateBtn2">${cate.catename}</button>
+                </a>
+            </li>
             </c:forEach>
-            <button type="button" class="rounded-circle PP_navbtn">
-                <span class="bi bi-chevron-right"></span>
-            </button>
+            <span id="list_cateRight"></span>
         </ul>
-    </nav>
+        <a href="#list_cateRight">
+            <button type="button" class="rounded-circle list_cateBtn1">
+                <i class="bi bi-chevron-right"></i>
+            </button>
+        </a>
+        <br class="clear">
+    </div>
 
-    <div class="col-12 list_count">
-        <span> ${PPcnt}</span><span class="list_count_span">개의 상품</span>
+    <%-- 상세 정렬 --%>
+    <div class="list_countNav">
+        <span class="list_count_txt1">${PDcnt}</span>
+        <span class="list_count_txt2">개의 상품</span>
         <button type="button" class="dropdown" data-toggle="dropdown">
-            <span class="list_count_span">정렬</span>
-            <span class="list_count_span2">대통령 랭킹순</span>
+            <span class="list_count_txt2">정렬</span>
+            <span class="list_count_txt3">대통령 랭킹순</span>
+            <img src="/img/CateThumb/arrow.png">
         </button>
-        <div class="dropdown-menu list_count_dropdown">
-            <a class="dropdown-item" data-target="#">낮은 가격순</a>
-            <a class="dropdown-item" data-target="#">높은 가격순</a>
-            <a class="dropdown-item" data-target="#">별점 가격순</a>
-            <a class="dropdown-item" data-target="#">후기 가격순</a>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">낮은 가격순</a>
+            <a class="dropdown-item" href="#">높은 가격순</a>
+            <a class="dropdown-item" href="#">별점 가격순</a>
+            <a class="dropdown-item" href="#">후기 가격순</a>
         </div>
     </div>
 
     <%-- list card --%>
-    <div class="col-12 marginCenter">
-        <ul class="list-inline">
+    <div class="pd_list">
+        <ul>
             <c:set var="i" value="#{(cp-1)*30+1}"/>
-            <c:forEach var="PP" items="${PPs}">
-                <li class="list-inline-item card_list">
-                    <a href="/Products/View?pno=${PP.pno}">
-                        <span class="badge BP_cardBadge">${i}위 </span>
-                        <div class="card card_list_card">
-                            <img src="/img/List_img.jpg" class="card-img-top card_list_Img" onclick="">
-                            <div class="card-body card_body">
-                                <h5 class="card-title list_card_title">${PP.pname} </h5>
-                                <span class="card-text list_card_text">
-                                    <span class="list_card_price">${PP.totprice}원 </span>
-                                </span>
-                                <div class="list_card_text">
-                                    <c:forEach var="star" begin="1" end="5" step="1">
-                                        <span class="list_card_star">★</span>
-                                    </c:forEach>
-                                    <span class="list_card_Reply">(1000)</span>
-                                </div>
-                                <span class="badge badge-danger list_card_badge">인기상품</span>
+            <c:forEach var="PD" items="${PDs}">
+                <li>
+                    <a href="/Products/View?pno=${PD.pno}">
+                        <div class="badge pd_badgeBP">${i}위</div>
+                        <div class="pd">
+                            <img src="/img/List_img.jpg" onclick="">
+                            <p class="pd_title">${PD.pname}</p>
+                            <c:if test="${PD.price ne PD.totprice}">
+                                <p  class="pd_price">
+                                    <span class="pd_noprice">${PD.price}원 </span>
+                                    <span class="pd_price">${PD.totprice}원 </span>
+                                </p>
+                            </c:if>
+                            <c:if test="${PD.price eq PD.totprice}">
+                                <p class="pd_price">${PD.totprice}원 </p>
+                            </c:if>
+                            <div>
+                                <c:forEach var="star" begin="1" end="5" step="1">
+                                    <span class="bi bi-star-fill pd_star"></span>
+                                </c:forEach>
+                                <span class="pd_reply">(1000)</span>
                             </div>
+                            <span class="badge badge-danger pd_badge">인기상품</span>
                         </div>
                     </a>
                 </li>
@@ -105,8 +122,8 @@
         </ul>
     </div>
 
-    <%-- navigation bar --%>
-    <div class="row list_underNav">
+    <%-- 페이지 정렬 --%>
+    <div class="row list_pageNav">
         <div class="col-12">
             <ul class="pagination justify-content-center">
                 <li class="page-item" <c:if test="${sp lt 10}"> disable </c:if>>

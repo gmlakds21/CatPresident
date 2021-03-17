@@ -44,25 +44,22 @@
     width: 700px;
     height: 80px;
     padding: 26px 0;
-
-    border: 1px solid orange;
 }
 .ft_list1txt {
     float: left;
     font-size: 14px;
     padding: 0 7px;
-    border: 1px solid red;
 }
 .ft_list1 div:last-child {
     font-weight: bold;
 }
 /* 왜 float:left 안되지 나중에 해야지 */
-ft_list1Divider {
+.ft_list1Divider {
     float: left;
-    width: 5px;
-    height: 10px;
-    margin: 0 10px;
-    background: black;
+    width: 1px;
+    height: 15px;
+    margin: 3px 10px;
+    background: #c0c0c0;
 }
 
 
@@ -79,7 +76,7 @@ ft_list1Divider {
     height: 50px;
     outline: none;
     background: none;
-    margin: 0 10px;
+    margin: 0px;
 }
 .ft_list2 button:focus {
     outline: none;
@@ -95,7 +92,7 @@ ft_list1Divider {
 .ft_listsDivider {
     height:1px;
     width: 100%;
-    background: #c4c4c4;
+    background: #d0d0d0;
     clear: both;
 }
 
