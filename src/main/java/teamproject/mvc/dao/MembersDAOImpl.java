@@ -38,7 +38,6 @@ public class MembersDAOImpl implements MembersDAO {
     @Override
     public MembersVO selectLogin(MembersVO mvo) {
         mvo = sqlSession.selectOne("Members.tryLogin", mvo);
-//        if (mvo == null) mvo.setUno("0");
         return mvo;
     }
 
@@ -56,10 +55,7 @@ public class MembersDAOImpl implements MembersDAO {
         return sqlSession.selectOne("Members.checkuid", email);
     }
 
-    @Override
-    public int insertCatMember(CatVO cvo) {
-        return sqlSession.insert("Members.insertCatMember", cvo);
-    }
+
 
     @Override
     public int updateUser(MembersVO mvo) {
@@ -67,10 +63,7 @@ public class MembersDAOImpl implements MembersDAO {
     }
 
     // 승희
-    @Override
-    public List<CatSpeciesVO> selectCateList() {
-        return sqlSession.selectList("Members.speciesList");
-    }
+
 
 
 

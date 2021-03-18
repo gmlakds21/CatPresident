@@ -23,14 +23,11 @@ public interface MembersService {
 
 
 
-    String newCatMember(CatVO cvo); // 고양이 새로 등록.
-
     String findUserId(String email);
 
 
     boolean modifyUser(MembersVO mvo);
 
     // 승희
-    List<CatSpeciesVO> readSpecies();
 
 }

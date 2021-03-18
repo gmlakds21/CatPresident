@@ -27,7 +27,7 @@
 
     <hr>
 
-    <form class="ap_form">
+    <form class="ap_form" id="newCat">
 
         <div class="ap_pic">
             <label for="ap_picInput">
@@ -110,11 +110,11 @@
         <input type="hidden" name="catweight" id="catweight">
         <input type="hidden" name="prima" id="prima">
 <%--            <input type="hidden" name="ctpic" id="ctpic">--%>
-        <div class="ap_btn">
-            <button type="button" id="ap_nobtn" class="ap_nobtn">나중에 하기</button>
-            <button type="button" id="ap_okbtn" class="ap_okbtn">등록하기</button>
-        </div>
-
     </form>
+
+    <div class="ap_btn">
+        <button type="button" id="ap_nobtn" class="ap_nobtn">나중에 하기</button>
+        <button type="button" id="ap_okbtn" class="ap_okbtn">등록하기</button>
+    </div>
 
 </div>

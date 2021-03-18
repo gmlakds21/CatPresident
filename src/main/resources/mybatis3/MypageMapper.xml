@@ -5,4 +5,16 @@
 
 <mapper namespace="Mypage">
 
+    <select id="speciesList" statementType="PREPARED"
+            resultType="teamproject.mvc.vo.CatSpeciesVO">
+        select catkind from Catspecies;
+    </select>
+
+    <insert id="newCat" statementType="PREPARED"
+            parameterType="teamproject.mvc.vo.CatVO">
+        insert into Cat (catname, uno, catkind, catyear, catmonth, catgender, catweight, prima)
+            values (#{catname},#{uno},#{catkind},#{catyear},#{catmonth},#{catgender},#{catweight},#{prima});
+    </insert>
+
+
 </mapper>

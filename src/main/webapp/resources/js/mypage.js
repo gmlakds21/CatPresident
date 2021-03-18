@@ -14,24 +14,22 @@ $('#ap_okbtn').on('click', function () {
         $('#catkind').val($('#ap_kindInput').val());
         $('#catyear').val($('#ap_yearInput').val());
         $('#catmonth').val($('#ap_monthInput').val());
-        if($('#ap_genderM').is(":checked")) ($('#ap_gender').value("남아"));
-        if($('#ap_genderF').is(":checked")) ($('#ap_gender').value("여아"));
+        if($('#ap_genderM').is(":checked")) $('#catgender').val("남아");
+        if($('#ap_genderF').is(":checked")) $('#catgender').val("여아");
         $('#catweight').val($('#ap_weightInput').val());
         if ($('#ap_priInput').is(":checked")) {
             $('#prima').val('Y')
         } else {
             $('#prima').val('N')
-        };
-
+        }
         // 값이 잘 입력되었는지를 판별. 실제 시스템 구동에는 필요없는 부분.
-        alert($('#catname').val() + "/" + $('#catkind').val() + "/" +
-            $('#catyear').val() + "/" + $('#catmonth').val() + "/"
-            + $('#ap_gender').val() + "/" + $('#catweight').val() + "/" + $('#prima').val());
+        // alert($('#catname').val() + "/" + $('#catkind').val() + "/" + $('#catyear').val() + "/" +
+        //     $('#catmonth').val() + "/" + $('#catgender').val() + "/" + $('#catweight').val() + "/" + $('#prima').val());
 
-        $('#ap_form').attr('action', '/mypage/add-pet') // 이 action을 해당 주소에서 실행한다.
-        $('#ap_form').attr('method', 'post')
-        $('#ap_form').submit();
-    };});
+        $('#newCat').attr('action', '/mypage/add-pet')
+        $('#newCat').attr('method', 'post')
+        $('#newCat').submit();
+    }});
 
 $('#ap_nobtn').on('click', function () {
     location.href = '/mypage/main';});

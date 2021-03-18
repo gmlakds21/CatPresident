@@ -32,11 +32,7 @@ public interface MembersDAO {
 
     int selectOneUserid(String email);
 
-    int insertCatMember(CatVO cvo);
 
-
-
-    List<CatSpeciesVO> selectCateList();
 
     int updateUser(MembersVO mvo);
 }

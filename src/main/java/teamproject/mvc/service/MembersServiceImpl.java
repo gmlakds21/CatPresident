@@ -48,7 +48,8 @@ public class MembersServiceImpl implements MembersService {
     @Override
     public String tryLogin(MembersVO mvo, HttpSession sess) {
         mvo = mbdao.selectLogin(mvo);
-        if ((mvo.getUno()) != null) sess.setAttribute("UID", mvo);
+        if ((mvo.getUno()) != null)
+            sess.setAttribute("UID", mvo);
         return mvo.getUno();
     }
 
@@ -58,14 +59,6 @@ public class MembersServiceImpl implements MembersService {
 
 
     // 1 - 현우
-    @Override
-    public String newCatMember(CatVO cvo) {
-        String result = "회원가입 실패";
-        int cnt = mbdao.insertCatMember(cvo);
-        if (cnt > 0) result = "회원가입 성공";
-        return result;
-    }
-
     @Override
     public String findUserId(String email) {
         ObjectMapper mapper = new ObjectMapper();
@@ -93,10 +86,6 @@ public class MembersServiceImpl implements MembersService {
     }
 
 
-    @Override
-    public List<CatSpeciesVO> readSpecies() {
-        return mbdao.selectCateList();
-    }
 
 
 }
