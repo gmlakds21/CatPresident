@@ -12,12 +12,12 @@
 
     <%-- 알람, 마이페이지, 장바구니 --%>
     <div class="hd_list2">
-        <span class="dropdown">
-            <button type="button" class="dropdown" data-toggle="dropdown">
+        <span class="dropdown hdDropDown">
+            <button type="button" class="dropdown" onclick="location.href='#'">
                 <i class="bi bi-bell"></i>
                 <span class="hd_list2_txt">알 림</span>
             </button>
-            <div class="dropdown-menu">
+            <div class="dropdown-menu hdDropMenu">
                 <c:if test="${empty UID}">
                     <a class="dropdown-item" href="/member/login">로그인</a></button>
                     <a class="dropdown-item" href="/member/agree">회원가입</a></button>
@@ -27,12 +27,12 @@
                 </c:if>
             </div>
         </span>
-        <span class="dropdown">
-            <button type="button" class="dropdown" data-toggle="dropdown">
+        <span class="dropdown hdDropDown">
+            <button type="button" class="dropdown" onclick="location.href='/mypage/main'">
                 <i class="bi bi-person"></i>
                 <span class="hd_list2_txt">M Y</span>
             </button>
-            <div class="dropdown-menu">
+            <div class="dropdown-menu hdDropMenu">
                 <c:if test="${empty UID}">
                     <a class="dropdown-item" href="#">최근 본</a>
                     <a class="dropdown-item" href="#">주문조회</a>
@@ -45,6 +45,7 @@
                     <a class="dropdown-item" href="/member/agree">회원가입</a></button>
                 </c:if>
                 <c:if test="${not empty UID}">
+                    <a class="dropdown-item" href="/mypage/main">마이 페이지</a>
                     <a class="dropdown-item" href="/mypage/add-pet">고양이 등록</a>
                     <a class="dropdown-item" href="#">자주구매</a>
                     <a class="dropdown-item" href="#">관심</a>
@@ -91,12 +92,12 @@
 
     <%-- 카테고리 --%>
     <div class="hd_list5">
-        <div class="dropdown hdNcategory">
+        <div class="dropdown ctDropDown hd_category">
             <a href="/category/page">
                 <i class="bi bi-justify"></i>
                 <span>카테고리</span>
             </a>
-            <div class="dropdown-menu hdNcatelist">
+            <div class="dropdown-menu ctDropMenu hd_catelist">
                 <a class="dropdown-item" href="/category/list?cate=0100&cp=1">사료</a>
                 <a class="dropdown-item" href="/category/list?cate=0200&cp=1">간식</a>
                 <a class="dropdown-item" href="/category/list?cate=0300&cp=1">건강관리</a>
@@ -124,4 +125,5 @@
             </ul>
         </span>
     </div>
+    <br class="clear">
 </div>

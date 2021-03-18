@@ -18,6 +18,17 @@ public class MypageController {
     @Autowired
     private MypageService mysrv;
 
+    // 마이페이지 메인페이지
+    @GetMapping("/mypage/main")
+    public String main(HttpSession sess) {
+        return "mypage/main.tiles";
+    }
+
+    @GetMapping("/mypage/main2")
+    public String main2(HttpSession sess) {
+        return "mypage/my_test.mytiles";
+    }
+
     // 고양이 정보 등록 페이지
     @GetMapping("/mypage/add-pet")
     public ModelAndView newCat(HttpSession sess) {
@@ -34,7 +45,6 @@ public class MypageController {
         String returnPage = "redirect:/mypage/add-pet";
         if (mysrv.newCat(cvo, sess) > 0 )
             returnPage = "redirect:/mypage/main";
-//        rds.addFlashAttribute("cvo", cvo); // 양식에서 입력받은 값을 서버에 전송.
         return returnPage;
     }
 

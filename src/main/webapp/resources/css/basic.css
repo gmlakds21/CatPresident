@@ -8,12 +8,30 @@
 .clear {
     clear:both;
 }
-* button:focus {
+.mainPage {
+    margin: 150px auto;
+    text-align: center;
+}
+.mainPage span {
+    font-weight: bold;
+}
+
+
+
+* a:link, * a:focus, * a:active, * a:hover {
+    color: black;
+    background: none;
+    text-decoration: none;
+}
+* button:focus, * button:active, * button:hover {
+    background: none;
     outline: none;
 }
-* input:focus {
+* input:focus, * input:active, * input:hover {
+    background: none;
     outline: none;
 }
-* select:focus {
+* select:focus, * select:active, * select:hover {
+    background: none;
     outline: none;
 }

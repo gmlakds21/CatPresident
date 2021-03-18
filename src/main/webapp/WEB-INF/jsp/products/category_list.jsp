@@ -15,7 +15,7 @@
 <fmt:parseNumber var="sp" value="${sp*10+1}"/>
 <fmt:parseNumber var="ep" value="${sp+9}"/>
 
-<c:set var="navlink" value="/Category/list?" />
+<c:set var="navlink" value="/category/list?cate=${param.cate}&cp="/>
 <c:if test="${not empty param.findKey}">
     <c:set var="navlink"
            value="/Best-Products/find?findType=${param.findType}&findKey=${param.findKey}&cp=">

@@ -80,30 +80,111 @@
 .ap_btn button:focus {
     color: black;
 }
-.ap_form input:focus {
-    outline: none;
+
+
+/* 네비게이션 바 */
+.my_nav {
+    height: 150px;
+    border-radius: 7px;
+    border: 1px solid #e0e0e0;
+    margin: 20px 0;
+    padding: 30px 40px;
 }
-.ap_form select:focus {
-    outline: none;
+.my_nav img{
+    height: 90px;
+    width: 90px;
+    float: left;
+}
+.my_navInfo{
+    float: left;
+    height: 90px;
+    padding: 20px 15px;
+}
+.my_navName {
+    font-size: 18px;
+    font-weight: bold;
+}
+.my_navID {
+    font-size: 14px;
+    color: #a0a0a0;
+}
+.my_navBtn {
+    padding: 16px;
+    margin: 0 130px;
+    border: none;
+    background: none;
+}
+.my_navBtn b {
+    font-size: 14px;
+}
+.my_navBtn i {
+    font-size: 20px;
+    margin-right: 5px;
+    position: relative;
+    top: -3px;
+}
+.my_navNum {
+    color: #A200C7;
+    font-size: 25px;
+    font-weight: bold;
 }
 
 
+/* 사이드 바 */
+.my_side {
+    float: left;
+    width: 182px;
+    height: 550px;
+    margin-bottom: 50px;
 
-
-
-
-
-
-
-.MY_pad0mgn0 {
-    padding: 0;
-    margin: 0 auto;
+    /*border: 1px solid red;*/
 }
+.my_side p {
+    margin-top: 30px;
+    font-weight: bold;
+}
+.my_side1 {
+    width:180px;
+    height: 101px;
+    border-radius: 7px;
+    border: 1px solid #e0e0e0;
+}
+.my_sideText {
+    float:left;
+    margin-left: 15px;
+    font-size: 13px;
+    padding: 15px 0;
+    font-weight: bold;
 
+}
+.my_sideNum {
+    float:right;
+    margin-right: 15px;
+    font-size: 23px;
+    padding: 7px 0;
+    margin-top:-1px;
+    font-weight: 500;
+}
+.my_side1Divider {
+    height: 1px;
+    width: 178px;
+    background: #e0e0e0;
+    clear: both;
+}
+.my_sideSub p {
+    color: #a0a0a0;
+    font-size: 15px;
+    font-weight: 700;
+    margin: 20px 0;
+    cursor: pointer;
+}
+.my_sideSub p:hover{
+    color:#A200C7;
+}
 
 .MY_roundbox {
     border-radius: 7px;
-    border: 1px solid #dee2e6;
+    border: 1px solid #e0e0e0;
 }
 
 .MY_noborder {
@@ -121,9 +202,6 @@
     box-shadow: none;
 }
 
-.MY_head {
-    min-height: 100px;
-}
 
 .MY_hdmenu {
     float: right;

@@ -63,9 +63,6 @@
 .ag_btn button:hover {
     color: black;
 }
-.ag_btn button:focus {
-    outline: none;
-}
 
 
 /* info 정보입력 */
@@ -141,21 +138,12 @@
     padding: 5px 10px;
     background: #A200C7;
 }
-.in_okbtn:focus {
-    outline: none;
-}
-.in_form input {
-    outline: none;
-}
 
 
 /* Zip modal */
 .zip_closeBtn {
     font-size: 30px;
     margin : -10px;
-    outline: none;
-}
-.zip_closeBtn:focus {
     outline: none;
 }
 .zip_findText {
@@ -188,9 +176,6 @@
     width: 150px;
     height: 35px;
     margin-bottom: 10px;
-}
-.jo_btns button:focus {
-    outline: none;
 }
 .jo_btns i {
     position: relative;

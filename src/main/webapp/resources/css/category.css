@@ -68,9 +68,7 @@
     background: none;
     text-align: left;
 }
-.ct_cate_list button:focus {
-    outline: none;
-}
+
 .ct_lead {
     font-weight: bold;
 }
