@@ -19,11 +19,11 @@
             </button>
             <div class="dropdown-menu">
                 <c:if test="${empty UID}">
-                    <a class="dropdown-item" href="/members/sign-in">로그인</a></button>
-                    <a class="dropdown-item" href="/members/agree">회원가입</a></button>
+                    <a class="dropdown-item" href="/member/login">로그인</a></button>
+                    <a class="dropdown-item" href="/member/agree">회원가입</a></button>
                 </c:if>
                 <c:if test="${not empty UID}">
-                    <a class="dropdown-item" href="/members/logout">로그아웃</a></button>
+                    <a class="dropdown-item" href="/member/logout">로그아웃</a></button>
                 </c:if>
             </div>
         </span>
@@ -41,16 +41,17 @@
                     <a class="dropdown-item" href="#">반품하기</a>
                     <a class="dropdown-item" href="#">고객센터</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="/members/sign-in">로그인</a></button>
-                    <a class="dropdown-item" href="/members/agree">회원가입</a></button>
+                    <a class="dropdown-item" href="/member/login">로그인</a></button>
+                    <a class="dropdown-item" href="/member/agree">회원가입</a></button>
                 </c:if>
                 <c:if test="${not empty UID}">
+                    <a class="dropdown-item" href="/mypage/add-pet">고양이 등록</a>
                     <a class="dropdown-item" href="#">자주구매</a>
                     <a class="dropdown-item" href="#">관심</a>
-                    <a class="dropdown-item" href="#">최근본</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">주문배송</a>
-                    <a class="dropdown-item" href="#">주문취소</a>
+                    <a class="dropdown-item" href="#">최근 본</a>
+                    <a class="dropdown-item" href="#">주문조회</a>
+                    <a class="dropdown-item" href="#">배송취소</a>
                     <a class="dropdown-item" href="#">교환하기</a>
                     <a class="dropdown-item" href="#">반품하기</a>
                     <a class="dropdown-item" href="#">구매후기</a>
@@ -59,7 +60,7 @@
                     <a class="dropdown-item" href="#">스티커</a>
                     <a class="dropdown-item" href="#">보유현금</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="/members/logout">로그아웃</a></button>
+                    <a class="dropdown-item" href="/member/logout">로그아웃</a></button>
                 </c:if>
             </div>
         </span>

@@ -18,21 +18,18 @@ public class MembersServiceImpl implements MembersService {
     @Autowired
     private MembersDAO mbdao;
 
-
+    // 해당 아이디 존재 여부 확인
     @Override
-    public String checkUserid(String email) {
-        String isOk = "0";
-        int cnt = mbdao.selectOneUserid(email);
-        if (cnt > 0) isOk = "1";
-
-        return isOk;
+    public int checkUserid(String email) {
+        return mbdao.countUserid(email);
     }
 
+    // 주소 검색
     @Override
     public String findZipCode(String dong) {
         ObjectMapper mapper = new ObjectMapper();
         String json = "";
-        dong = dong + "%";
+        dong = "%" + dong + "%";
         try {
             json = mapper.writeValueAsString(mbdao.selectZipCode(dong));
         } catch (JsonProcessingException e) {
@@ -41,16 +38,26 @@ public class MembersServiceImpl implements MembersService {
         return json;
     }
 
-    ///////////////////////////////////////////////////////////////////////
-
-
-    // 1 - 현우
+    // 신규 회원 등록
     @Override
     public int newMember(MembersVO mvo) {
         return mbdao.insertMember(mvo);
     }
 
+    // 로그인
+    @Override
+    public String tryLogin(MembersVO mvo, HttpSession sess) {
+        mvo = mbdao.selectLogin(mvo);
+        if ((mvo.getUno()) != null) sess.setAttribute("UID", mvo);
+        return mvo.getUno();
+    }
 
+
+
+    ///////////////////////////////////////////////////////////////////////
+
+
+    // 1 - 현우
     @Override
     public String newCatMember(CatVO cvo) {
         String result = "회원가입 실패";
@@ -65,24 +72,12 @@ public class MembersServiceImpl implements MembersService {
         String json = "";
         email = email + "%";
         try {
-            json = mapper.writeValueAsString(mbdao.selectUserId(email));
+            json = mapper.writeValueAsString(mbdao.countUserid(email));
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }
 
         return json;
-    }
-
-    @Override
-    public boolean checkLogin(MembersVO mvo, HttpSession sess) {
-        boolean isLogin = false;
-
-        mvo = mbdao.selectLogin(mvo);
-        if (Integer.parseInt(mvo.getUno()) > 0) {
-            sess.setAttribute("UID", mvo);
-            isLogin = true;
-        }
-        return isLogin;
     }
 
     @Override

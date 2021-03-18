@@ -1,3 +1,99 @@
+/* 고양이 등록*/
+.ap_form {
+    background: none;
+    border: none;
+    width: 450px;
+    margin: 50px auto;
+}
+.ap_pic {
+    text-align: center;
+}
+.ap_picInput[type="file"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+.ap_text {
+    margin-bottom: -10px;
+}
+.ap_input {
+    width: 450px;
+    height: 50px;
+    font-size: 15px;
+    border-radius: 5px;
+    border: 1px solid #adb5bd;
+    padding-left: 15px;
+}
+.ap_detail{
+    float: left;
+}
+.ap_birthInput {
+    /*clear: both;*/
+    background: #f3f3f3;
+    padding-left: 15px;
+    font-size: 15px;
+    border-radius: 5px;
+    border: 1px solid #adb5bd;
+    text-align: center;
+    clear: both;
+    width: 150px;
+    height: 50px;
+    margin-right: 10px;
+}
+.ap_genderInput input{
+    margin-left: 10px;
+}
+.ap_check {
+    text-align: center;
+    margin : 20px 0;
+    color : grey;
+}
+
+.ap_btn {
+    text-align: center;
+    margin: 10px 20px 60px 0;
+}
+.ap_btn button {
+    border-radius: 5px;
+    border: none;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    margin: 0 20px;
+    padding: 5px 10px;
+}
+.ap_okbtn {
+    background: #6060ff;
+}
+.ap_nobtn {
+    background: #ff6060;
+}
+.ap_btn button:hover {
+    color: black;
+}
+.ap_btn button:focus {
+    color: black;
+}
+.ap_form input:focus {
+    outline: none;
+}
+.ap_form select:focus {
+    outline: none;
+}
+
+
+
+
+
+
+
+
 
 .MY_pad0mgn0 {
     padding: 0;

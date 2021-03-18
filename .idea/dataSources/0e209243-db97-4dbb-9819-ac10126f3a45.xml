@@ -1125,6 +1125,8 @@
     <column id="359" parent="332" name="uno">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="360" parent="332" name="username">
       <Position>2</Position>
@@ -1178,167 +1180,172 @@
       <Position>14</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="373" parent="333" name="ordno">
+    <key id="373" parent="332" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>uno</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="374" parent="333" name="ordno">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
     </column>
-    <column id="374" parent="333" name="ordprd">
+    <column id="375" parent="333" name="ordprd">
       <Position>2</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="375" parent="333" name="orduno">
+    <column id="376" parent="333" name="orduno">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
     </column>
-    <column id="376" parent="333" name="orduname">
+    <column id="377" parent="333" name="orduname">
       <Position>4</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="377" parent="333" name="orddate">
+    <column id="378" parent="333" name="orddate">
       <Position>5</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="378" parent="333" name="orddeliv">
+    <column id="379" parent="333" name="orddeliv">
       <Position>6</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="379" parent="333" name="ordstatus">
+    <column id="380" parent="333" name="ordstatus">
       <Position>7</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="380" parent="333" name="ordcost">
+    <column id="381" parent="333" name="ordcost">
       <Position>8</Position>
       <DataType>int(11)|0s</DataType>
     </column>
-    <column id="381" parent="334" name="pno">
+    <column id="382" parent="334" name="pno">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
     </column>
-    <column id="382" parent="334" name="ctno">
+    <column id="383" parent="334" name="ctno">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
     </column>
-    <column id="383" parent="334" name="brand">
+    <column id="384" parent="334" name="brand">
       <Position>3</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="384" parent="334" name="event">
+    <column id="385" parent="334" name="event">
       <Position>4</Position>
       <DataType>int(11)|0s</DataType>
     </column>
-    <column id="385" parent="334" name="pname">
+    <column id="386" parent="334" name="pname">
       <Position>5</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="386" parent="334" name="type">
+    <column id="387" parent="334" name="type">
       <Position>6</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="387" parent="334" name="price">
+    <column id="388" parent="334" name="price">
       <Position>7</Position>
       <DataType>int(11)|0s</DataType>
     </column>
-    <column id="388" parent="334" name="disco">
+    <column id="389" parent="334" name="disco">
       <Position>8</Position>
       <DataType>int(11)|0s</DataType>
     </column>
-    <column id="389" parent="334" name="totprice">
+    <column id="390" parent="334" name="totprice">
       <Position>9</Position>
       <DataType>int(11)|0s</DataType>
     </column>
-    <column id="390" parent="334" name="amount">
+    <column id="391" parent="334" name="amount">
       <Position>10</Position>
       <DataType>int(11)|0s</DataType>
     </column>
-    <column id="391" parent="334" name="sales">
+    <column id="392" parent="334" name="sales">
       <Position>11</Position>
       <DataType>int(11)|0s</DataType>
     </column>
-    <column id="392" parent="334" name="explains">
+    <column id="393" parent="334" name="explains">
       <Position>12</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="393" parent="334" name="signat">
+    <column id="394" parent="334" name="signat">
       <Position>13</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="394" parent="334" name="contents">
+    <column id="395" parent="334" name="contents">
       <Position>14</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="395" parent="334" name="uuid">
+    <column id="396" parent="334" name="uuid">
       <Position>15</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="396" parent="334" name="filename">
+    <column id="397" parent="334" name="filename">
       <Position>16</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="397" parent="334" name="filesize">
+    <column id="398" parent="334" name="filesize">
       <Position>17</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="398" parent="335" name="pno">
+    <column id="399" parent="335" name="pno">
       <Position>1</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="399" parent="335" name="rno">
+    <column id="400" parent="335" name="rno">
       <Position>2</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="400" parent="335" name="cno">
+    <column id="401" parent="335" name="cno">
       <Position>3</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="401" parent="335" name="uno">
+    <column id="402" parent="335" name="uno">
       <Position>4</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="402" parent="335" name="username">
+    <column id="403" parent="335" name="username">
       <Position>5</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="403" parent="335" name="regdate">
+    <column id="404" parent="335" name="regdate">
       <Position>6</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="404" parent="335" name="catage">
+    <column id="405" parent="335" name="catage">
       <Position>7</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="405" parent="335" name="catweight">
+    <column id="406" parent="335" name="catweight">
       <Position>8</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="406" parent="335" name="repic">
+    <column id="407" parent="335" name="repic">
       <Position>9</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="407" parent="336" name="ZIPCODE">
+    <column id="408" parent="336" name="ZIPCODE">
       <Position>1</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="408" parent="336" name="SIDO">
+    <column id="409" parent="336" name="SIDO">
       <Position>2</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="409" parent="336" name="GUGUN">
+    <column id="410" parent="336" name="GUGUN">
       <Position>3</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="410" parent="336" name="DONG">
+    <column id="411" parent="336" name="DONG">
       <Position>4</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="411" parent="336" name="RI">
+    <column id="412" parent="336" name="RI">
       <Position>5</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="412" parent="336" name="BUNJI">
+    <column id="413" parent="336" name="BUNJI">
       <Position>6</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="413" parent="336" name="SEQ">
+    <column id="414" parent="336" name="SEQ">
       <Position>7</Position>
       <DataType>int(11)|0s</DataType>
     </column>

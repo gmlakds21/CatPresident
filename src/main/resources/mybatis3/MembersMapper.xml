@@ -5,17 +5,39 @@
 
 <mapper namespace="Members">
 
-    <!-- 1 - 현우 -->
+    <select id="checkUserID" statementType="PREPARED"
+            parameterType="String"
+            resultType="int">
+        select count(uno) from Members
+            where email like #{emforaddcat};
+    </select>
 
-    <insert id="insertMember" statementType="PREPARED"
+    <select id="findZipcode" statementType="PREPARED"
+            parameterType="String"
+            resultType="teamproject.mvc.vo.ZipCodeVO">
+        select zipcode, sido, gugun, dong, ri, bunji from zipcode
+            where dong like #{mydong};
+    </select>
+
+    <insert id="newMember" statementType="PREPARED"
             parameterType="teamproject.mvc.vo.MembersVO">
         insert into Members (username, email, passwd, zipcode, addr, alarm)
-        values (#{username}, #{email}, #{passwd}, #{zipcode}, #{addr},#{agrcheck});
+            values (#{username}, #{email}, #{passwd}, #{zipcode}, #{addr},#{alarm});
     </insert>
 
-    <select id="zipcode" statementType="PREPARED" parameterType="String" resultType="teamproject.mvc.vo.ZipCodeVO">
-        select zipcode, sido, gugun, dong, ri, bunji from zipcode where dong like #{mydong};
+    <select id="tryLogin" statementType="PREPARED"
+            parameterType="teamproject.mvc.vo.MembersVO"
+            resultType="teamproject.mvc.vo.MembersVO">
+        select * from Members
+            where email = #{email} and passwd = #{passwd};
     </select>
+
+
+
+
+    <!-- 1 - 현우 -->
+
+
 
     <insert id="insertCatMember" statementType="PREPARED"
             parameterType="teamproject.mvc.vo.CatVO">
@@ -23,18 +45,8 @@
         values (#{catname},#{uno},#{catkind},#{catyear},#{catmonth},#{catgender},#{catweight},#{prima});
     </insert>
 
-    <select id="getuserid" statementType="PREPARED" parameterType="String"
-            resultType="teamproject.mvc.vo.MembersVO">
-        select uno from Members where email like #{emforaddcat};
-    </select>
-
     <select id="checkuid" statementType="PREPARED" parameterType="String" resultType="int">
         select count(email) cnt from Members where email like #{email};
-    </select>
-
-    <select id="checklogin" statementType="PREPARED" parameterType="teamproject.mvc.vo.MembersVO"
-            resultType="teamproject.mvc.vo.MembersVO">
-        select * from Members where email = #{email} and passwd = #{passwd};
     </select>
 
     <update id="modifyuser" statementType="PREPARED" parameterType="teamproject.mvc.vo.MembersVO">

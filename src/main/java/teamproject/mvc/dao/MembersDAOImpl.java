@@ -16,12 +16,40 @@ public class MembersDAOImpl implements MembersDAO {
     @Autowired
     private SqlSession sqlSession;
 
-    // 1 - 현우
+    // 해당 아이디 존재 여부 확인
+    @Override
+    public int countUserid(String email) {
+        return sqlSession.selectOne("Members.checkUserID", email);
+    }
+
+    // 주소 검색
+    @Override
+    public List<ZipCodeVO> selectZipCode(String dong) {
+        return sqlSession.selectList("Members.findZipcode", dong);
+    }
+
+    // 신규 회원 등록
     @Override
     public int insertMember(MembersVO mvo) {
-
-        return sqlSession.insert("Members.insertMember", mvo);
+        return sqlSession.insert("Members.newMember", mvo);
     }
+
+    // 로그인
+    @Override
+    public MembersVO selectLogin(MembersVO mvo) {
+        mvo = sqlSession.selectOne("Members.tryLogin", mvo);
+//        if (mvo == null) mvo.setUno("0");
+        return mvo;
+    }
+
+
+
+
+
+
+
+
+
 
     @Override
     public int selectOneUserid(String email) {
@@ -29,42 +57,14 @@ public class MembersDAOImpl implements MembersDAO {
     }
 
     @Override
-    public List<ZipCodeVO> selectZipCode(String dong) {
-        return sqlSession.selectList("Members.zipcode", dong);
-    }
-
-
-    @Override
     public int insertCatMember(CatVO cvo) {
         return sqlSession.insert("Members.insertCatMember", cvo);
-    }
-
-    @Override
-    public Object selectUserId(String email) {
-        return sqlSession.selectList("Members.getuserid", email);
-    }
-
-
-    @Override
-    public MembersVO selectLogin(MembersVO mvo) {
-        mvo = sqlSession.selectOne("Members.checklogin", mvo);
-
-        if (mvo == null) {
-            mvo = new MembersVO();
-            mvo.setUno("0");
-            mvo.setUsername("");
-            mvo.setPhone("");
-        }
-
-        System.out.println("[" + mvo.getUno() + "/" + mvo.getUsername() + "/" + mvo.getPhone() + "]");
-        return mvo;
     }
 
     @Override
     public int updateUser(MembersVO mvo) {
         return sqlSession.update("Members.modifyuser",mvo);
     }
-
 
     // 승희
     @Override

@@ -9,18 +9,32 @@ import java.util.List;
 
 public interface MembersDAO {
 
-// 1 - 현우
+    // 해당 아이디 존재 여부 확인
+    int countUserid(String email);
+
+    // 주소 검색
+    List<ZipCodeVO> selectZipCode(String dong);
+
+    // 신규 회원 등록
     int insertMember(MembersVO mvo);
 
-    List<ZipCodeVO> selectZipCode(String dong);
+    // 로그인
+    MembersVO selectLogin(MembersVO mvo);
+
+
+
+
+
+
+
+// 1 - 현우
+
 
     int selectOneUserid(String email);
 
     int insertCatMember(CatVO cvo);
 
-    Object selectUserId(String email);
 
-    MembersVO selectLogin(MembersVO mvo);
 
     List<CatSpeciesVO> selectCateList();
 

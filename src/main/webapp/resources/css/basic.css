@@ -5,3 +5,15 @@
     margin: 0 auto;
     width: 1400px;
 }
+.clear {
+    clear:both;
+}
+* button:focus {
+    outline: none;
+}
+* input:focus {
+    outline: none;
+}
+* select:focus {
+    outline: none;
+}

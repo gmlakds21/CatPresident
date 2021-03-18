@@ -23,9 +23,9 @@
         <bean id="dbcpDataSource"
               class="org.apache.commons.dbcp2.BasicDataSource"
               p:driverClassName="org.mariadb.jdbc.Driver"
-              p:url="jdbc:mariadb://maria-db.coqecfviusin.ap-northeast-2.rds.amazonaws.com:3306/TeamProject"
-              p:username="TeamProject"
-              p:password="TeamProject2020" />
+              p:url="jdbc:mariadb://maria-db.coqecfviusin.ap-northeast-2.rds.amazonaws.com:3306/TeamProject2"
+              p:username="TeamProject2"
+              p:password="TeamProject22020" />
 
 
 

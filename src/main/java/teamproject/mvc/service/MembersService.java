@@ -9,14 +9,17 @@ import java.util.List;
 
 public interface MembersService {
 
-    // 아이디 중복 체크
-    String checkUserid(String email);
+    // 해당 아이디 존재 여부 확인
+    int checkUserid(String email);
 
-    // 주소 찾기
+    // 주소 검색
     String findZipCode(String dong);
 
     // 신규 회원 등록
     int newMember(MembersVO mvo);
+
+    // 로그인
+    String tryLogin(MembersVO mvo, HttpSession sess);
 
 
 
@@ -24,13 +27,10 @@ public interface MembersService {
 
     String findUserId(String email);
 
-    boolean checkLogin(MembersVO mvo, HttpSession sess);
 
     boolean modifyUser(MembersVO mvo);
 
     // 승희
     List<CatSpeciesVO> readSpecies();
-
-
 
 }

@@ -10,8 +10,10 @@
     <link rel="stylesheet" href="/css/basic.css">
     <link rel="stylesheet" href="/css/template/header.css">
     <link rel="stylesheet" href="/css/template/footer.css">
-    <link rel="stylesheet" href="/css/list.css">
     <link rel="stylesheet" href="/css/register.css">
+
+
+    <link rel="stylesheet" href="/css/list.css">
     <link rel="stylesheet" href="/css/category.css">
     <%-- 현우 --%>
     <link rel="stylesheet" href="/css/mypage.css">
@@ -38,6 +40,8 @@
 <script src="/js/bootstrap.bundle.min.js"></script>
 <script src="/js/product.js"></script>
 <script src="/js/register.js"></script>
+
+<script src="/js/mypage.js"></script>
 <script src="/js/planKnow.js"></script>
 <script src="/js/order.js"></script>
 </body>

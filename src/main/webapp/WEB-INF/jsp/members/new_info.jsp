@@ -80,17 +80,19 @@
             <input type="text" class="in_input" id="in_adInput" value="${mvo.addr}">
         </div>
 
-        <div class="in_alarm">
-            <input type="checkbox" id="in_check" name="in_check">
-            <span>
-                본인은 만 14세 이상이며, 고양이대통령 이용약관,<br>&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="in_alarm custom-control custom-checkbox">
+            <input type="checkbox" id="in_check" class="custom-control-input">
+            <label for="in_check" class="custom-control-label">
+                본인은 만 14세 이상이며, 고양이대통령 이용약관,<br>
                 개인정보 수집 및 이용내용을 확인 하였으며 동의합니다.
-            </span>
+            </label>
             <br>
-            <input type="checkbox" id="in_alarm" name="in_alarm">
-            <span>
+        </div>
+        <div class="in_alarm custom-control custom-checkbox">
+            <input type="checkbox" id="in_alarm" class="custom-control-input">
+            <label for="in_alarm" class="custom-control-label">
                 쏠쏠한 할인쿠폰, 신상품 및 이벤트 등 수신동의 (선택)
-            </span>
+            </label>
         </div>
 
         <%-- 회원 정보 --%>
