@@ -16,7 +16,8 @@ public class MembersVO {
     private String lastview;
     private String addr;
     private String zipcode;
-    private String agrcheck;
+    private String catno;
+
 
     public MembersVO() {
     }
@@ -24,7 +25,7 @@ public class MembersVO {
     public MembersVO(String uno, String username, String email,
                      String passwd, String phone, String alarm, String sticker,
                      String points, String buylist, String buyamounts, String wishlist,
-                     String lastview, String addr, String zipcode, String agrcheck) {
+                     String lastview, String addr, String zipcode) {
         this.uno = uno;
         this.username = username;
         this.email = email;
@@ -39,9 +40,15 @@ public class MembersVO {
         this.lastview = lastview;
         this.addr = addr;
         this.zipcode = zipcode;
-        this.agrcheck = agrcheck;
     }
 
+    public String getCatno() {
+        return catno;
+    }
+
+    public void setCatno(String catno) {
+        this.catno = catno;
+    }
     public String getUno() {
         return uno;
     }
@@ -154,11 +161,4 @@ public class MembersVO {
         this.zipcode = zipcode;
     }
 
-    public String getAgrcheck() {
-        return agrcheck;
-    }
-
-    public void setAgrcheck(String agrcheck) {
-        this.agrcheck = agrcheck;
-    }
 }

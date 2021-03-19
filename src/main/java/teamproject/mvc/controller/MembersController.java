@@ -54,22 +54,19 @@ public class MembersController {
 
     // 신규 회원 등록
     @PostMapping("/member/info")
-    public String newMemberInfoOK(MembersVO mvo, HttpSession sess) { // 양식에서 입력받은 값들을 mvo에 저장, 서버에 전송.
+    public String newMemberInfoOK(MembersVO mvo, HttpSession sess) {
         String returnPage = "redirect:/member/info";
         if(mbsrv.newMember(mvo) > 0 ) {
+            mbsrv.tryLogin(mvo, sess);
             returnPage = "redirect:/member/join";
-            sess.setAttribute("user", mvo);
         }
         return returnPage;
     }
 
     // 회원가입 3
     @GetMapping("/member/join")
-    public ModelAndView newMemberJoinOK(ModelAndView mv, HttpSession sess) {
-        MembersVO mvo = (MembersVO) sess.getAttribute("user");
-        mv.addObject("user", mvo);
-        mv.setViewName("members/new_join.tiles");
-        return mv;
+    public String newMemberJoin() {
+        return "members/new_join.tiles";
     }
 
     // 로그인

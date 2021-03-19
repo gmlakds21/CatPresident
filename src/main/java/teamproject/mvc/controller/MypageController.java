@@ -12,6 +12,7 @@ import teamproject.mvc.vo.CatVO;
 import teamproject.mvc.vo.MembersVO;
 
 import javax.servlet.http.HttpSession;
+import java.lang.reflect.Member;
 
 @Controller
 public class MypageController {
@@ -22,10 +23,9 @@ public class MypageController {
     // 마이페이지 메인페이지
     @GetMapping("/mypage/main")
     public ModelAndView main(ModelAndView mv, HttpSession sess) {
-
-        mv.addObject("user", sess.getAttribute("user"));
+        MembersVO mvo = (MembersVO) sess.getAttribute("user");
+        mv.addObject("cats", mysrv.catList(mvo.getUno()));
         mv.setViewName("mypage/main.tiles");
-
         return mv;
     }
 
@@ -67,9 +67,9 @@ public class MypageController {
 
     // 고양이 정보 등록
     @PostMapping("/mypage/pet_add")
-    public String newCatOK(CatVO cvo) {
+    public String newCatOK(CatVO cvo, HttpSession sess) {
         String returnPage = "redirect:/mypage/pet_add";
-        if (mysrv.newCat(cvo) > 0 )
+        if (mysrv.newCat(cvo, sess) > 0 )
             returnPage = "redirect:/mypage/main";
         return returnPage;
     }

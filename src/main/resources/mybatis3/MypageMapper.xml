@@ -16,5 +16,18 @@
             values (#{catname},#{uno},#{catkind},#{catyear},#{catmonth},#{catgender},#{catweight},#{prima});
     </insert>
 
+    <select id="catList" statementType="PREPARED"
+            parameterType="String"
+            resultType="teamproject.mvc.vo.CatVO">
+        select * from Cat
+            where uno = ${uno};
+    </select>
+
+    <select id="readOneCat" statementType="PREPARED"
+            parameterType="teamproject.mvc.vo.CatVO"
+            resultType="String">
+        select catno from Cat
+            where uno = ${uno} and catname = ${catname};
+    </select>
 
 </mapper>

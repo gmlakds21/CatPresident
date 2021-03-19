@@ -1,14 +1,12 @@
 <%@ page pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
-<%--<c:if test="${empty user}">--%>
-<%--    <script>--%>
-<%--        alert("로그인이 필요한 페이지입니다.")--%>
-<%--        location.href = '/members/login';--%>
-<%--    </script>--%>
-<%--</c:if>--%>
-
-
+<c:if test="${empty user}">
+    <script>
+        alert("로그인이 필요한 페이지입니다.")
+        location.href = '/members/login';
+    </script>
+</c:if>
 
 
 
@@ -131,15 +129,14 @@
 
         <p class="my_subTitle">나의 고양이</p>
         <div class="cat_body">
-        <%--<c:forEach var="i" begin="1" end="${fn:length(UID.passwd)}" step="1">--%>
-            <c:forEach var="i" begin="1" end="5" step="1">
+            <c:forEach var="cat"  items="${cats}">
                 <button class="cat_listBtn">
                     <div class="cat_name">
-                        냥냥이
-                        <c:if test="${i eq 3}"><span class="badge badge-primary cat_badge">대표</span></c:if>
+                        ${cat.catname}
+                        <c:if test="${cat.catno eq uno.catno}"><span class="badge badge-primary cat_badge">대표</span></c:if>
                     </div>
-                    <div class="cat_info">고양이 종류</div>
-                    <div class="cat_info">고양이 성별</div>
+                    <div class="cat_info">${cat.catkind}</div>
+                    <div class="cat_info">${cat.catgender}</div>
                 </button>
             </c:forEach>
             <button class="cat_newBtn" onclick="location.href='/mypage/pet_add'">

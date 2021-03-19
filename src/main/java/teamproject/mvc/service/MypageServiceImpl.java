@@ -19,6 +19,12 @@ public class MypageServiceImpl implements MypageService {
     @Autowired
     private MypageDAO mydao;
 
+    // 고양이 목록
+    @Override
+    public List<CatVO> catList(String uno) {
+        return mydao.selectCat(uno);
+    }
+
     // 고양이 품종 불러오기
     @Override
     public List<CatSpeciesVO> readSpecies() {
@@ -27,7 +33,18 @@ public class MypageServiceImpl implements MypageService {
 
     // 고양이 정보 등록
     @Override
-    public int newCat(CatVO cvo) {
+    public int newCat(CatVO cvo, HttpSession sess) {
+        // 고양이 등록
+        mydao.insertCat(cvo);
+
+        // 대표 고양이에 신규 고양이 등록
+        if (cvo.getPrima().equals("Y")) {
+            cvo.setPrima("N");
+            MembersVO mvo = (MembersVO) sess.getAttribute("user");
+            String catno = mydao.selectOneCat(cvo);
+            mvo.setCatno(catno);
+        }
+
         return mydao.insertCat(cvo);
     }
 
