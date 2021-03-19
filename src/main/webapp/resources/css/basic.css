@@ -1,3 +1,19 @@
+* a:link, * a:focus, * a:active, * a:hover {
+    color: black;
+    background: none;
+    text-decoration: none;
+}
+* button:focus, * button:active, * button:hover {
+    outline: none;
+}
+* input:focus, * input:active, * input:hover {
+    outline: none;
+}
+* select:focus, * select:active, * select:hover {
+    outline: none;
+}
+
+
 .marginCenter {
     margin : 0 auto;
 }
@@ -8,30 +24,37 @@
 .clear {
     clear:both;
 }
+
+
+
+
 .mainPage {
-    margin: 150px auto;
+    margin-bottom: 130px;
     text-align: center;
 }
-.mainPage span {
-    font-weight: bold;
-}
-
-
-
-* a:link, * a:focus, * a:active, * a:hover {
+.mainPage a {
     color: black;
-    background: none;
-    text-decoration: none;
 }
-* button:focus, * button:active, * button:hover {
-    background: none;
-    outline: none;
+.mainPageList {
+    float: right;
+    width: 500px;
+    margin-right:100px;
+    padding: 30px 50px;
+    border: 1px solid #A200C7;
 }
-* input:focus, * input:active, * input:hover {
-    background: none;
-    outline: none;
+.mainPageText {
+    float: left;
+    width: 650px;
+    padding: 50px 40px;
+    border: 1px solid #A200C7;
 }
-* select:focus, * select:active, * select:hover {
-    background: none;
-    outline: none;
+.mainPageText a {
+    color: #A200C7;
+    font-weight: bold;
+    font-size: 20px;
+}
+.mainPageText b {
+    font-size: 18px;
+    padding-top:3px;
+    position: relative;
 }

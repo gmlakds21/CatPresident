@@ -27,8 +27,7 @@ public class MypageServiceImpl implements MypageService {
 
     // 고양이 정보 등록
     @Override
-    public int newCat(CatVO cvo, HttpSession sess) {
-        cvo.setUno( ((MembersVO)sess.getAttribute("UID")).getUno() );
+    public int newCat(CatVO cvo) {
         return mydao.insertCat(cvo);
     }
 

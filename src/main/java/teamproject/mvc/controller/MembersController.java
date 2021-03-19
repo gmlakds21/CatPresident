@@ -58,15 +58,18 @@ public class MembersController {
         String returnPage = "redirect:/member/info";
         if(mbsrv.newMember(mvo) > 0 ) {
             returnPage = "redirect:/member/join";
-            sess.setAttribute("UID", mvo);
+            sess.setAttribute("user", mvo);
         }
         return returnPage;
     }
 
     // 회원가입 3
     @GetMapping("/member/join")
-    public String newMemberJoinOK() {
-        return "members/new_join.tiles";
+    public ModelAndView newMemberJoinOK(ModelAndView mv, HttpSession sess) {
+        MembersVO mvo = (MembersVO) sess.getAttribute("user");
+        mv.addObject("user", mvo);
+        mv.setViewName("members/new_join.tiles");
+        return mv;
     }
 
     // 로그인
@@ -77,10 +80,15 @@ public class MembersController {
 
     @PostMapping("/member/login")
     public String loginok(MembersVO mvo, HttpSession sess) {
-        String returnPage = "redirect:/member/login";
-        if (mbsrv.tryLogin(mvo, sess) != null)
+        String returnPage = "redirect:/member/loginX";
+        if (mbsrv.tryLogin(mvo, sess) != "X")
             returnPage = "redirect:/";
         return returnPage;
+    }
+
+    @GetMapping("/member/loginX")
+    public String loginX() {
+        return "members/loginX.tiles";
     }
 
     // 로그아웃
@@ -155,24 +163,6 @@ public class MembersController {
         return "members/recentview.tiles";
     }
 
-
-    @GetMapping("/mypage/update")
-    public ModelAndView memberupdate(HttpSession sess) {
-        ModelAndView mv = new ModelAndView();
-        mv.addObject("UID", sess.getAttribute("UID"));
-        mv.setViewName("members/update.tiles");
-        return mv;
-
-    }
-
-    @PostMapping("/mypage/update") // 회원정보 수정
-    public String memberupdateok(MembersVO mvo) {
-        String returnPage = "redirect:/mypage/fail";
-        if (mbsrv.modifyUser(mvo))
-            returnPage = "redirect:/mypage/orders";
-
-        return returnPage;
-    }
 
 
 

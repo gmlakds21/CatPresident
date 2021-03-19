@@ -18,11 +18,11 @@
                 <span class="hd_list2_txt">알 림</span>
             </button>
             <div class="dropdown-menu hdDropMenu">
-                <c:if test="${empty UID}">
+                <c:if test="${empty user}">
                     <a class="dropdown-item" href="/member/login">로그인</a></button>
                     <a class="dropdown-item" href="/member/agree">회원가입</a></button>
                 </c:if>
-                <c:if test="${not empty UID}">
+                <c:if test="${not empty user}">
                     <a class="dropdown-item" href="/member/logout">로그아웃</a></button>
                 </c:if>
             </div>
@@ -33,7 +33,7 @@
                 <span class="hd_list2_txt">M Y</span>
             </button>
             <div class="dropdown-menu hdDropMenu">
-                <c:if test="${empty UID}">
+                <c:if test="${empty user}">
                     <a class="dropdown-item" href="#">최근 본</a>
                     <a class="dropdown-item" href="#">주문조회</a>
                     <a class="dropdown-item" href="#">배송취소</a>
@@ -44,7 +44,7 @@
                     <a class="dropdown-item" href="/member/login">로그인</a></button>
                     <a class="dropdown-item" href="/member/agree">회원가입</a></button>
                 </c:if>
-                <c:if test="${not empty UID}">
+                <c:if test="${not empty user}">
                     <a class="dropdown-item" href="/mypage/main">마이 페이지</a>
                     <a class="dropdown-item" href="/mypage/add-pet">고양이 등록</a>
                     <a class="dropdown-item" href="#">자주구매</a>

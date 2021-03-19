@@ -47,9 +47,12 @@ public class MembersServiceImpl implements MembersService {
     // 로그인
     @Override
     public String tryLogin(MembersVO mvo, HttpSession sess) {
-        mvo = mbdao.selectLogin(mvo);
-        if ((mvo.getUno()) != null)
-            sess.setAttribute("UID", mvo);
+        if (mbdao.selectLogin(mvo) == null) {
+            mvo.setUno("X");
+        } else {
+            mvo = mbdao.selectLogin(mvo);
+            sess.setAttribute("user", mvo);
+        }
         return mvo.getUno();
     }
 

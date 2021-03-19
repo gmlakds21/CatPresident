@@ -145,8 +145,8 @@ $('#zip_sendBtn').on('click', function () {
 // join
 $('#goMain').on('click', function () {
     location.href = '/';});
-$('#addPet').on('click', function () {
-    location.href = '/mypage/add-pet';});
+$('#pet_add').on('click', function () {
+    location.href = '/mypage/pet_add';});
 
 
 // login
@@ -156,7 +156,7 @@ $("#li_okbtn").on('click', function () {
     else {
         $("#email").val($('#li_emailInput').val())
         $("#passwd").val($('#li_pwInput').val())
-        alert($('#email').val() + "님 환영합니다.");
+
         $('#logMember').attr("action", "/member/login")
         $('#logMember').attr("method", "post")
         $('#logMember').submit()

@@ -1,7 +1,7 @@
 <%@ page pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<c:if test="${not empty UID}">
+<c:if test="${not empty user}">
     <script>
         alert("잘못된 접근입니다.")
         location.href = "/";

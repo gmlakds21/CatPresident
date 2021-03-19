@@ -12,7 +12,7 @@ public interface MypageService {
     List<CatSpeciesVO> readSpecies();
 
     // 고양이 정보 등록
-    int newCat(CatVO cvo, HttpSession sess);
+    int newCat(CatVO cvo);
 
 
 

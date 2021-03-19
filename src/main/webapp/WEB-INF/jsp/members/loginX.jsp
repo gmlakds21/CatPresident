@@ -18,8 +18,8 @@
 
 <div class="body">
 
-    <p class="mb_title"> 로그인</p>
-    <p class="mb_text"></p>
+    <p class="mb_title">로그인</p>
+    <p class="mb_text">아이디 및 비밀번호를 확인해주세요</p>
 
     <hr>
 

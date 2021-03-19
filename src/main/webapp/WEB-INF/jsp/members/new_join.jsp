@@ -24,13 +24,13 @@
     <hr>
 
     <div class="jo_body">
-        <h2> <b>${mvo.username}</b>님 회원가입을 축하합니다!! </h2>
+        <h2> <b>${user.username}</b>님 회원가입을 축하합니다!! </h2>
         <p> 고양이 대통령의 보다 많은 서비스를 이용하시기 위해 고양이 정보를 등록하실 것을 추천드립니다.</p>
     </div>
 
     <div class="jo_btns">
         <div>
-            <button type="button" id="addPet">고양이 등록하기</button>
+            <button type="button" id="pet_add">고양이 등록하기</button>
         </div>
         <div>
             <button type="button" id="goMain">

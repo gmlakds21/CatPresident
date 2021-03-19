@@ -22,11 +22,8 @@ $('#ap_okbtn').on('click', function () {
         } else {
             $('#prima').val('N')
         }
-        // 값이 잘 입력되었는지를 판별. 실제 시스템 구동에는 필요없는 부분.
-        // alert($('#catname').val() + "/" + $('#catkind').val() + "/" + $('#catyear').val() + "/" +
-        //     $('#catmonth').val() + "/" + $('#catgender').val() + "/" + $('#catweight').val() + "/" + $('#prima').val());
 
-        $('#newCat').attr('action', '/mypage/add-pet')
+        $('#newCat').attr('action', '/mypage/pet_add')
         $('#newCat').attr('method', 'post')
         $('#newCat').submit();
     }});

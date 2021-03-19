@@ -1,3 +1,6 @@
+
+
+
 /* 고양이 등록*/
 .ap_form {
     background: none;
@@ -135,7 +138,7 @@
     float: left;
     width: 182px;
     height: 550px;
-    margin-bottom: 50px;
+    margin-bottom: 100px;
 
     /*border: 1px solid red;*/
 }
@@ -182,6 +185,102 @@
     color:#A200C7;
 }
 
+
+/* 마이페이지 기본 설정 */
+.my_body {
+    float: right;
+    width: 1150px;
+    margin-bottom: 100px;
+}
+.my_title {
+    font-size: 30px;
+    font-weight: bold;
+    padding: 20px 0;
+}
+.my_subTitle {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px 0;
+}
+.my_Text {
+
+}
+
+
+/* 마이페이지 내정보 */
+.if_title {
+    width: 110px;
+    color: #a0a0a0;
+}
+.if_text {
+    font-weight: bold;
+    margin-left: 10px;
+}
+.if_body button {
+    border-radius: 5px;
+    border: 1px solid #a0a0a0;
+    background: none;
+    margin-left: 10px;
+    color: #a0a0a0;
+}
+.if_btns {
+    margin: 25px 0;
+}
+
+
+/* 마이페이지 내 고양이 */
+.cat_listBtn {
+    width: 250px;
+    height: 130px;
+    margin: 15px;
+    background: #f0f0f0;
+    border: none;
+}
+.cat_name {
+    font-weight: bold;
+}
+.cat_info {
+    color: #a0a0a0;
+    font-size: 14px;
+}
+.cat_badge {
+    background: #A200C7;
+    padding: 7px;
+    position: relative;
+    top: -2px;
+}
+.cat_newBtn {
+    position: relative;
+    top: 15px;
+    width: 250px;
+    height: 130px;
+    margin: 20px;
+    background: none;
+    border: 1px solid #a208c7;
+    color: #A200C7;
+}
+.cat_newBtn i {
+    font-size: 30px;
+}
+.cat_listBtn:hover {
+    border: 1px solid #A200C7;
+    color: #A200C7;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*///////////////////////*/
 .MY_roundbox {
     border-radius: 7px;
     border: 1px solid #e0e0e0;
