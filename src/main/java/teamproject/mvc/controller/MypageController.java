@@ -68,10 +68,21 @@ public class MypageController {
     // 고양이 정보 등록
     @PostMapping("/mypage/pet_add")
     public String newCatOK(CatVO cvo, HttpSession sess) {
-        String returnPage = "redirect:/mypage/pet_add";
-        if (mysrv.newCat(cvo, sess) > 0 )
+        String returnPage = "redirect:/mypage/pet_addX";
+
+        // 기존에 동일한 정보가 없어야 하고 && 고양이 등록이 안료되면
+        if ((mysrv.checkCat(cvo) == null) && (mysrv.newCat(cvo, sess) > 0)) {
             returnPage = "redirect:/mypage/main";
+        }
         return returnPage;
+    }
+
+    // 고양이 정보 등록 페이지
+    @GetMapping("/mypage/pet_addX")
+    public ModelAndView newCatX(ModelAndView mv) {
+        mv.addObject("kinds", mysrv.readSpecies());
+        mv.setViewName("mypage/pet_addX.tiles");
+        return mv;
     }
 
 

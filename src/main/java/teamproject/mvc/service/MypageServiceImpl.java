@@ -31,6 +31,12 @@ public class MypageServiceImpl implements MypageService {
         return mydao.selectCatSpecies();
     }
 
+    // 고양이 이름 중복 체크
+    @Override
+    public String checkCat(CatVO cvo) {
+        return mydao.selectOneCat(cvo);
+    }
+
     // 고양이 정보 등록
     @Override
     public int newCat(CatVO cvo, HttpSession sess) {

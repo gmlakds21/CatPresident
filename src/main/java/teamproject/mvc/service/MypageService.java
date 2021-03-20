@@ -14,6 +14,9 @@ public interface MypageService {
     // 고양이 품종 불러오기
     List<CatSpeciesVO> readSpecies();
 
+    // 고양이 이름 중복 체크
+    String checkCat(CatVO cvo);
+
     // 고양이 정보 등록
     int newCat(CatVO cvo, HttpSession sess);
 
