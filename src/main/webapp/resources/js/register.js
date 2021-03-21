@@ -128,7 +128,7 @@ $('#zip_sendBtn').on('click', function () {
     }
 
     let addr1 = addr.substring(0, 7);    // 123-456
-    let addr2 = addr.substring(7);      // 가나다라마바사
+    let addr2 = addr.substring(8);      // 가나다라마바사
 
     $('#zip1').val(addr1.split('-')[0]);
     $('#zip2').val(addr1.split('-')[1]);
