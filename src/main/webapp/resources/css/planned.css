@@ -1,35 +1,6 @@
 /* 기획전 관련 */
-.PL_card {
-    width: 410px;
-    height: 300px;
-    cursor: pointer;
-    border: 0px;
-    margin: 0 15px 30px 0
-}
 
-.PL_card:hover {
-    box-shadow: 2px 2px 5px #999;
-}
 
-.PL_card_img {
-    width: 410px;
-    height: 200px;
-}
-
-.PL_card h5 {
-    font-weight: bold;
-}
-
-.PL_card span {
-    color: gray;
-}
-
-.title {
-    font-weight: bold;
-    margin: 0 auto;
-    font-size: 25px;
-    text-align: left;
-}
 
 .PL_padd {
     padding-left: 15px

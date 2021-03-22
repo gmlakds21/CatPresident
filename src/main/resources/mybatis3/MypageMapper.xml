@@ -20,14 +20,34 @@
             parameterType="String"
             resultType="teamproject.mvc.vo.CatVO">
         select * from Cat
-            where uno = ${uno};
+            where uno = #{uno};
     </select>
 
-    <select id="readOneCat" statementType="PREPARED"
+    <select id="readCatNo" statementType="PREPARED"
             parameterType="teamproject.mvc.vo.CatVO"
             resultType="String">
         select catno from Cat
-            where uno = ${uno} and catname = ${catname};
+            where uno = #{uno} and catname = #{catname};
     </select>
+
+    <select id="readOneCat" statementType="PREPARED"
+            parameterType="String"
+            resultType="teamproject.mvc.vo.CatVO">
+        select * from Cat
+            where catno = ${catno}
+    </select>
+
+    <update id="modifyCat" statementType="PREPARED"
+            parameterType="teamproject.mvc.vo.CatVO">
+        update Cat set catname = #{catname}, set catkind = #{catkind}, set catyear = #{catyear}
+            set catmonth = #{catmonth}, set catgender = #{catgender}, set catweight = #{catweight}
+            where catno = #{catno};
+    </update>
+
+    <update id="modifyMember" statementType="PREPARED"
+            parameterType="teamproject.mvc.vo.MembersVO">
+        update Members set catno = ${catno}
+            where uno = ${uno}
+    </update>
 
 </mapper>

@@ -114,10 +114,10 @@ public class ProductsController {
 
 
     // 5 - 재선
-    @GetMapping("/Planned/list") // 기획전 list 출력
+    @GetMapping("/planned/page") // 기획전 list 출력
     public ModelAndView plannedList(ModelAndView mv) {
-        mv.setViewName("products/PlannedList.tiles");
-        mv.addObject("pls", pdsrv.readPlanned());
+        mv.setViewName("products/planned_page.tiles");
+        mv.addObject("BDs", pdsrv.readPlanned());
 
         return mv;
     }

@@ -11,10 +11,11 @@
     <link rel="stylesheet" href="/css/template/header.css">
     <link rel="stylesheet" href="/css/template/footer.css">
     <link rel="stylesheet" href="/css/register.css">
-
-
-    <link rel="stylesheet" href="/css/list.css">
     <link rel="stylesheet" href="/css/category.css">
+    <link rel="stylesheet" href="/css/list.css">
+
+    <link rel="stylesheet" href="/css/plan_know.css">
+
     <%-- 현우 --%>
     <link rel="stylesheet" href="/css/mypage.css">
     <%-- 재선 --%>

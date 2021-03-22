@@ -1,0 +1,43 @@
+.bd_page {
+    margin: 10px 0 70px 0;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 10px;
+
+    /*border: 1px solid red;*/
+}
+
+.bd_page li {
+    list-style: none;
+    width: 440px;
+    height: 330px;
+    cursor: pointer;
+    border: none;
+    margin: 0 10px 20px 10px;
+}
+
+.bd_page li:hover {
+    box-shadow: 2px 2px 5px #999;
+}
+/*1400 / 3*/
+/*10 440 10*/
+/*460 x 3 1380*/
+
+
+/*410 200*/
+.bd_page img {
+    width: 440px;
+    height: 220px;
+}
+
+.bd_title {
+    font-weight: bold;
+    font-size: 19px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.bd_text {
+    margin-left: 20px;
+    color: #a0a0a0;
+}

@@ -8,8 +8,6 @@
     </script>
 </c:if>
 
-
-
 <div class="page_header">
     <div class="page_nav">
         <span>홈</span>
@@ -130,10 +128,10 @@
         <p class="my_subTitle">나의 고양이</p>
         <div class="cat_body">
             <c:forEach var="cat"  items="${cats}">
-                <button class="cat_listBtn">
+                <button class="cat_listBtn" onclick="location.href='/mypage/pet_update?catno=${cat.catno}'">
                     <div class="cat_name">
                         ${cat.catname}
-                        <c:if test="${cat.catno eq uno.catno}"><span class="badge badge-primary cat_badge">대표</span></c:if>
+                        <c:if test="${cat.catno eq user.catno}"><span class="badge badge-primary cat_badge">대표</span></c:if>
                     </div>
                     <div class="cat_info">${cat.catkind}</div>
                     <div class="cat_info">${cat.catgender}</div>

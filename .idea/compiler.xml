@@ -6,10 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="CatPresident" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="TeamProject" target="8" />
+      <module name="CatPresident" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>

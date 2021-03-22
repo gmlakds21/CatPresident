@@ -34,27 +34,38 @@ public class MypageServiceImpl implements MypageService {
     // 고양이 이름 중복 체크
     @Override
     public String checkCat(CatVO cvo) {
-        return mydao.selectOneCat(cvo);
+        return mydao.selectCatNo(cvo);
     }
 
     // 고양이 정보 등록
     @Override
-    public int newCat(CatVO cvo, HttpSession sess) {
-        // 고양이 등록
+    public boolean newCat(CatVO cvo, HttpSession sess) {
         mydao.insertCat(cvo);
 
-        // 대표 고양이에 신규 고양이 등록
+        // 대표 고양이 번호 지정
         if (cvo.getPrima().equals("Y")) {
             cvo.setPrima("N");
+            String catno = mydao.selectCatNo(cvo);
             MembersVO mvo = (MembersVO) sess.getAttribute("user");
-            String catno = mydao.selectOneCat(cvo);
             mvo.setCatno(catno);
+            mydao.updateCatNo(mvo);
         }
 
-        return mydao.insertCat(cvo);
+        return true;
     }
 
+    // 고양이 정보 불러오기
+    @Override
+    public CatVO readOneCat(String catno) {
+        return mydao.selectOneCat(catno);
+    }
 
+    // 고양이 정보 수정
+    @Override
+    public int modifyCat(CatVO cvo) {
+        System.out.println(cvo.getCatname()+" "+cvo.getUno());
+        return mydao.updateCat(cvo);
+    }
 
 
 }

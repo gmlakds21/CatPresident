@@ -13,7 +13,7 @@
     <%-- 알람, 마이페이지, 장바구니 --%>
     <div class="hd_list2">
         <span class="dropdown hdDropDown">
-            <button type="button" class="dropdown" onclick="location.href='#'">
+            <button type="button" class="dropdown" onclick="location.href='/mypage/main'">
                 <i class="bi bi-bell"></i>
                 <span class="hd_list2_txt">알 림</span>
             </button>
@@ -119,7 +119,7 @@
                 <li class="nav-item"><a class="nav-link" href="/today's/list?cp=1">오늘의딜</a></li>
                 <li class="nav-item"><a class="nav-link" href="/best/list?cp=1">랭킹</a></li>
                 <li class="nav-item"><a class="nav-link" href="/recent/list?cp=1">신상품</a></li>
-                <li class="nav-item"><a class="nav-link" href="/Planned/list">기획전</a></li>
+                <li class="nav-item"><a class="nav-link" href="/planned/page">기획전</a></li>
                 <li class="nav-item"><a class="nav-link" href="/Knowhow/list">노하우</a></li>
                 <li class="nav-item"><a class="nav-link" href="/sticker/list?cp=1">스티커샵</a></li>
             </ul>
