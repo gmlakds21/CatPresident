@@ -98,20 +98,20 @@
                 <span>카테고리</span>
             </a>
             <div class="dropdown-menu ctDropMenu hd_catelist">
-                <a class="dropdown-item" href="/category/list?cate=0100&cp=1">사료</a>
-                <a class="dropdown-item" href="/category/list?cate=0200&cp=1">간식</a>
-                <a class="dropdown-item" href="/category/list?cate=0300&cp=1">건강관리</a>
-                <a class="dropdown-item" href="/category/list?cate=0400&cp=1">모래</a>
-                <a class="dropdown-item" href="/category/list?cate=0500&cp=1">화장실/위생</a>
-                <a class="dropdown-item" href="/category/list?cate=0600&cp=1">미용/목욕</a>
-                <a class="dropdown-item" href="/category/list?cate=0700&cp=1">급식기/급수기</a>
-                <a class="dropdown-item" href="/category/list?cate=0800&cp=1">스크래쳐/캣타워</a>
-                <a class="dropdown-item" href="/category/list?cate=0900&cp=1">하우스</a>
-                <a class="dropdown-item" href="/category/list?cate=1000&cp=1">이동장</a>
-                <a class="dropdown-item" href="/category/list?cate=1100&cp=1">의류/액세서리</a>
-                <a class="dropdown-item" href="/category/list?cate=1200&cp=1">목줄/가슴줄</a>
-                <a class="dropdown-item" href="/category/list?cate=1300&cp=1">장난감</a>
-                <a class="dropdown-item" href="/category/list?cate=1400&cp=1">생활/가전</a>
+                <a class="dropdown-item" href="/category/list?cate=1100&cp=1">사료</a>
+                <a class="dropdown-item" href="/category/list?cate=1200&cp=1">간식</a>
+                <a class="dropdown-item" href="/category/list?cate=1300&cp=1">건강관리</a>
+                <a class="dropdown-item" href="/category/list?cate=1400&cp=1">모래</a>
+                <a class="dropdown-item" href="/category/list?cate=1500&cp=1">화장실/위생</a>
+                <a class="dropdown-item" href="/category/list?cate=1600&cp=1">미용/목욕</a>
+                <a class="dropdown-item" href="/category/list?cate=1700&cp=1">급식기/급수기</a>
+                <a class="dropdown-item" href="/category/list?cate=1800&cp=1">스크래쳐/캣타워</a>
+                <a class="dropdown-item" href="/category/list?cate=1900&cp=1">하우스</a>
+                <a class="dropdown-item" href="/category/list?cate=2000&cp=1">이동장</a>
+                <a class="dropdown-item" href="/category/list?cate=2100&cp=1">의류/액세서리</a>
+                <a class="dropdown-item" href="/category/list?cate=2200&cp=1">목줄/가슴줄</a>
+                <a class="dropdown-item" href="/category/list?cate=2300&cp=1">장난감</a>
+                <a class="dropdown-item" href="/category/list?cate=2400&cp=1">생활/가전</a>
             </div>
         </div>
         <span class="hd_pdlist">
