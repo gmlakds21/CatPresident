@@ -29,13 +29,28 @@ public interface ProductsService {
     // 카테고리 명 읽어오기
     String readcatename(String target);
 
+    ///
+
+
+    // 기획전, 노하우 게시물 리스트 읽어오기
+    List<BoardVO> readBoardList(String bgroup);
+
+    // 기획전, 노하우 게시물 읽어오기
+    BoardVO readBoardOne(String bno);
+
+    // 기획전, 노하우 제품 리스트 읽어오기
+    List<ProductsVO> readBoardProducts(String bno);
+
+
+
+
+
+
 
 
     // 5 - 재선 (기획전 + 노하우)
 
-    List<BoardVO> readPlanned();
     List<BoardVO> readKnowHow();
-    BoardVO readOneEventView(String bno);
     List<BoardVO> readEvent(String bno);
     BoardVO readOneKnowView(String bno);
 

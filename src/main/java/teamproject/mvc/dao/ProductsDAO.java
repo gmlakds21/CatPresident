@@ -28,9 +28,18 @@ public interface ProductsDAO {
     // 카테고리 이름 읽어오기
     String selectCatename(String target);
 
-    // 5 - 재선
-    List<BoardVO> selectPlanned(); // 기획전 list 출력
-    BoardVO selectOneEvent(String bno); // 기획전 상세
+    // 기획전, 노하우 게시물 리스트 읽어오기
+    List<BoardVO> selectBoardList(String bgroup);
+
+    // 기획전, 노하우 게시물 읽어오기
+    BoardVO selectBoardOne(String bno);
+
+    // 기획전, 노하우 제품 리스트 읽어오기
+    String selectBoardProducts(String bno);
+
+
+
+    // 기획전 상세
     List<BoardVO> selectKnowHow(); // 노하우 list 출력
     BoardVO selectOneKnowHow(String bno);
 

@@ -39,7 +39,7 @@
     background: none;
     border: none;
 }
-.hd_list2_txt {
+.hd_list2Text {
     width: 50px;
     height: 22px;
     font-size: 12px;
@@ -190,16 +190,17 @@
     position: relative;
     top: -2px;
 }
-
 .page_title {
     width: 1400px;
     margin: 20px auto;
 }
 .page_title span {
     font-weight: bold;
-    /*margin: 0 10px;*/
     font-size: 23px;
 }
+
+
+
 
 
 /* 삭제 될 부분 */

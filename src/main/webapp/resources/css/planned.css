@@ -1,21 +1,4 @@
 /* 기획전 관련 */
-
-
-
-.PL_padd {
-    padding-left: 15px
-}
-
-.PL_marginR {
-    padding-right: 35px;
-}
-
-.PL_conten {
-    font-weight: normal;
-    font-size: 20px;
-    color: gray
-}
-
 .PL_mFont {
     font-weight: bold;
     margin-left: 160px;
@@ -40,19 +23,7 @@
     margin-left: 110px;
 }
 
-.btnAttr {
-    margin: 30px;
-    width: 120px;
-    height: 50px;
-    border: 1px solid #a200c7;
-    background: #a200c7;
-    color: white;
-    font-weight: bold;
-}
 
-.btnAttr:hover {
-    color: white;
-}
 
 /* 노하우 관련 */
 .KH_card {

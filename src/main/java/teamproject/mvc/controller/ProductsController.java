@@ -95,10 +95,6 @@ public class ProductsController {
         return mv;
     }
 
-
-
-
-
     // 제품 뷰 페이지
     @GetMapping("/Products/View")
     public ModelAndView ProductsView(ModelAndView mv, String pno) {
@@ -108,48 +104,51 @@ public class ProductsController {
         // mv.addObject("rp",pdsrv.readReply(pno));
         return mv;
     }
-    
-//////////////////////////////////////////////////////////////////////////////////////////////////////
 
+    ///
 
-
-    // 5 - 재선
-    @GetMapping("/planned/page") // 기획전 list 출력
-    public ModelAndView plannedList(ModelAndView mv) {
+    // 기획전 페이지
+    @GetMapping("/planned/page")
+    public ModelAndView Planned(ModelAndView mv) {
         mv.setViewName("products/planned_page.tiles");
-        mv.addObject("BDs", pdsrv.readPlanned());
-
+        mv.addObject("BDs", pdsrv.readBoardList("1"));
         return mv;
     }
 
-    @GetMapping("/Planned/view") // 기획전 상세
+    // 기획전 리스트
+    @GetMapping("/planned/list")
     public ModelAndView plannedView(ModelAndView mv,String bno) {
-        mv.setViewName("products/PlannedView.tiles");
-        mv.addObject("plview", pdsrv.readOneEventView(bno));
-        mv.addObject("cnt",pdsrv.countEvent(bno));
-        mv.addObject("prods",pdsrv.readEvent(bno));
-
+        mv.setViewName("products/planned_list.tiles");
+        mv.addObject("BD", pdsrv.readBoardOne(bno));
+        mv.addObject("PDs",pdsrv.readBoardProducts(bno));
+        mv.addObject("PDcnt",pdsrv.readBoardProducts(bno).size());
         return mv;
     }
 
-    @GetMapping("/Knowhow/list") // 노하우 list 출력
+    // 노하우 페이지
+    @GetMapping("/knowhow/page")
     public ModelAndView knowHowList(ModelAndView mv)  {
-
-        mv.setViewName("products/KnowhowList.tiles");
-        mv.addObject("knows", pdsrv.readKnowHow());
-
+        mv.setViewName("products/knowhow_page.tiles");
+        mv.addObject("BDs", pdsrv.readBoardList("2"));
         return mv;
     }
 
-    @GetMapping("/Knowhow/view") // 기획전 상세
+    // 노하우 리스트
+    @GetMapping("/knowhow/list")
     public ModelAndView knowhowView(ModelAndView mv,String bno) {
-        mv.setViewName("products/KnowhowView.tiles");
-        mv.addObject("knview", pdsrv.readOneEventView(bno));
-        mv.addObject("cnt",pdsrv.countEvent(bno));
-        mv.addObject("knprods",pdsrv.readEvent(bno));
-
+        mv.setViewName("products/knowhow_list.tiles");
+        mv.addObject("BD", pdsrv.readBoardOne(bno));
+        mv.addObject("PDs",pdsrv.readBoardProducts(bno));
+        mv.addObject("PDcnt",pdsrv.readBoardProducts(bno).size());
         return mv;
     }
+
+
+
+
+
+
+
 
     @GetMapping("/Order/view")
     public ModelAndView orderView(ModelAndView mv) {

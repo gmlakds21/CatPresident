@@ -7,10 +7,7 @@ import teamproject.mvc.vo.BoardVO;
 import teamproject.mvc.vo.CategoryVO;
 import teamproject.mvc.vo.ProductsVO;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 
 @Service("pdsrv")
@@ -62,23 +59,35 @@ public class ProductsServiceImpl implements ProductsService {
         return pddao.selectCatename(target);
     }
 
-
-// 5 - 재선
-
+    // 기획전, 노하우 게시물 리스트 읽어오기
     @Override
-    public List<BoardVO> readPlanned() {
-        return pddao.selectPlanned();
+    public List<BoardVO> readBoardList(String bgroup) {
+        return pddao.selectBoardList(bgroup);
     }
+
+    // 기획전, 노하우 게시물 읽어오기
+    @Override
+    public BoardVO readBoardOne(String bno) {
+        return pddao.selectBoardOne(bno);
+    }
+
+    // 기획전, 노하우 제품 리스트 읽어오기
+    @Override
+    public List<ProductsVO> readBoardProducts(String bno) {
+        String[] pnos = (pddao.selectBoardProducts(bno)).split("[,]");
+        List<ProductsVO> pvos = new ArrayList<>();
+        for (String pno : pnos) {
+            pvos.add(pddao.selectProductsOne(pno));
+        }
+        return pvos;
+    }
+
 
     @Override
     public List<BoardVO> readKnowHow() {
         return pddao.selectKnowHow();
     }
 
-    @Override
-    public BoardVO readOneEventView(String bno) {
-        return pddao.selectOneEvent(bno);
-    }
 
     @Override
     public BoardVO readOneKnowView(String bno) {

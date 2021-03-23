@@ -27,13 +27,13 @@
 
 <div class="ft_lists1">
     <div class="ft_list1">
-        <div class="ft_list1txt">회사소개</div>
+        <div class="ft_list1Text">회사소개</div>
         <div class="ft_list1Divider"></div>
-        <div class="ft_list1txt">입점문의</div>
+        <div class="ft_list1Text">입점문의</div>
         <div class="ft_list1Divider"></div>
-        <div class="ft_list1txt">이용약관</div>
+        <div class="ft_list1Text">이용약관</div>
         <div class="ft_list1Divider"></div>
-        <div class="ft_list1txt">개인정보처리방침</div>
+        <div class="ft_list1Text">개인정보처리방침</div>
     </div>
 
     <div class="ft_list2">

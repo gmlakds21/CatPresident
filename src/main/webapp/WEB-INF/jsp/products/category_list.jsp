@@ -76,11 +76,11 @@
 
         <%-- 상세 정렬 --%>
         <div class="list_countNav">
-            <span class="list_count_txt1">${PDcnt}</span>
-            <span class="list_count_txt2">개의 상품</span>
+            <span class="list_countText1">${PDcnt}</span>
+            <span class="list_countText2">개의 상품</span>
             <button type="button" class="dropdown" data-toggle="dropdown">
-                <span class="list_count_txt2">정렬</span>
-                <span class="list_count_txt3">대통령 랭킹순</span>
+                <span class="list_countText2">정렬</span>
+                <span class="list_countText3">대통령 랭킹순</span>
                 <img src="/img/CateThumb/arrow.png">
             </button>
             <div class="dropdown-menu">
@@ -95,28 +95,26 @@
         <div class="pd_list">
             <ul>
                 <c:forEach var="PD" items="${PDs}">
-                    <li>
-                        <a href="/Products/View?pno=${PD.pno}">
-                            <div class="pd">
-                                <img src="/img/List_img.jpg" onclick="">
-                                <p class="pd_title">${PD.pname}</p>
-                                <c:if test="${PD.price ne PD.totprice}">
-                                    <p  class="pd_price">
-                                        <span class="pd_noprice">${PD.price}원 </span>
-                                        <span class="pd_price">${PD.totprice}원 </span>
-                                    </p>
-                                </c:if>
-                                <c:if test="${PD.price eq PD.totprice}">
-                                    <p class="pd_price">${PD.totprice}원 </p>
-                                </c:if>
-                                <div>
-                                    <c:forEach var="star" begin="1" end="5" step="1">
-                                        <span class="bi bi-star-fill pd_star"></span>
-                                    </c:forEach>
-                                    <span class="pd_reply">(1000)</span>
-                                </div>
+                    <li onclick="location.href='/Products/View?pno=${PD.pno}'">
+                        <div class="pd">
+                            <img src="/img/List_img.jpg" onclick="">
+                            <p class="pd_title">${PD.pname}</p>
+                            <c:if test="${PD.price ne PD.totprice}">
+                                <p  class="pd_price">
+                                    <span class="pd_noprice">${PD.price}원 </span>
+                                    <span class="pd_price">${PD.totprice}원 </span>
+                                </p>
+                            </c:if>
+                            <c:if test="${PD.price eq PD.totprice}">
+                                <p class="pd_price">${PD.totprice}원 </p>
+                            </c:if>
+                            <div>
+                                <c:forEach var="star" begin="1" end="5" step="1">
+                                    <span class="bi bi-star-fill pd_star"></span>
+                                </c:forEach>
+                                <span class="pd_reply">(1000)</span>
                             </div>
-                        </a>
+                        </div>
                     </li>
                 </c:forEach>
             </ul>

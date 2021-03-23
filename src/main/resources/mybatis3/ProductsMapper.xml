@@ -50,19 +50,40 @@
     </select>
 
 
-    <!-- 5 - 재선 -->
-    <select id="plannedList" statementType="PREPARED"
+
+
+
+    <!-- 기획전, 노하우 게시물 리스트 읽어오기 -->
+    <select id="readBoardList" statementType="PREPARED"
             resultType="teamproject.mvc.vo.BoardVO">
-        select bno, title, contents,imgthum from Board where bgroup = 1 order by bno desc;
+        select bno, title, contents, imgthum, tag from Board
+            where bgroup = ${bgroup};
     </select>
+
+    <!-- 기획전, 노하우 게시물 읽어오기 -->
+    <select id="readBoardOne" statementType="PREPARED"
+            resultType="teamproject.mvc.vo.BoardVO"
+            parameterType="String">
+        select * from Board
+            where bno = ${bno};
+    </select>
+
+    <!-- 기획전, 노하우 게시물 제품목록 불러오기-->
+    <select id="readBoardProducts" statementType="PREPARED"
+            resultType="String"
+            parameterType="String">
+        select Products from Board
+            where bno = ${bno}
+    </select>
+
+
+
+
+
+
 
     <select id="knowhowList" statementType="PREPARED" resultType="teamproject.mvc.vo.BoardVO">
         select bno, title, contents,imgthum,tag from Board where bgroup = 2 order by bno;
-    </select>
-
-    <select id="EventView" statementType="PREPARED" resultType="teamproject.mvc.vo.BoardVO"
-            parameterType="String">
-        select * from Board where bno = ${bno};
     </select>
 
     <select id="countEvent" statementType="PREPARED" resultType="int" parameterType="String">
@@ -74,6 +95,8 @@
         select pno, brand, pname, totprice,filename from Products where event = ${bno} order by pname;
 
     </select>
+
+
 
 
     <!-- Step 3 검색하기

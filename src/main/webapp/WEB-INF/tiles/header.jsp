@@ -15,7 +15,7 @@
         <span class="dropdown hdDropDown">
             <button type="button" class="dropdown" onclick="location.href='/mypage/main'">
                 <i class="bi bi-bell"></i>
-                <span class="hd_list2_txt">알 림</span>
+                <span class="hd_list2Text">알 림</span>
             </button>
             <div class="dropdown-menu hdDropMenu">
                 <c:if test="${empty user}">
@@ -30,7 +30,7 @@
         <span class="dropdown hdDropDown">
             <button type="button" class="dropdown" onclick="location.href='/mypage/main'">
                 <i class="bi bi-person"></i>
-                <span class="hd_list2_txt">M Y</span>
+                <span class="hd_list2Text">M Y</span>
             </button>
             <div class="dropdown-menu hdDropMenu">
                 <c:if test="${empty user}">
@@ -67,7 +67,7 @@
         </span>
         <button type="button" href="">
             <i class="bi bi-cart3"></i>
-            <span class="hd_list2_txt">장바구니</span>
+            <span class="hd_list2Text">장바구니</span>
         </button>
     </div>
 
@@ -120,7 +120,7 @@
                 <li class="nav-item"><a class="nav-link" href="/best/list?cp=1">랭킹</a></li>
                 <li class="nav-item"><a class="nav-link" href="/recent/list?cp=1">신상품</a></li>
                 <li class="nav-item"><a class="nav-link" href="/planned/page">기획전</a></li>
-                <li class="nav-item"><a class="nav-link" href="/Knowhow/list">노하우</a></li>
+                <li class="nav-item"><a class="nav-link" href="/knowhow/page">노하우</a></li>
                 <li class="nav-item"><a class="nav-link" href="/sticker/list?cp=1">스티커샵</a></li>
             </ul>
         </span>

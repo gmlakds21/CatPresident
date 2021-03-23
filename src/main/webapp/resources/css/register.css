@@ -146,6 +146,10 @@
     margin : -10px;
     outline: none;
 }
+.zip_closeBtn i {
+    position: relative;
+    top: -5px;
+}
 .zip_findText {
     font-size: 14px;
     color: #007BFF;

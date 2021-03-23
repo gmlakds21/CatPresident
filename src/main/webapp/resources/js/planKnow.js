@@ -1,34 +1,24 @@
-// plannedlist
-function showPlanned(bno) {
-    location.href = "/Planned/view?bno=" + bno
-}
-
-// plannedview에서 제품 클릭시 해당 상품으로 이동
-function moveProduct (pno) {
-    location.href = "/Products/View?pno=" + pno
-}
+// 공유하기 모달창 닫기
+$('#share_modalX').on('click',function (){
+    $('#share_modal').modal('hide');})
 
 // url 버튼 클릭시 url을 클립보드에 복사 / 복사완료 모달창띄우기
-$('#clip').on('click',function () {
+$('#url_modal').on('click',function () {
     var inputDump = document.createElement('input'),
         hrefText = window.location.href;
     document.body.appendChild(inputDump);
     inputDump.value = hrefText;
     inputDump.select();
     document.execCommand('copy');
-    document.body.removeChild(inputDump);
-})
-
-// 공유하기 모달창 닫기
-$('#modalx').on('click',function (){
-    $('#shareModal').modal('hide');
-})
+    document.body.removeChild(inputDump);})
 
 // 복사완료 모달창 닫기
-$('#close').on('click',function (){
-    $('#clipok').modal('hide');
-    $('#shareModal').modal('hide');
-})
+$('#url_modalX').on('click',function (){
+    $('#url_modal').modal('hide');
+    $('#share_modal').modal('hide');})
+
+
+
 
 // facebook사이트로 이동
 function showFacebook() {

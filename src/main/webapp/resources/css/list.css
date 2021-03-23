@@ -62,15 +62,15 @@
     width : 50px;
     margin: 0 -10px;
 }
-.list_count_txt1 {
+.list_countText1 {
     color: black;
     position: relative;
     top: -1px;
 }
-.list_count_txt2 {
+.list_countText2 {
     color: #a0a0a0;
 }
-.list_count_txt3 {
+.list_countText3 {
     color: #A200C7;
     font-weight: bold;
     margin-right: 5px;
@@ -138,6 +138,9 @@
 .pd_badge {
     margin-top: 8px;
     height : 18px;
+}
+.pd:hover {
+    cursor: pointer;
 }
 
 

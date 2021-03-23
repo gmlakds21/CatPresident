@@ -49,16 +49,39 @@ public class ProductsDAOImpl implements ProductsDAO {
         return sqlSession.selectOne("Products.cateName", target);
     }
 
-    // 5 - 재선
-    @Override // 기획전 list 출력
-    public List<BoardVO> selectPlanned() {
-        return sqlSession.selectList("Products.plannedList");
+    ///
+
+    // 기획전, 노하우 게시물 리스트 읽어오기
+    @Override
+    public List<BoardVO> selectBoardList(String bgroup) {
+        return sqlSession.selectList("Products.readBoardList", bgroup);
     }
 
-    @Override // 기획전, 노하우 상세 (bno로만 조회하기 때문에 한개의 메서드로만 구현)
-    public BoardVO selectOneEvent(String bno) {
-        return sqlSession.selectOne("Products.EventView",bno);
+    // 기획전, 노하우 게시물 읽어오기
+    @Override
+    public BoardVO selectBoardOne(String bno) {
+        return sqlSession.selectOne("Products.readBoardOne", bno);
     }
+
+    // 기획전, 노하우 제품 리스트 읽어오기
+    @Override
+    public String selectBoardProducts(String bno) {
+        return sqlSession.selectOne("Products.readBoardProducts", bno);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+    // 5 - 재선
+
 
     @Override
     public List<BoardVO> selectKnowHow() {

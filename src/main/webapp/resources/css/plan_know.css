@@ -1,12 +1,10 @@
+/* planned page*/
 .bd_page {
     margin: 10px 0 70px 0;
     display: flex;
     flex-wrap: wrap;
     padding: 0 10px;
-
-    /*border: 1px solid red;*/
 }
-
 .bd_page li {
     list-style: none;
     width: 440px;
@@ -15,29 +13,102 @@
     border: none;
     margin: 0 10px 20px 10px;
 }
-
 .bd_page li:hover {
     box-shadow: 2px 2px 5px #999;
+    cursor: pointer;
 }
-/*1400 / 3*/
-/*10 440 10*/
-/*460 x 3 1380*/
-
-
-/*410 200*/
 .bd_page img {
     width: 440px;
     height: 220px;
 }
-
-.bd_title {
-    font-weight: bold;
-    font-size: 19px;
+.bd_text {
     margin-top: 20px;
     margin-left: 20px;
 }
-
-.bd_text {
-    margin-left: 20px;
+.bd_title {
+    font-weight: bold;
+    font-size: 20px;
+}
+.bd_contents {
     color: #a0a0a0;
+}
+.bd_tag {
+    overflow: hidden;
+    color: rgba(60, 60, 67, 0.6);
+    margin: 12px 6px 0 0;
+    display: inline-block;
+    padding: 2px 7px;
+    font-weight: 400;
+    border-radius: 30px;
+    letter-spacing: -1px;
+    background-color: rgba(116, 116, 128, 0.08);
+}
+
+
+/* planned list */
+.bd_header {
+    float:left;
+}
+.bd_sns {
+    float: right;
+}
+.bd_sns button {
+    width: 40px;
+    height: 40px;
+    margin-top: 5px;
+    border: 1px solid #a0a0a0;
+    outline: none;
+    background: none;
+}
+.bd_sns i {
+    font-size: 25px;
+    position: relative;
+    top: -5px;
+    left: -2px;
+}
+.list_BDimg {
+    margin: 20px auto 0 auto;
+    /*margin-top: 20px;*/
+}
+
+
+/* 공유 모달 */
+.share_closeBtn {
+    font-size: 30px;
+    margin : -10px;
+    outline: none;
+}
+.share_snsBtns {
+    text-align: center;
+}
+.share_snsBtn {
+    /*margin-top: -50px;*/
+    border: none;
+    outline: none;
+    background: none;
+}
+.share_snsBtn img {
+    height: 50px;
+    width: 50px;
+}
+.share_snsText {
+    color: #a0a0a0;
+}
+
+/* url 모달 */
+.url_modal {
+    margin-top: 200px;
+    margin-left: -10px;
+}
+.url_text {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 8px;
+}
+.url_closeBtn {
+    width: 120px;
+    height: 50px;
+    border: 1px solid #a200c7;
+    font-weight: bold;
+    text-align: center;
 }
