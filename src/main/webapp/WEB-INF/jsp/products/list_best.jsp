@@ -134,12 +134,18 @@ param 의 where, order 을 navlink 에 담아서 하단 네비를 눌렀을 때 
                         <p class="pd_title">${PD.pname}</p>
                         <c:if test="${PD.price ne PD.totprice}">
                             <p  class="pd_price">
-                                <span class="pd_noprice">${PD.price}원 </span>
-                                <span class="pd_price">${PD.totprice}원 </span>
+                                <span class="pd_noprice">
+                                    <fmt:formatNumber value="${PD.price}" pattern="##,###"/>원
+                                </span>
+                                <span class="pd_price">
+                                    <fmt:formatNumber value="${PD.totprice}" pattern="##,###"/>원
+                                </span>
                             </p>
                         </c:if>
                         <c:if test="${PD.price eq PD.totprice}">
-                            <p class="pd_price">${PD.totprice}원 </p>
+                            <p class="pd_price">
+                                <fmt:formatNumber value="${PD.totprice}" pattern="##,###"/>원
+                            </p>
                         </c:if>
                         <div>
                             <c:forEach var="star" begin="1" end="5" step="1">

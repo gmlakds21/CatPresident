@@ -1,3 +1,4 @@
+/* 카테고리 리스트 */
 $(document).ready(function(){
     $(".ct_lead").click(function(){
         let submenu = $(this).next("div");
@@ -15,3 +16,8 @@ $(document).ready(function(){
         location.href = '/category/list' + param;
     });
 });
+
+
+/* 설명 모달 */
+$('#info_modalX').on('click',function (){
+    $('#info_modal').modal('hide');})

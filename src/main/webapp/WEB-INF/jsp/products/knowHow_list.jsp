@@ -1,13 +1,14 @@
 <%@ page pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
 <div>
     <div class="page_header">
         <div class="page_nav">
             <span> 홈 </span>
             <span class="page_nav_bi bi bi-chevron-right"> </span>
-            <span> 기획전 </span>
+            <span> 노하우 </span>
             <span class="page_nav_bi bi bi-chevron-right"> </span>
             <span> ${BD.title} </span>
         </div>
@@ -16,6 +17,15 @@
         <div class="bd_header">
             <div class="bd_title">${BD.title}</div>
             <div class="bd_contents">${BD.contents}</div>
+            <div class="bd_tags">
+                <c:if test="${BD.tag ne ''}">
+                    <c:forEach begin="0" end="4" var="i">
+                        <c:if test="${fn:split(BD.tag,'[,]')[i] ne null}">
+                            <span>${fn:split(BD.tag,'[,]')[i]}</span>
+                        </c:if>
+                    </c:forEach>
+                </c:if>
+            </div>
         </div>
         <div class="bd_sns" data-toggle="modal" data-target="#share_modal">
             <button type="button" class="rounded-circle">
@@ -47,31 +57,35 @@
     </div>
 
     <div class="pd_list">
-        <ul>
-            <c:forEach var="PD" items="${PDs}">
-                <li onclick="location.href='/Products/View?pno=${PD.pno}'">
-                    <div class="pd">
-                        <img src="/img/List_img.jpg">
-                        <p class="pd_title">${PD.pname}</p>
-                        <c:if test="${PD.price ne PD.totprice}">
-                            <p  class="pd_price">
-                                <span class="pd_noprice">${PD.price}원 </span>
-                                <span class="pd_price">${PD.totprice}원 </span>
-                            </p>
-                        </c:if>
-                        <c:if test="${PD.price eq PD.totprice}">
-                        <p class="pd_price">${PD.totprice}원 </p>
-                        </c:if>
-                        <div>
-                            <c:forEach var="star" begin="1" end="5" step="1">
-                                <span class="bi bi-star-fill pd_star"></span>
-                            </c:forEach>
-                            <span class="pd_reply">(1000)</span>
+        <form name="bd_form">
+            <ul>
+                <c:forEach var="PD" items="${PDs}">
+                    <li>
+                        <input type="checkbox" class="check-box pd_select" name="pd_select"
+                               onclick="javascript:computePrice(this.form)" value="${PD.totprice}">
+                        <div class="pd" onclick="location.href='/Products/View?pno=${PD.pno}'">
+                            <img src="/img/List_img.jpg">
+                            <p class="pd_title">${PD.pname}</p>
+                            <c:if test="${PD.price ne PD.totprice}">
+                                <p  class="pd_price">
+                                    <span class="pd_noprice">${PD.price}원 </span>
+                                    <span class="pd_price">${PD.totprice}원 </span>
+                                </p>
+                            </c:if>
+                            <c:if test="${PD.price eq PD.totprice}">
+                                <p class="pd_price">${PD.totprice}원 </p>
+                            </c:if>
+                            <div>
+                                <c:forEach var="star" begin="1" end="5" step="1">
+                                    <span class="bi bi-star-fill pd_star"></span>
+                                </c:forEach>
+                                <span class="pd_reply">(1000)</span>
+                            </div>
                         </div>
-                    </div>
-                </li>
-            </c:forEach>
-        </ul>
+                    </li>
+                </c:forEach>
+            </ul>
+        </form>
     </div>
 </div>
 

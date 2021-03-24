@@ -17,39 +17,41 @@ $('#url_modalX').on('click',function (){
     $('#url_modal').modal('hide');
     $('#share_modal').modal('hide');})
 
-
-
-
-// facebook사이트로 이동
-function showFacebook() {
-    window.open("https://www.facebook.com/")
-}
-
-// knowhowlist
-function showKnowHow(bno) {
-    location.href = "/Knowhow/view?bno=" + bno
-}
-
-// 상품 체크시 가격 + 상품갯수 + , 해제시 가격 - 상품갯수 - 가 되는 메서드
-function clickPrice(pricefrm) {
-    var sumPrice = 0
-    var count = pricefrm.check.length
+// 상품 임시 장바구니
+function computePrice(bd_form) {
+    var totalPrice = 0
+    var PDCount = bd_form.pd_select.length
     var realCount = 0
     var a = ''
 
-    for(var i = 0; i < count; i++) {
-        if(pricefrm.check[i].checked == true) {
-            sumPrice += Number(pricefrm.check[i].value);
+    for(var i = 0; i < PDCount; i++) {
+        if(bd_form.pd_select[i].checked == true) {
+            totalPrice += Number(bd_form.pd_select[i].value);
             realCount += 1
         }
     }
+    totalPrice = totalPrice.toLocaleString() // 천단위 (,) 찍기
+    document.getElementById('cart_price').innerText = totalPrice + '원'
+    document.getElementById('cart_count').innerText = realCount + '개의 제품'
+    document.getElementById('cart_button').innerText = '장바구니에 담기'}
 
-    sumPrice = sumPrice.toLocaleString() // 천단위 (,) 찍기
 
-    document.getElementById('sumPrice').innerText = sumPrice + '원'
-    document.getElementById('listCnt').innerText = realCount + '개의 구매 가격'
-    document.getElementById('cartProd').innerText = realCount + '개 장바구니 담기'
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // OrderView
 // 배송요청사항 에서 직접입력 클릭시 textarea 태그 보이게 함

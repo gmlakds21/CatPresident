@@ -57,7 +57,8 @@
     <select id="readBoardList" statementType="PREPARED"
             resultType="teamproject.mvc.vo.BoardVO">
         select bno, title, contents, imgthum, tag from Board
-            where bgroup = ${bgroup};
+            where bgroup = ${bgroup}
+                order by bno desc;
     </select>
 
     <!-- 기획전, 노하우 게시물 읽어오기 -->

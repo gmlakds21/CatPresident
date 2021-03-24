@@ -1,4 +1,4 @@
-/* planned page*/
+/* board page*/
 .bd_page {
     margin: 10px 0 70px 0;
     display: flex;
@@ -8,10 +8,9 @@
 .bd_page li {
     list-style: none;
     width: 440px;
-    height: 330px;
     cursor: pointer;
     border: none;
-    margin: 0 10px 20px 10px;
+    margin: 0 10px 30px 10px;
 }
 .bd_page li:hover {
     box-shadow: 2px 2px 5px #999;
@@ -22,8 +21,8 @@
     height: 220px;
 }
 .bd_text {
-    margin-top: 20px;
-    margin-left: 20px;
+    margin: 20px 0 0 20px;
+    padding-bottom:10px;
 }
 .bd_title {
     font-weight: bold;
@@ -31,21 +30,21 @@
 }
 .bd_contents {
     color: #a0a0a0;
+    margin-bottom: 10px;
 }
-.bd_tag {
-    overflow: hidden;
-    color: rgba(60, 60, 67, 0.6);
-    margin: 12px 6px 0 0;
-    display: inline-block;
-    padding: 2px 7px;
-    font-weight: 400;
+.bd_tags {
+    margin: 0 6px 10px 0;
+}
+.bd_tags span {
+    color: #a0a0a0;
     border-radius: 30px;
-    letter-spacing: -1px;
-    background-color: rgba(116, 116, 128, 0.08);
+    border: 1px solid #a0a0a0;
+    padding: 2px 10px;
+    font-size: 13px;
 }
 
 
-/* planned list */
+/* board list */
 .bd_header {
     float:left;
 }
@@ -68,7 +67,11 @@
 }
 .list_BDimg {
     margin: 20px auto 0 auto;
-    /*margin-top: 20px;*/
+}
+.pd_select {
+    width:18px;
+    height: 18px;
+
 }
 
 
@@ -82,7 +85,6 @@
     text-align: center;
 }
 .share_snsBtn {
-    /*margin-top: -50px;*/
     border: none;
     outline: none;
     background: none;
@@ -94,6 +96,7 @@
 .share_snsText {
     color: #a0a0a0;
 }
+
 
 /* url 모달 */
 .url_modal {
@@ -111,4 +114,52 @@
     border: 1px solid #a200c7;
     font-weight: bold;
     text-align: center;
+}
+
+
+/* 임시 장바구니 */
+.cart_body {
+    width: 1400px;
+    height: 200px;
+    margin: 0 auto;
+    position: fixed;
+    z-index: 1100px;
+    bottom: 70px;
+    right: 0;
+    left: 0;
+}
+.cart_text {
+    float: right;
+    height: 200px;
+    width: 500px;
+    padding: 20px 0;
+    border: 3px solid rgba(240,240,240,0.7);
+    background: rgba(255,255,255,0.3);
+    text-align: center;
+}
+.cart_count {
+    font-size: 30px;
+    font-weight: bold;
+    color: #909090;
+}
+.cart_price {
+    font-size: 25px;
+    font-weight: bold;
+    color: #909090;
+    margin:5px;
+}
+.cart_divider {
+    width: 500px;
+    height: 2px;
+    background: #a208c7;
+}
+.cart_button {
+    padding: 10px 15px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: none;
+    background: #a208c7;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
 }

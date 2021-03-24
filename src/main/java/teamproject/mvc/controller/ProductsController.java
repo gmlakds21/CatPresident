@@ -109,7 +109,7 @@ public class ProductsController {
 
     // 기획전 페이지
     @GetMapping("/planned/page")
-    public ModelAndView Planned(ModelAndView mv) {
+    public ModelAndView plannedPage(ModelAndView mv) {
         mv.setViewName("products/planned_page.tiles");
         mv.addObject("BDs", pdsrv.readBoardList("1"));
         return mv;
@@ -117,7 +117,7 @@ public class ProductsController {
 
     // 기획전 리스트
     @GetMapping("/planned/list")
-    public ModelAndView plannedView(ModelAndView mv,String bno) {
+    public ModelAndView plannedList(ModelAndView mv,String bno) {
         mv.setViewName("products/planned_list.tiles");
         mv.addObject("BD", pdsrv.readBoardOne(bno));
         mv.addObject("PDs",pdsrv.readBoardProducts(bno));
@@ -126,17 +126,17 @@ public class ProductsController {
     }
 
     // 노하우 페이지
-    @GetMapping("/knowhow/page")
-    public ModelAndView knowHowList(ModelAndView mv)  {
-        mv.setViewName("products/knowhow_page.tiles");
+    @GetMapping("/knowHow/page")
+    public ModelAndView knowHowPage(ModelAndView mv)  {
+        mv.setViewName("products/knowHow_page.tiles");
         mv.addObject("BDs", pdsrv.readBoardList("2"));
         return mv;
     }
 
     // 노하우 리스트
-    @GetMapping("/knowhow/list")
-    public ModelAndView knowhowView(ModelAndView mv,String bno) {
-        mv.setViewName("products/knowhow_list.tiles");
+    @GetMapping("/knowHow/list")
+    public ModelAndView knowHowList(ModelAndView mv,String bno) {
+        mv.setViewName("products/knowHow_list.tiles");
         mv.addObject("BD", pdsrv.readBoardOne(bno));
         mv.addObject("PDs",pdsrv.readBoardProducts(bno));
         mv.addObject("PDcnt",pdsrv.readBoardProducts(bno).size());

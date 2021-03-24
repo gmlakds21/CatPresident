@@ -13,8 +13,7 @@
     <link rel="stylesheet" href="/css/register.css">
     <link rel="stylesheet" href="/css/category.css">
     <link rel="stylesheet" href="/css/list.css">
-
-    <link rel="stylesheet" href="/css/plan_know.css">
+    <link rel="stylesheet" href="/css/board.css">
 
     <%-- 현우 --%>
     <link rel="stylesheet" href="/css/mypage.css">
