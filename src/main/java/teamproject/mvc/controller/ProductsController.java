@@ -22,25 +22,32 @@ public class ProductsController {
     @GetMapping("/category/page")
     public ModelAndView Category(ModelAndView mv) {
         mv.setViewName("products/category_page.tiles");
-        mv.addObject("cates", pdsrv.readCategory());
+        mv.addObject("cates", pdsrv.readBigCategory());
         return mv;
     }
 
     // 카테고리 리스트
     @GetMapping("/category/list")
-    public ModelAndView CategoryList(ModelAndView mv, String cp, String cate) {
+    public ModelAndView CategoryList(ModelAndView mv, String cate, String order, String cp) {
         mv.setViewName("products/category_list.tiles");
-        // 왼쪽에 카테고리 목록
-        mv.addObject("cates",pdsrv.readCateAll());
-
-        // 타이틀 카테고리 명
-        mv.addObject("ct_title", pdsrv.readcatename(cate));
-
         // 카테고리 목록
-        String target = "where ctno = "+cate+"";
-        if ((Integer.parseInt(cate) % 100) == 0) {
-            target = "where ctno like \'"+cate.substring(0,2)+"%\'";
-        }
+        mv.addObject("cates",pdsrv.readCategoryList());
+
+        // 카테고리 타이틀
+        mv.addObject("ct_title", pdsrv.readCategoryCatename(cate));
+
+        System.out.println(cate);
+        System.out.println(cate.substring(2));
+        System.out.println(order);
+
+        // 조건 정리
+        String need1 = pdsrv.categoryNeed(cate);
+        String need2 = pdsrv.orderNeed(order);
+        String target = need1 + need2;
+
+        System.out.println(need1);
+        System.out.println(need2);
+
         mv.addObject("PDs", pdsrv.readProductsList(cp, target));
         mv.addObject("PDcnt", pdsrv. countProducts(target));
 
@@ -51,9 +58,9 @@ public class ProductsController {
     @GetMapping("/today's/list")
     public ModelAndView TodayDealsList(ModelAndView mv, String cp) {
         mv.setViewName("products/list_today.tiles");
-        mv.addObject("cates", pdsrv.readCategory());
-        mv.addObject("PDs", pdsrv.readProductsList(cp, "order by disco desc"));
-        mv.addObject("PDcnt", pdsrv.countProducts(""));
+        mv.addObject("cates", pdsrv.readBigCategory());
+        mv.addObject("PDs", pdsrv.readBoardProducts("2"));
+        mv.addObject("PDcnt", pdsrv.readBoardProducts("2").size());
         return mv;
     }
 
@@ -61,7 +68,7 @@ public class ProductsController {
     @GetMapping("/recent/list")
     public ModelAndView RecentProductList(ModelAndView mv, String cp) {
         mv.setViewName("products/list_recent.tiles");
-        mv.addObject("cates", pdsrv.readCategory());
+        mv.addObject("cates", pdsrv.readBigCategory());
         mv.addObject("PDs", pdsrv.readProductsList(cp, "order by pno desc"));
         mv.addObject("PDcnt", pdsrv.countProducts(""));
         return mv;
@@ -79,7 +86,7 @@ public class ProductsController {
          * } else {
          * target = target + "order by sales desc"
          */
-        mv.addObject("cates", pdsrv.readCategory());
+        mv.addObject("cates", pdsrv.readBigCategory());
         mv.addObject("PDs", pdsrv.readProductsList(cp, "order by sales desc"));
         mv.addObject("PDcnt", pdsrv.countProducts(""));
         return mv;
@@ -89,7 +96,7 @@ public class ProductsController {
     @GetMapping("/sticker/list")
     public ModelAndView StickerShopList(ModelAndView mv, String cp) {
         mv.setViewName("products/list_sticker.tiles");
-        mv.addObject("cates", pdsrv.readCategory());
+        mv.addObject("cates", pdsrv.readBigCategory());
         mv.addObject("PDs", pdsrv.readProductsList(cp, "order by pno desc"));
         mv.addObject("PDcnt", pdsrv.countProducts(""));
         return mv;

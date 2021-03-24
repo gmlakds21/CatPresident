@@ -16,14 +16,54 @@ public class ProductsServiceImpl implements ProductsService {
     @Autowired
     private ProductsDAO pddao;
 
-    // 2 - 창욱
+    // 카테고리 대분류 읽어오기
     @Override
-    public List<ProductsVO> readCategoryProducts() {
-        return null;
+    public List<CategoryVO> readBigCategory() {
+        return pddao.selectBigCategory();
     }
 
+    // 카테고리 전체 읽어오기
+    @Override
+    public List<CategoryVO> readCategoryList() {
+        return pddao.selectCategoryList();
+    }
 
-// 4 - 승희
+    // 카테고리 타이틀 읽어오기
+    @Override
+    public String readCategoryCatename(String target) {
+        return pddao.selectCategoryCatename(target);
+    }
+
+    // 카테고리 조건 정리
+    @Override
+    public String categoryNeed(String cate) {
+        String need;
+        if ( cate.substring(2).equals("00")) {
+            need = "where ctno like \'"+cate.substring(0,2)+"%\' ";
+        } else {
+            need = "where ctno = "+cate+" ";
+        }
+        return need;
+    }
+    
+    // 정렬 조건 정리
+    @Override
+    public String orderNeed(String order) {
+        String need ="";
+        if ( order.equals("time")) {
+            need = "order by pno desc";
+        } else if ( order.equals("highPrice")) {
+            need = "order by totprice desc";
+        } else if ( order.equals("lowPrice")) {
+            need = "order by totprice";
+        } else if ( order.equals("star")) {
+            need = "order by pno desc";
+        } else if ( order.equals("reply")) {
+            need = "order by pno desc";
+        }
+        return need;
+    }
+
 
     @Override // 제품 갯수 읽어오기
     public int countProducts(String target) {
@@ -44,20 +84,8 @@ public class ProductsServiceImpl implements ProductsService {
         return pddao.selectProductsOne(pno);
     }
 
-    @Override // 카테고리 대분류 읽어오기
-    public List<CategoryVO> readCategory() {
-        return pddao.selectCateList();
-    }
 
-    @Override // 카테고리 전체 읽어오기
-    public List<CategoryVO> readCateAll() {
-        return pddao.selectCateAll();
-    }
 
-    @Override // 카테고리 명 읽어오기
-    public String readcatename(String target) {
-        return pddao.selectCatename(target);
-    }
 
     // 기획전, 노하우 게시물 리스트 읽어오기
     @Override

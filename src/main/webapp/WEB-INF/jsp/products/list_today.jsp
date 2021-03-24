@@ -3,18 +3,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
-<fmt:parseNumber var="cp" value="${param.cp}"/>
-<fmt:parseNumber var="pp" value="30"/>
-
-<fmt:parseNumber var="tp" value="${PDcnt/pp}" integerOnly="true"/>
-<c:if test="${(PDcnt%pp) gt 0}">
-    <fmt:parseNumber var="tp" value="${tp + 1}"/>
-</c:if>
-
-<fmt:parseNumber var="sp" integerOnly="true" value="${((cp-1)/pp)}"/>
-<fmt:parseNumber var="sp" value="${sp*10+1}"/>
-<fmt:parseNumber var="ep" value="${sp+9}"/>
-
 <c:set var="navlink" value="/Today-Deals/list?cp=" />
 <c:if test="${not empty param.findKey}">
     <c:set var="navlink"
@@ -38,37 +26,6 @@
 </div>
 
 <div class="body">
-
-    <%-- 상세 검색 --%>
-    <div class="list_cateNav">
-        <a href="#list_cateLeft">
-            <button type="button" class="rounded-circle list_cateBtn1">
-                <i class="bi bi-chevron-left"></i>
-            </button>
-        </a>
-        <ul>
-            <span id="list_cateLeft"></span>
-            <li>
-                <a href="#">
-                    <button type="button" class="list_cateBtn2">전체</button>
-                </a>
-            </li>
-            <c:forEach var="cate" items="${cates}">
-                <li>
-                    <a href="#${cate.ctno}">
-                        <button type="button" class="list_cateBtn2">${cate.catename}</button>
-                    </a>
-                </li>
-            </c:forEach>
-            <span id="list_cateRight"></span>
-        </ul>
-        <a href="#list_cateRight">
-            <button type="button" class="rounded-circle list_cateBtn1">
-                <i class="bi bi-chevron-right"></i>
-            </button>
-        </a>
-        <br class="clear">
-    </div>
 
     <%-- 상세 정렬 --%>
     <div class="list_countNav">
@@ -116,30 +73,45 @@
             </c:forEach>
         </ul>
     </div>
+</div>
 
-    <%-- 페이지 정렬 --%>
-    <div class="row list_pageNav">
-        <div class="col-12">
-            <ul class="pagination justify-content-center">
-                <li class="page-item" <c:if test="${sp lt 10}"> disable </c:if>>
-                    <a href="${navlink}${sp-10}" class="page-link">
-                        <span class="bi bi-chevron-left"></span>
-                    </a>
-                </li>
-                <c:forEach var="i" begin="${sp}" end="${ep}" step="1">
-                    <c:if test="${i le tp}">
-                        <li class="page-item"
-                            <c:if test="${cp eq i}">active</c:if>>
-                            <a href="${navlink}${i}" class="page-link">${i}</a>
-                        </li>
-                    </c:if>
-                </c:forEach>
-                <li class="page-item <c:if test="${ep gt 10}"> disabled </c:if>">
-                    <a href="${navlink}${sp+10}" class="page-link">
-                        <span class="bi bi-chevron-right"></span>
-                    </a>
-                </li>
-            </ul>
+<%-- 설명 모달 --%>
+<button class="info_body rounded-circle" data-toggle="modal" data-target="#info_modal">
+    <span> Code </span>
+</button>
+
+<div class="modal fade" id="info_modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="info_modal">
+                <p>
+                    오늘의 딜 리스트에서는 오늘의 딜에 설정된 제품 목록을 가져옵니다.<br>
+                    ex) select products from Board where bno = ?<br>
+                    <br>
+                    오늘의 딜 리스트는 기획전 및 노하우 게시글과 마찬가지로<br>
+                    오늘의 딜 이라는 게시글 안에 제품 목록을 포함하고 있습니다.<br>
+                    해당 게시물에 지정된 제품들은 String 형태로<Br>
+                    2027, 3013, 3029, ... 형식으로 저장되어 있습니다.<br>
+                    이것을 split 하여 제품 고유 번호인 pno로 분리<br>
+                    다시 pno를 이용해 모든 정보를 가져옵니다.<br>
+                    ex) select * from Products where pno = ?<br>
+                    <br>
+                    리스트에 해당되는 제품들은 List(ProductsVO) 형태로<Br>
+                    foreach 문을 이용하여 화면에 배열합니다.<br>
+                    ex) (c:forEach var="PD" items="$(PDs)")<br>
+                    <br>
+                    해당 게시물들은 onclick 이벤트로 클릭시<br>
+                    제품 고유번호인 pno 를 이용하여 제품 페이지로 이동합니다.
+                </p>
+                <p><b>Point</b></p>
+                <p>
+                    1. 할인시 원가 표기와 함께 할인가 표시<br>
+                    2. 페이지 상단 우측에 상세 정렬 (미구현)<br>
+                    3. 댓글, 평점 시스템 (미구현)
+                </p>
+            </div>
+            <div class="modal_divider"></div>
+            <button type="button" class="btn info_closeBtn" id="info_modalX">확인</button>
         </div>
     </div>
 </div>

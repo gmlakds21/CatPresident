@@ -5,6 +5,34 @@
 
 <mapper namespace="Products">
 
+    <!-- 카테고리 대분류 불러오기 -->
+    <select id="readBigCategory" statementType="PREPARED"
+            resultType="teamproject.mvc.vo.CategoryVO">
+        select ctno, catename from Category
+            where ctno like '%00'
+                order by ctno;
+    </select>
+
+    <!-- 카테고리 전체 불러오기 -->
+    <select id="readCategoryList" statementType="PREPARED"
+            resultType="teamproject.mvc.vo.CategoryVO">
+        select ctno, catename from Category
+            order by ctno;
+    </select>
+
+    <!-- 카테고리 타이틀 불러오기 -->
+    <select id="readCategoryCatename" statementType="PREPARED"
+            parameterType="String"
+            resultType="String">
+        select catename from Category where ctno = ${target}
+    </select>
+
+
+
+
+
+
+
     <!-- 제품 목록 불러오기 -->
     <select id="ProductsList" statementType="PREPARED"
             parameterType="Map"
@@ -27,27 +55,8 @@
         select count(pno) from Products ${target}
     </select>
 
-    <!-- 카테고리 대분류 불러오기 -->
-    <select id="cateList" statementType="PREPARED"
-            resultType="teamproject.mvc.vo.CategoryVO">
-        select ctno, catename from Category
-            where ctno like '%00'
-                order by ctno;
-    </select>
 
-    <!-- 카테고리 전체 불러오기 -->
-    <select id="cateAll" statementType="PREPARED"
-            resultType="teamproject.mvc.vo.CategoryVO">
-        select ctno, catename from Category
-            order by ctno;
-    </select>
 
-    <!-- 카테고리 타이틀 불러오기 -->
-    <select id="cateName" statementType="PREPARED"
-            parameterType="String"
-            resultType="String">
-        select catename from Category where ctno = ${target}
-    </select>
 
 
 

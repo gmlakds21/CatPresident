@@ -48,7 +48,7 @@
                     ex) (c:forEach var="BD" items="$(BDs)")<br>
                     <br>
                     해당 게시물들은 onclick 이벤트로 클릭시<br>
-                    게시물 고유번호인 bno를 이용하여 게시물 페이지로 이동합니다.
+                    게시물 고유번호인 bno 를 이용하여 게시물 페이지로 이동합니다.
                 </p>
             </div>
             <div class="modal_divider"></div>

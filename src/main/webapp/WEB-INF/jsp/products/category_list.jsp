@@ -15,12 +15,7 @@
 <fmt:parseNumber var="sp" value="${sp*10+1}"/>
 <fmt:parseNumber var="ep" value="${sp+9}"/>
 
-<c:set var="navlink" value="/category/list?cate=${param.cate}&cp="/>
-<c:if test="${not empty param.findKey}">
-    <c:set var="navlink"
-           value="/Best-Products/find?findType=${param.findType}&findKey=${param.findKey}&cp=">
-    </c:set>
-</c:if>
+<c:set var="navlink" value="/category/list?cate=${param.cate}&order=${param.order}&cp="/>
 
 <fmt:parseNumber var="snum" integerOnly="true" value="${PDcnt - (cp-1) * pp}"/>
 <fmt:parseNumber var="cate" value="${param.cate}"/>
@@ -84,10 +79,10 @@
                 <img src="/img/CateThumb/arrow.png">
             </button>
             <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">낮은 가격순</a>
-                <a class="dropdown-item" href="#">높은 가격순</a>
-                <a class="dropdown-item" href="#">별점 가격순</a>
-                <a class="dropdown-item" href="#">후기 가격순</a>
+                <a class="dropdown-item" href="/category/list?cate=${param.cate}&order=lowPrice&cp=1">낮은 가격순</a>
+                <a class="dropdown-item" href="/category/list?cate=${param.cate}&order=highPrice&cp=1">높은 가격순</a>
+                <a class="dropdown-item" href="/category/list?cate=${param.cate}&order=star&cp=1">별점 높은순</a>
+                <a class="dropdown-item" href="/category/list?cate=${param.cate}&order=reply&cp=1">후기 많은순</a>
             </div>
         </div>
 
@@ -150,3 +145,38 @@
     <br class="clear">
 </div>
 
+<%-- 설명 모달 --%>
+<button class="info_body rounded-circle" data-toggle="modal" data-target="#info_modal">
+    <span> Code </span>
+</button>
+
+<div class="modal fade" id="info_modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="info_modal">
+                <p>
+                    카테고리 리스트에서는 고유 번호인 ctno 를 이용하여<br>
+                    해당하는 카테고리의 제품 리스트를 가져옵니다.<br>
+                    ex) select * from Products where ctno = ?<br>
+                    <br>
+                    리스트에 해당되는 제품들은 List(ProductsVO) 형태로<Br>
+                    foreach 문을 이용하여 화면에 배열합니다.<br>
+                    ex) (c:forEach var="PD" items="$(PDs)")<br>
+                    <br>
+                    해당 게시물들은 onclick 이벤트로 클릭시<br>
+                    제품 고유번호인 pno 를 이용하여 제품 페이지로 이동합니다.
+                </p>
+                <p><b>Point</b></p>
+                <p>
+                    1. 화면 좌측에 카테고리 목록 (Accordion)<br>
+                    2. 세부 카테고리를 누를시, 카테고리에 해당하는 ctno 를 이용<br>
+                    리스트화면 다시 출력<br>
+                    3. 검색 조건이 바뀔 시 제품 정보 또한 변경<br>
+                    4. 상단 우측에 상세 정렬 (DropDown) (미구현)
+                </p>
+            </div>
+            <div class="modal_divider"></div>
+            <button type="button" class="btn info_closeBtn" id="info_modalX">확인</button>
+        </div>
+    </div>
+</div>

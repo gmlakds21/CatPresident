@@ -187,3 +187,37 @@ param 의 where, order 을 navlink 에 담아서 하단 네비를 눌렀을 때 
         </div>
     </div>
 </div>
+
+<%-- 설명 모달 --%>
+<button class="info_body rounded-circle" data-toggle="modal" data-target="#info_modal">
+    <span> Code </span>
+</button>
+
+<div class="modal fade" id="info_modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="info_modal">
+                <p>
+                    랭킹 리스트에서는 판매량에 따라 제품 목록을 가져옵니다.<br>
+                    ex) select * from Products order by sales desc<br>
+                    <br>
+                    리스트에 해당되는 제품들은 List(ProductsVO) 형태로<Br>
+                    foreach 문을 이용하여 화면에 배열합니다.<br>
+                    ex) (c:forEach var="PD" items="$(PDs)")<br>
+                    <br>
+                    해당 게시물들은 onclick 이벤트로 클릭시<br>
+                    제품 고유번호인 pno 를 이용하여 제품 페이지로 이동합니다.
+                </p>
+                <p><b>Point</b></p>
+                <p>
+                    1. 할인시 원가 표기와 함께 할인가 표시<br>
+                    2. 페이지 상단의 세부 조건 (미구현)<br>
+                    3. 페이지 상단 우측에 상세 정렬 (미구현)<br>
+                    4. 댓글, 평점 시스템 (미구현)
+                </p>
+            </div>
+            <div class="modal_divider"></div>
+            <button type="button" class="btn info_closeBtn" id="info_modalX">확인</button>
+        </div>
+    </div>
+</div>

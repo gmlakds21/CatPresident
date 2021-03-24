@@ -178,7 +178,8 @@
                     해당 게시물에 지정된 제품들은 String 형태로<Br>
                     2027, 3013, 3029, ... 형식으로 저장되어 있습니다.<br>
                     이것을 split 하여 제품 고유 번호인 pno로 분리<br>
-                    다시 pno를 이용해 모든 정보를 가져옵니다.
+                    다시 pno를 이용해 모든 정보를 가져옵니다.<br>
+                    ex) select * from Products where pno = ?<br>
                 </p>
                 <p><b>Point</b></p>
                 <p>

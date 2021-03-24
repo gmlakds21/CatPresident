@@ -12,7 +12,7 @@ $(document).ready(function(){
     });
 
     $(".ct_sub .ct_subbtn").click(function() {
-        let param = '?cate=' + $(this).val() + '&cp=1';
+        let param = '?cate=' + $(this).val() + '&order=time&cp=1';
         location.href = '/category/list' + param;
     });
 });

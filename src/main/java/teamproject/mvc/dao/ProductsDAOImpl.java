@@ -16,6 +16,28 @@ public class ProductsDAOImpl implements ProductsDAO {
     @Autowired
     private SqlSession sqlSession;
 
+    // 카테고리 대분류 읽어오기
+    @Override
+    public List<CategoryVO> selectBigCategory() {
+        return sqlSession.selectList("Products.readBigCategory");
+    }
+
+    // 카테고리 전체 읽어오기
+    @Override
+    public List<CategoryVO> selectCategoryList() {
+        return sqlSession.selectList("Products.readCategoryList");
+    }
+
+    // 카테고리 타이틀 읽어오기
+    @Override
+    public String selectCategoryCatename(String target) {
+        return sqlSession.selectOne("Products.readCategoryCatename", target);
+    }
+
+
+
+
+
     // 제품 갯수 읽어오기
     @Override
     public int selectCountProducts(String target) {
@@ -32,22 +54,8 @@ public class ProductsDAOImpl implements ProductsDAO {
         return sqlSession.selectOne("Products.ProductsOne", pno);
     }
 
-    // 카테고리 대분류 읽어오기
-    @Override
-    public List<CategoryVO> selectCateList() {
-        return sqlSession.selectList("Products.cateList");
-    }
 
-    // 카테고리 전체 읽어오기
-    @Override
-    public List<CategoryVO> selectCateAll() {
-        return sqlSession.selectList("Products.cateAll");
-    }
 
-    @Override
-    public String selectCatename(String target) {
-        return sqlSession.selectOne("Products.cateName", target);
-    }
 
     ///
 
