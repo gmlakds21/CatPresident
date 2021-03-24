@@ -19,8 +19,7 @@ public interface ProductsService {
 
     // 카테고리 조건 정리
     String categoryNeed(String cate);
-
-//    String whereNeed(String where);
+    String whereNeed(String where);
     String orderNeed(String order);
 
 

@@ -96,12 +96,18 @@
                             <p class="pd_title">${PD.pname}</p>
                             <c:if test="${PD.price ne PD.totprice}">
                                 <p  class="pd_price">
-                                    <span class="pd_noprice">${PD.price}원 </span>
-                                    <span class="pd_price">${PD.totprice}원 </span>
+                                <span class="pd_noprice">
+                                    <fmt:formatNumber value="${PD.price}" pattern="##,###"/>원
+                                </span>
+                                    <span class="pd_price">
+                                    <fmt:formatNumber value="${PD.totprice}" pattern="##,###"/>원
+                                </span>
                                 </p>
                             </c:if>
                             <c:if test="${PD.price eq PD.totprice}">
-                                <p class="pd_price">${PD.totprice}원 </p>
+                                <p class="pd_price">
+                                    <fmt:formatNumber value="${PD.totprice}" pattern="##,###"/>원
+                                </p>
                             </c:if>
                             <div>
                                 <c:forEach var="star" begin="1" end="5" step="1">
@@ -172,7 +178,7 @@
                     2. 세부 카테고리를 누를시, 카테고리에 해당하는 ctno 를 이용<br>
                     리스트화면 다시 출력<br>
                     3. 검색 조건이 바뀔 시 제품 정보 또한 변경<br>
-                    4. 상단 우측에 상세 정렬 (DropDown) (미구현)
+                    4. 상단 우측에 상세 정렬 (DropDown)
                 </p>
             </div>
             <div class="modal_divider"></div>

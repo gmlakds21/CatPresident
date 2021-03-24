@@ -117,8 +117,8 @@
         <span class="hd_pdlist">
             <ul class="nav nav-tabs" role="tablist">
                 <li class="nav-item"><a class="nav-link" href="/today's/list">오늘의딜</a></li>
-                <li class="nav-item"><a class="nav-link" href="/best/list?cp=1">랭킹</a></li>
-                <li class="nav-item"><a class="nav-link" href="/recent/list?cp=1">신상품</a></li>
+                <li class="nav-item"><a class="nav-link" href="/best/list?cate=1000&order=best">랭킹</a></li>
+                <li class="nav-item"><a class="nav-link" href="/recent/list?where=recent&order=time&cp=1">신상품</a></li>
                 <li class="nav-item"><a class="nav-link" href="/planned/page">기획전</a></li>
                 <li class="nav-item"><a class="nav-link" href="/knowHow/page">노하우</a></li>
                 <li class="nav-item"><a class="nav-link" href="/sticker/list?cp=1">스티커샵</a></li>

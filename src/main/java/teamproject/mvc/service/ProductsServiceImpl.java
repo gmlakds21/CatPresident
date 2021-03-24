@@ -38,7 +38,9 @@ public class ProductsServiceImpl implements ProductsService {
     @Override
     public String categoryNeed(String cate) {
         String need;
-        if ( cate.substring(2).equals("00")) {
+        if ( cate.equals("1000")) {
+            need = "";
+        } else if ( cate.substring(2).equals("00")) {
             need = "where ctno like \'"+cate.substring(0,2)+"%\' ";
         } else {
             need = "where ctno = "+cate+" ";
@@ -60,6 +62,16 @@ public class ProductsServiceImpl implements ProductsService {
             need = "order by pno desc";
         } else if ( order.equals("reply")) {
             need = "order by pno desc";
+        } else if ( order.equals("best")) {
+            need = "order by sales desc";
+        }
+        return need;
+    }
+    @Override
+    public String whereNeed(String where) {
+        String need ="";
+        if ( where.equals("recent")) {
+            need = "where regdate = '2021-03-25'";
         }
         return need;
     }

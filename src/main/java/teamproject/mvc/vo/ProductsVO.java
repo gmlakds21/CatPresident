@@ -6,7 +6,6 @@ public class ProductsVO {
     private String pno;         // 제품번호
     private String cate;        // 203 = 2번째 카테고리의 3번째 카테고리
     private String brand;
-    private String event;       // 1 = 기획전, 2 = 노하우, 3 = 오늘의 딜
     private String pname;       // 제품명
     private String type;
     private String price;       // 가격
@@ -20,10 +19,19 @@ public class ProductsVO {
     private String uuid;        // 사진 분별
     private String filename;    // 사진 파일 이름
     private String filesize;    // 사진 파일 크기
+    private String regdate;     // 등록일
 
     public ProductsVO(String pno, String amount) {
         this.pno = pno;
         this.amount = amount;
+    }
+
+    public String getRegdate() {
+        return regdate;
+    }
+
+    public void setRegdate(String regdate) {
+        this.regdate = regdate;
     }
 
     public String getPno() {
@@ -48,14 +56,6 @@ public class ProductsVO {
 
     public void setBrand(String brand) {
         this.brand = brand;
-    }
-
-    public String getEvent() {
-        return event;
-    }
-
-    public void setEvent(String event) {
-        this.event = event;
     }
 
     public String getPname() {

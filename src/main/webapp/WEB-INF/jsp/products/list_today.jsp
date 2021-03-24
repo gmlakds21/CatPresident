@@ -3,15 +3,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
-<c:set var="navlink" value="/Today-Deals/list?cp=" />
-<c:if test="${not empty param.findKey}">
-    <c:set var="navlink"
-           value="/Today-Deals/find?findType=${param.findType}&findKey=${param.findKey}&cp=">
-    </c:set>
-</c:if>
-
-<fmt:parseNumber var="snum" integerOnly="true" value="${PDcnt - (cp-1) * pp}"/>
-
 <div>
     <div class="page_header">
         <div class="page_nav">
@@ -31,17 +22,6 @@
     <div class="list_countNav">
         <span class="list_countText1">${PDcnt}</span>
         <span class="list_countText2">개의 상품</span>
-        <button type="button" class="dropdown" data-toggle="dropdown">
-            <span class="list_countText2">정렬</span>
-            <span class="list_countText3">대통령 랭킹순</span>
-            <img src="/img/CateThumb/arrow.png">
-        </button>
-        <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">낮은 가격순</a>
-            <a class="dropdown-item" href="#">높은 가격순</a>
-            <a class="dropdown-item" href="#">별점 가격순</a>
-            <a class="dropdown-item" href="#">후기 가격순</a>
-        </div>
     </div>
 
     <%-- list card --%>
@@ -54,12 +34,18 @@
                         <p class="pd_title">${PD.pname}</p>
                         <c:if test="${PD.price ne PD.totprice}">
                             <p  class="pd_price">
-                                <span class="pd_noprice">${PD.price}원 </span>
-                                <span class="pd_price">${PD.totprice}원 </span>
+                                <span class="pd_noprice">
+                                    <fmt:formatNumber value="${PD.price}" pattern="##,###"/>원
+                                </span>
+                                <span class="pd_price">
+                                    <fmt:formatNumber value="${PD.totprice}" pattern="##,###"/>원
+                                </span>
                             </p>
                         </c:if>
                         <c:if test="${PD.price eq PD.totprice}">
-                            <p class="pd_price">${PD.totprice}원 </p>
+                            <p class="pd_price">
+                                <fmt:formatNumber value="${PD.totprice}" pattern="##,###"/>원
+                            </p>
                         </c:if>
                         <div>
                             <c:forEach var="star" begin="1" end="5" step="1">
@@ -106,8 +92,7 @@
                 <p><b>Point</b></p>
                 <p>
                     1. 할인시 원가 표기와 함께 할인가 표시<br>
-                    2. 페이지 상단 우측에 상세 정렬 (미구현)<br>
-                    3. 댓글, 평점 시스템 (미구현)
+                    2. 댓글, 평점 시스템 (미구현)
                 </p>
             </div>
             <div class="modal_divider"></div>
