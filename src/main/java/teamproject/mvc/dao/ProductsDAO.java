@@ -34,6 +34,12 @@ public interface ProductsDAO {
     // 제품 갯수 읽어오기
     int selectCountProducts(String target);
 
+    // 스티커 제품 목록 일어오기
+    List<ProductsVO> selectStickerList(Map param);
+
+    // 스티커 제품 갯수 읽어오기
+    int selectCountSticker(String target);
+
     // 제품 하나 읽어오기
     ProductsVO selectProductsOne(String pno);
 }

@@ -18,7 +18,7 @@ public interface MypageDAO {
     String selectCatCno(CatVO cvo);
 
     // 고양이 정보 등록
-    int insertNewCat(CatVO cvo);
+    void insertNewCat(CatVO cvo);
 
     // 대표고양이 번호 수정
     int updateMemberCno(MembersVO mvo);
@@ -26,6 +26,10 @@ public interface MypageDAO {
     // 고양이 정보 읽어오기
     CatVO selectCatOne(String catno);
 
+    // 고양이 이름 중복 체크 (업데이트)
+    int countCatCno(CatVO cvo);
+
     // 고양이 정보 수정
     int updateCatOne(CatVO cvo);
+
 }

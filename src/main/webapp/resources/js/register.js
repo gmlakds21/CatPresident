@@ -148,19 +148,32 @@ $('#goMain').on('click', function () {
 $('#pet_add').on('click', function () {
     location.href = '/mypage/pet_add';});
 
-
 // login
 $("#li_okbtn").on('click', function () {
     if ($('#li_emailInput').val() == '') alert('아이디를 입력하세요');
     else if ($('#li_pwInput').val() == '') alert('비밀번호를 입력하세요');
     else {
-        $("#email").val($('#li_emailInput').val())
-        $("#passwd").val($('#li_pwInput').val())
-
-        $('#logMember').attr("action", "/member/login")
-        $('#logMember').attr("method", "post")
-        $('#logMember').submit()
+        $.ajax({ // 비동기 요청 설정
+            url: '/member/loginOk',
+            type: 'GET',
+            data: {
+                email: $('#li_emailInput').val(),
+                passwd: $('#li_pwInput').val()
+            }
+        })
+            .done(function (data) { // 성공시
+                if (data == 'X') {
+                    alert('아이디 또는 비밀번호를 확인하여주세요');
+                    // msg = '아이디 또는 비밀번호를 확인하여주세요';
+                    // $('#mb_text').text(msg);
+                    // $('#mb_text').attr('style', 'color:blue; margin-top: 5px; !important');
+                } else {
+                    location.href="/";
+                }})
+            .fail(function (xhr, status, error) { // 실패시
+                alert(xhr.status, +"/" + error);});
     }});
+
 
 $("#li_newbtn").on('click', function () {
     location.href = '/member/agree';});

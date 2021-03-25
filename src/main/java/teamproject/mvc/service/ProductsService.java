@@ -37,6 +37,13 @@ public interface ProductsService {
     // 제품 갯수 읽어오기
     int readCountProducts(String target);
 
+    // 스티커 제품 리스트 읽어오기
+    List<ProductsVO> readStickerList(String cp, String target);
+
+    // 스티커 제품 갯수 읽어오기
+    int readCountSticker(String target);
+
     // 제품 한개 읽어오기
     ProductsVO readProductOne(String pno);
+
 }

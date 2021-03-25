@@ -22,7 +22,6 @@
     </div>
 </div>
 
-
 <!-- 네비 -->
 <div class="ag_body">
     <!-- 이용약관 제작 -->
@@ -394,5 +393,29 @@ Copyright © Kakao Corp. All rights reserved.
     <div class="ag_btn">
         <button type="button" class="ag_okbtn" id="ag_okbtn">약관에 동의합니다</button>
         <button type="button" class="ag_nobtn" id="ag_nobtn">동의하지 않습니다</button>
+    </div>
+</div>
+
+<%-- 설명 모달 --%>
+<button class="info_body rounded-circle" data-toggle="modal" data-target="#info_modal">
+    <span> Code </span>
+</button>
+
+<div class="modal fade" id="info_modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="info_modal">
+                <p>
+                    해당 회원가입 페이지에서는 체크박스를 통해 이용약관의 동의를 받습니다.<br>
+                    만약 체크가 되지 않을 경우에는 alert 창을 띄워 안내합니다.<br>
+                    <br>
+                    둘다 만족할 경우 다음 페이지로 이동합니다.<br>
+                    <br>
+                    로그인 정보가 있을경우 이 페이지에 접속하지 못하도록 막습니다.<br>
+                </p>
+            </div>
+            <div class="modal_divider"></div>
+            <button type="button" class="btn info_closeBtn" id="info_modalX">확인</button>
+        </div>
     </div>
 </div>

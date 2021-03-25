@@ -5,6 +5,11 @@
 
 <mapper namespace="Products">
 
+    <select id="TEST" statementType="PREPARED"
+            resultType="String">
+        ${target}
+    </select>
+
     <!-- 카테고리 대분류 불러오기 -->
     <select id="readBigCategory" statementType="PREPARED"
             resultType="teamproject.mvc.vo.CategoryVO">
@@ -64,6 +69,21 @@
             parameterType="String"
             resultType="int">
         select count(pno) from Products ${target}
+    </select>
+
+    <!-- 제품 목록 불러오기 -->
+    <select id="readStickerList" statementType="PREPARED"
+            parameterType="Map"
+            resultType="teamproject.mvc.vo.ProductsVO">
+        select pno, pname, price, disco, totprice from Sticker
+            ${target} limit ${snum}, 30;
+     </select>
+
+    <!-- 제품 갯수 불러오기 -->
+    <select id="readCountSticker" statementType="PREPARED"
+            parameterType="String"
+            resultType="int">
+        select count(pno) from Sticker ${target}
     </select>
 
     <!-- 제품 하나 불러오기 -->

@@ -117,6 +117,23 @@ public class ProductsServiceImpl implements ProductsService {
         return pddao.selectCountProducts(target);
     }
 
+    // 스티커 제품 리스트 읽어오기
+    @Override
+    public List<ProductsVO> readStickerList(String cp, String target) {
+        Map<String, String> param = new HashMap<>();
+        String snum = String.valueOf((Integer.parseInt(cp)-1)*30);
+        param.put("snum", snum);
+        param.put("target", target);
+        return pddao.selectStickerList(param);
+    }
+
+    // 스티커 제품 갯수 읽어오기
+    @Override
+    public int readCountSticker(String target) {
+        return pddao.selectCountSticker(target);
+    }
+
+
     @Override // 제품 하나 읽어오기
     public ProductsVO readProductOne(String pno) {
         return pddao.selectProductsOne(pno);

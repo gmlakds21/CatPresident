@@ -1,5 +1,6 @@
 <%@ page pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <c:if test="${empty user}">
     <script>
         alert("로그인이 필요한 페이지 입니다.")
@@ -101,20 +102,15 @@
         </div>
 
         <%-- 데이터 전송용 --%>
-        <input type="hidden" name="uno" id="uno" value="${UID}">
-        <input type="hidden" name="catname" id="catname">
-        <input type="hidden" name="catkind" id="catkind">
-        <input type="hidden" name="catyear" id="catyear">
-        <input type="hidden" name="catmonth" id="catmonth">
+        <input type="hidden" name="uno" id="uno" value="${user.uno}">
+        <input type="hidden" name="catno" id="catno" value="${cat.catno}">
         <input type="hidden" name="catgender" id="catgender">
-        <input type="hidden" name="catweight" id="catweight">
         <input type="hidden" name="prima" id="prima">
-<%--            <input type="hidden" name="ctpic" id="ctpic">--%>
     </form>
 
     <div class="ap_btn">
-        <button type="button" id="ap_nobtn" class="ap_delbtn">삭제하기</button>
-        <button type="button" id="ap_okbtn" class="ap_upbtn">수정하기</button>
+        <button type="button" id="ap_nobtn" class="ap_nobtn">삭제하기</button>
+        <button type="button" id="ap_upbtn" class="ap_okbtn">수정하기</button>
     </div>
 
 </div>

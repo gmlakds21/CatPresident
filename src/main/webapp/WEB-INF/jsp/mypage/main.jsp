@@ -1,10 +1,11 @@
 <%@ page pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+
 <c:if test="${empty user}">
     <script>
         alert("로그인이 필요한 페이지입니다.")
-        location.href = '/members/login';
+        location.href='/members/login';
     </script>
 </c:if>
 

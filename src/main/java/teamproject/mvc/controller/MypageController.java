@@ -11,6 +11,7 @@ import teamproject.mvc.service.MypageService;
 import teamproject.mvc.vo.CatVO;
 import teamproject.mvc.vo.MembersVO;
 
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.lang.reflect.Member;
 
@@ -70,23 +71,18 @@ public class MypageController {
     }
 
     // 고양이 정보 등록
-    @PostMapping("/mypage/pet_add")
-    public String newCatOK(CatVO cvo, HttpSession sess) {
-        String returnPage = "redirect:/mypage/pet_addX";
-
-        // 기존에 동일한 정보가 없어야 하고 && 고양이 등록이 안료되면
-        if ((mysrv.checkCat(cvo) == null) && (mysrv.addNewCat(cvo, sess))) {
-            returnPage = "redirect:/mypage/main";
+    @GetMapping("/mypage/pet_addOk")
+    public void newCatOK(CatVO cvo, HttpSession sess, HttpServletResponse res) {
+        try {
+            if(mysrv.checkCat(cvo) == null){
+                mysrv.addNewCat(cvo, sess);
+                res.getWriter().print("O");
+            } else {
+                res.getWriter().print("X");
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
         }
-        return returnPage;
-    }
-
-    // 고양이 정보 등록 페이지
-    @GetMapping("/mypage/pet_addX")
-    public ModelAndView newCatX(ModelAndView mv) {
-        mv.addObject("kinds", mysrv.readSpeciesList());
-        mv.setViewName("mypage/pet_addX.tiles");
-        return mv;
     }
 
     // 고양이 정보 수정
@@ -98,14 +94,17 @@ public class MypageController {
         return mv;
     }
 
-    @PostMapping("/mypage/pet_update")
-    public String updateCatOK(CatVO cvo, HttpSession sess) {
-        String returnPage = "redirect:/mypage/pet_updateX";
-        System.out.println(cvo.getUno());
-        // 기존에 동일한 정보가 없어야 하고 && 고양이 등록이 안료되면
-        if ((mysrv.modifyCatOnt(cvo) > 0)) {
-            returnPage = "redirect:/mypage/main";
+    @GetMapping("/mypage/pet_updateOK")
+    public void updateCatOK(CatVO cvo, HttpSession sess, HttpServletResponse res) {
+        try {
+            if (mysrv.countCatCno(cvo) == 0) {
+                mysrv.modifyCatOne(cvo, sess);
+                res.getWriter().print("O");
+            } else {
+                res.getWriter().print("X");
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
         }
-        return returnPage;
     }
 }

@@ -41,3 +41,24 @@
 
     <br class="clear">
 </div>
+
+<%-- 설명 모달 --%>
+<button class="info_body rounded-circle" data-toggle="modal" data-target="#info_modal">
+    <span> Code </span>
+</button>
+
+<div class="modal fade" id="info_modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="info_modal">
+                <p>
+                    해당 회원가입 페이지에서는 입력받았던 정보를 통해 자동로그인을 시켜줍니다.<br>
+                    <br>
+                    해당 홈페이지를 보다 효율적으로 이용할 수 있게 고양이 등록 기능을 넣어주었습니다.<br>
+                </p>
+            </div>
+            <div class="modal_divider"></div>
+            <button type="button" class="btn info_closeBtn" id="info_modalX">확인</button>
+        </div>
+    </div>
+</div>

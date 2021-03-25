@@ -134,3 +134,39 @@
         </div>
     </div>
 </div>
+
+<%-- 설명 모달 --%>
+<button class="info_body rounded-circle" data-toggle="modal" data-target="#info_modal">
+    <span> Code </span>
+</button>
+
+<div class="modal fade" id="info_modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="info_modal">
+                <p>
+                    스티커 리스트에서는 스티커로 따로 등록한 제품에서 가져옵니다..<br>
+                    ex) select * from Sticker order by pno desc<br>
+                    <br>
+                    상단의 카테고리를 선택하여 해당 카테고리에 해당하는<br>
+                    제품목록을 스티커 테이블에서 출력합니다.<br>
+                    <br>
+                    리스트에 해당되는 제품들은 List(ProductsVO) 형태로<Br>
+                    foreach 문을 이용하여 화면에 배열합니다.<br>
+                    ex) (c:forEach var="PD" items="$(PDs)")<br>
+                    <br>
+                    해당 게시물들은 onclick 이벤트로 클릭시<br>
+                    제품 고유번호인 pno 를 이용하여 제품 페이지로 이동합니다.
+                </p>
+                <p><b>Point</b></p>
+                <p>
+                    1. 페이지 상단의 세부 조건<br>
+                    2. 페이지 상단 우측에 상세 정렬<br>
+                    3. 댓글, 평점 시스템 (미구현)
+                </p>
+            </div>
+            <div class="modal_divider"></div>
+            <button type="button" class="btn info_closeBtn" id="info_modalX">확인</button>
+        </div>
+    </div>
+</div>

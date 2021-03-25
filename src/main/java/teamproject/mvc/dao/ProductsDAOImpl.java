@@ -55,12 +55,25 @@ public class ProductsDAOImpl implements ProductsDAO {
     // 제품 목록 읽어오기
     @Override
     public List<ProductsVO> selectProductsList(Map param) {
-        return sqlSession.selectList("Products.readProductsList", param); }
+        return sqlSession.selectList("Products.readProductsList", param);
+    }
 
     // 제품 갯수 읽어오기
     @Override
     public int selectCountProducts(String target) {
         return sqlSession.selectOne("Products.readCountProducts", target);
+    }
+
+    // 스티커 제품 목록 읽어오기
+    @Override
+    public List<ProductsVO> selectStickerList(Map param) {
+        return sqlSession.selectList("Products.readStickerList", param);
+    }
+
+    // 스티커 갯수 읽어오기
+    @Override
+    public int selectCountSticker(String target) {
+        return sqlSession.selectOne("Products.readCountSticker", target);
     }
 
     // 제품 하나 읽어오기

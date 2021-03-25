@@ -1,4 +1,3 @@
-
 // pet_add 고양이 등록
 $('#ap_okbtn').on('click', function () {
 
@@ -10,28 +9,42 @@ $('#ap_okbtn').on('click', function () {
     else if ($('#ap_weightInput input').val() == "") alert('고양이 무게를 입력하지 않았거나 숫자 이외의 문자가 포함되어 있습니다.');
 
     else { // 양식에서 받은 데이터를 전송.
-        $('#catname').val($('#ap_nameInput').val());
-        $('#catkind').val($('#ap_kindInput').val());
-        $('#catyear').val($('#ap_yearInput').val());
-        $('#catmonth').val($('#ap_monthInput').val());
         if($('#ap_genderM').is(":checked")) $('#catgender').val("남아");
         if($('#ap_genderF').is(":checked")) $('#catgender').val("여아");
-        $('#catweight').val($('#ap_weightInput').val());
         if ($('#ap_priInput').is(":checked")) {
             $('#prima').val('Y')
         } else {
             $('#prima').val('N')
         }
 
-        $('#newCat').attr('action', '/mypage/pet_add')
-        $('#newCat').attr('method', 'post')
-        $('#newCat').submit();
+        $.ajax({ // 비동기 요청 설정
+            url: '/mypage/pet_addOk',
+            type: 'GET',
+            data: {
+                uno :$('#uno').val(),
+                catname :$('#ap_nameInput').val(),
+                catkind :$('#ap_kindInput').val(),
+                catyear :$('#ap_yearInput').val(),
+                catmonth :$('#ap_monthInput').val(),
+                catgender :$('#catgender').val(),
+                catweight :$('#ap_weightInput').val(),
+                prima : $('#prima').val()
+            }
+        })
+            .done(function (data) { // 성공시
+                if (data == "X") {
+                    alert('중복된 고양이 이름은 사용하실 수 없습니다.');
+                } else {
+                    location.href="/mypage/main";
+                }})
+            .fail(function (xhr, status, error) { // 실패시
+                alert(xhr.status, +"/" + error);});
     }});
 
 $('#ap_nobtn').on('click', function () {
     location.href = '/mypage/main';});
 
-// pet_update 고양이 등록
+// pet_update 고양이 정보 수정
 $('#ap_upbtn').on('click', function () {
 
     if ($('#ap_nameInput').val() == "") alert('고양이 이름을 입력하세요');
@@ -42,28 +55,38 @@ $('#ap_upbtn').on('click', function () {
     else if ($('#ap_weightInput input').val() == "") alert('고양이 무게를 입력하지 않았거나 숫자 이외의 문자가 포함되어 있습니다.');
 
     else { // 양식에서 받은 데이터를 전송.
-        $('#catname').val($('#ap_nameInput').val());
-        $('#catkind').val($('#ap_kindInput').val());
-        $('#catyear').val($('#ap_yearInput').val());
-        $('#catmonth').val($('#ap_monthInput').val());
         if($('#ap_genderM').is(":checked")) $('#catgender').val("남아");
         if($('#ap_genderF').is(":checked")) $('#catgender').val("여아");
-        $('#catweight').val($('#ap_weightInput').val());
         if ($('#ap_priInput').is(":checked")) {
             $('#prima').val('Y')
         } else {
             $('#prima').val('N')
         }
 
-        $('#newCat').attr('action', '/mypage/pet_update')
-        $('#newCat').attr('method', 'post')
-        $('#newCat').submit();
+        $.ajax({ // 비동기 요청 설정
+            url: '/mypage/pet_updateOK',
+            type: 'GET',
+            data: {
+                uno :$('#uno').val(),
+                catno :$('#catno').val(),
+                catname :$('#ap_nameInput').val(),
+                catkind :$('#ap_kindInput').val(),
+                catyear :$('#ap_yearInput').val(),
+                catmonth :$('#ap_monthInput').val(),
+                catgender :$('#catgender').val(),
+                catweight :$('#ap_weightInput').val(),
+                prima : $('#prima').val()
+            }
+        })
+            .done(function (data) { // 성공시
+                if (data == "X") {
+                    alert('중복된 고양이 이름은 사용하실 수 없습니다.');
+                } else {
+                    location.href="/mypage/main";
+                }})
+            .fail(function (xhr, status, error) { // 실패시
+                alert(xhr.status, +"/" + error);});
     }});
-
-
-
-
-
 
 
 

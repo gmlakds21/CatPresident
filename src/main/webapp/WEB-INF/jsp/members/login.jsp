@@ -19,11 +19,11 @@
 <div class="body">
 
     <p class="mb_title"> 로그인</p>
-    <p class="mb_text"></p>
+    <p class="mb_text" id="mb_text"></p>
 
     <hr>
 
-    <form class="li_form" id="logMember">
+    <div class="li_form" id="logMember">
         <div>
             <div class="li_text">
                 <p id="li_email">아이디</p>
@@ -47,9 +47,37 @@
             <button type="button" class="li_okbtn" id="li_okbtn">로그인</button>
             <button type="button" class="li_newbtn" id="li_newbtn">회원가입</button>
         </div>
+<%--        <input type="hidden" name="email" id="email" value="${mvo.email}">--%>
+<%--        <input type="hidden" name="passwd" id="passwd">--%>
+    </div>
+</div>
 
-        <input type="hidden" name="email" id="email" value="${mvo.email}">
-        <input type="hidden" name="passwd" id="passwd">
+<%-- 설명 모달 --%>
+<button class="info_body rounded-circle" data-toggle="modal" data-target="#info_modal">
+    <span> Code </span>
+</button>
 
-    </form>
+<div class="modal fade" id="info_modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="info_modal">
+                <p>
+                    로그인 페이지에서는 input 안에 들어있는 value 값<br>
+                    id 와 pw를 이용해 유저를 조회합니다.<br>
+                    ex) select * from Members<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;where userid = ? and passwd = ?<br>
+                    <br>
+                    ajax 통신을 통해 null 이 나오면 안내메시지를<br>
+                    null 이 아니면 해당 정보로 유저정보를 HttpSession 에 담습니다.<br>
+                    <br>
+                <p>
+                <p><b>Point</b></p>
+                <p>
+                    자동로그인 (미구현)<br>
+                </p>
+            </div>
+            <div class="modal_divider"></div>
+            <button type="button" class="btn info_closeBtn" id="info_modalX">확인</button>
+        </div>
+    </div>
 </div>

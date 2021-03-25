@@ -18,11 +18,15 @@ public interface MypageService {
     String checkCat(CatVO cvo);
 
     // 고양이 정보 등록
-    boolean addNewCat(CatVO cvo, HttpSession sess);
+    void addNewCat(CatVO cvo, HttpSession sess);
 
     // 고양이 정보 읽어오기
     CatVO readCatOne(String catno);
 
+    // 고양이 이름 중복 체크 (업데이트)
+    int countCatCno(CatVO cvo);
+
     // 고양이 정보 수정
-    int modifyCatOnt(CatVO cvo);
+    void modifyCatOne(CatVO cvo, HttpSession sess);
+
 }

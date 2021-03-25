@@ -111,10 +111,6 @@
     </div>
 
 </div>
-<!-- 메인 -->
-
-
-
 
 <%-- ZIP modal --%>
 <div class="modal fade" id="zip_modal" data-backdrop="static" data-keyboard="false">
@@ -128,35 +124,33 @@
             </div>
             <hr>
             <div class="modal-body">
-                <form>
-                    <div class="form-group row justify-content-center">
-                        <div class="col-8 zip_findText">
-                            <span for="dong">
-                                검색하실 주소의 동 이름을 입력하세요 <br>
-                                지역의 읍/면/동의 이름을 공백없이 입력하신 후, [검색하기] 버튼을 클릭하세요
-                            </span>
-                        </div>
+                <div class="form-group row justify-content-center">
+                    <div class="col-8 zip_findText">
+                        <span for="dong">
+                            검색하실 주소의 동 이름을 입력하세요 <br>
+                            지역의 읍/면/동의 이름을 공백없이 입력하신 후, [검색하기] 버튼을 클릭하세요
+                        </span>
                     </div>
-                    <div class="form-group row justify-content-center">
-                        <div class="col-1"></div>
-                        <div class="col-5">
-                            <input type="text" id="dong" name="dong"
-                                   class="form-control border-primary">
-                        </div>
-                        <div class="col-3">
-                            <button type="button" id="zip_find" class="btn btn-primary">
-                                <i class="bi bi-search"></i>검색하기
-                            </button>
-                        </div>
+                </div>
+                <div class="form-group row justify-content-center">
+                    <div class="col-1"></div>
+                    <div class="col-5">
+                        <input type="text" id="dong" name="dong"
+                               class="form-control border-primary">
                     </div>
-                    <div class="form-group row justify-content-center">
-                        <div class="col-8 zip_list">
-                            <select id="zip_addr" name="zip_addr"
-                                    class="form-control" size="10">
-                            </select>
-                        </div>
+                    <div class="col-3">
+                        <button type="button" id="zip_find" class="btn btn-primary">
+                            <i class="bi bi-search"></i>검색하기
+                        </button>
                     </div>
-                </form>
+                </div>
+                <div class="form-group row justify-content-center">
+                    <div class="col-8 zip_list">
+                        <select id="zip_addr" name="zip_addr"
+                                class="form-control" size="10">
+                        </select>
+                    </div>
+                </div>
             </div>
             <div class="modal-footer justify-content-end">
                 <button type="button" class="btn btn-primary" id="zip_sendBtn">
@@ -166,4 +160,29 @@
         </div>
     </div>
 </div>
-<!-- 우편모달 -->
+
+<%-- 설명 모달 --%>
+<button class="info_body rounded-circle" data-toggle="modal" data-target="#info_modal">
+    <span> Code </span>
+</button>
+
+<div class="modal fade" id="info_modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="info_modal">
+                <p>
+                    해당 회원가입 페이지에서는 입력창을 통해 회원정보를 수집합니다.<br>
+                    만약 빈칸 또는 조건이 맞지 않을경우 blur 이벤트와 ajax 를 통해 정보를 확인합니다.<br>
+                    <br>
+                    주소찾기 모달은 입력값에 따라 ajax 통신을 통해<br>
+                    데이터베이스내에 저장되어있는 주소목록을 불러옵니다.<br>
+                    선택된 주소값을 split 으로 나누어 다시 입력칸에 값을 넣어줍니다.<br>
+                    <br>
+                    로그인 정보가 있을경우 이 페이지에 접속하지 못하도록 막습니다.<br>
+                </p>
+            </div>
+            <div class="modal_divider"></div>
+            <button type="button" class="btn info_closeBtn" id="info_modalX">확인</button>
+        </div>
+    </div>
+</div>

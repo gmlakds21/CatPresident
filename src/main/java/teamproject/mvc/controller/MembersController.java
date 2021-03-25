@@ -75,17 +75,13 @@ public class MembersController {
         return "members/login.tiles";
     }
 
-    @PostMapping("/member/login")
-    public String loginok(MembersVO mvo, HttpSession sess) {
-        String returnPage = "redirect:/member/loginX";
-        if (mbsrv.tryLogin(mvo, sess) != "X")
-            returnPage = "redirect:/";
-        return returnPage;
-    }
-
-    @GetMapping("/member/loginX")
-    public String loginX() {
-        return "members/loginX.tiles";
+    @GetMapping("/member/loginOk")
+    public void loginOk(MembersVO mvo, HttpSession sess, HttpServletResponse res) {
+        try {
+            res.getWriter().print(mbsrv.tryLogin(mvo, sess));
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
     }
 
     // 로그아웃

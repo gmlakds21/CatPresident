@@ -12,12 +12,6 @@ public class ProductsController {
     @Autowired
     private ProductsService pdsrv;
 
-    // 메인 페이지
-    @GetMapping("/")
-    public String MainPage() {
-        return "products/MainPage.tiles";
-    }
-
     // 카테고리 페이지
     @GetMapping("/category/page")
     public ModelAndView Category(ModelAndView mv) {
@@ -136,8 +130,8 @@ public class ProductsController {
         String target = need1 + need2;
 
         mv.addObject("cates", pdsrv.readBigCategory());
-        mv.addObject("PDs", pdsrv.readProductsList(cp, target));
-        mv.addObject("PDCount", pdsrv.readCountProducts(need1));
+        mv.addObject("PDs", pdsrv.readStickerList(cp, target));
+        mv.addObject("PDCount", pdsrv.readCountSticker(need1));
         return mv;
     }
 

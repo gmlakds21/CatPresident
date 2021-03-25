@@ -35,8 +35,8 @@ public class MypageDaoImpl implements MypageDAO {
 
     // 고양이 정보 등록
     @Override
-    public int insertNewCat(CatVO cvo) {
-        return sqlSession.insert("Mypage.addNewCat", cvo);
+    public void insertNewCat(CatVO cvo) {
+        sqlSession.insert("Mypage.addNewCat", cvo);
     }
 
     // 대표고양이 번호 수정
@@ -49,6 +49,12 @@ public class MypageDaoImpl implements MypageDAO {
     @Override
     public CatVO selectCatOne(String catno) {
         return sqlSession.selectOne("Mypage.readCatOne", catno);
+    }
+
+    // 고양이 이름 중복 체크 (업데이트)
+    @Override
+    public int countCatCno(CatVO cvo) {
+        return sqlSession.selectOne("Mypage.countCatCno", cvo);
     }
 
     // 고양이 정보 수정

@@ -6,7 +6,7 @@
 <mapper namespace="Mypage">
 
     <!-- 고양이 목록 읽어오기 -->
-    <select id="catList" statementType="PREPARED"
+    <select id="readCatList" statementType="PREPARED"
             parameterType="String"
             resultType="teamproject.mvc.vo.CatVO">
         select * from Cat
@@ -49,11 +49,18 @@
             where catno = ${catno}
     </select>
 
+    <select id="countCatCno" statementType="PREPARED"
+            parameterType="teamproject.mvc.vo.CatVO"
+            resultType="int">
+        select count(catno) from Cat
+            where uno = #{uno} and catname = #{catname} and catno != #{catno};
+    </select>
+
     <!-- 고양이 정보 수정 -->
     <update id="modifyCatOne" statementType="PREPARED"
             parameterType="teamproject.mvc.vo.CatVO">
-        update Cat set catname = #{catname}, set catkind = #{catkind}, set catyear = #{catyear}
-            set catmonth = #{catmonth}, set catgender = #{catgender}, set catweight = #{catweight}
+        update Cat set catname = '${catname}', catkind = '${catkind}', catyear = ${catyear},
+            catmonth = ${catmonth}, catgender = '${catgender}', catweight = ${catweight}
             where catno = #{catno};
     </update>
 </mapper>

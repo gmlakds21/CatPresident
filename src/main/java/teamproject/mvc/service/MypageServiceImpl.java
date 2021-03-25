@@ -39,7 +39,7 @@ public class MypageServiceImpl implements MypageService {
 
     // 고양이 정보 등록
     @Override
-    public boolean addNewCat(CatVO cvo, HttpSession sess) {
+    public void addNewCat(CatVO cvo, HttpSession sess) {
         mydao.insertNewCat(cvo);
 
         // 대표 고양이 번호 지정
@@ -50,7 +50,6 @@ public class MypageServiceImpl implements MypageService {
             mvo.setCatno(catno);
             mydao.updateMemberCno(mvo);
         }
-        return true;
     }
 
     // 고양이 정보 읽어오기
@@ -59,10 +58,31 @@ public class MypageServiceImpl implements MypageService {
         return mydao.selectCatOne(catno);
     }
 
+//    // 고양이 정보 수정
+//    @Override
+//    public int modifyCatOnt(CatVO cvo) {
+//        System.out.println(cvo.getCatname()+" "+cvo.getUno());
+//        return mydao.updateCatOne(cvo);
+//    }
+
+    // 고양이 이름 중복 체크 (업데이트)
+    @Override
+    public int countCatCno(CatVO cvo) {
+        return mydao.countCatCno(cvo);
+    }
+
     // 고양이 정보 수정
     @Override
-    public int modifyCatOnt(CatVO cvo) {
-        System.out.println(cvo.getCatname()+" "+cvo.getUno());
-        return mydao.updateCatOne(cvo);
+    public void modifyCatOne(CatVO cvo, HttpSession sess) {
+        mydao.updateCatOne(cvo);
+
+        // 대표 고양이 번호 지정
+        if (cvo.getPrima().equals("Y")) {
+            cvo.setPrima("N");
+            String catno = mydao.selectCatCno(cvo);
+            MembersVO mvo = (MembersVO) sess.getAttribute("user");
+            mvo.setCatno(catno);
+            mydao.updateMemberCno(mvo);
+        }
     }
 }
