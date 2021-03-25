@@ -25,7 +25,7 @@ public class MypageController {
     public ModelAndView main(ModelAndView mv, HttpSession sess) {
         MembersVO mvo = (MembersVO) sess.getAttribute("user");
         if (mvo != null ) {
-            mv.addObject("cats", mysrv.catList(mvo.getUno()));
+            mv.addObject("cats", mysrv.readCatList(mvo.getUno()));
             mv.setViewName("mypage/main.tiles");
         } else {
             mv.setViewName("members/login.tiles");
@@ -64,7 +64,7 @@ public class MypageController {
     // 고양이 정보 등록 페이지
     @GetMapping("/mypage/pet_add")
     public ModelAndView newCat(ModelAndView mv) {
-        mv.addObject("kinds", mysrv.readSpecies());
+        mv.addObject("kinds", mysrv.readSpeciesList());
         mv.setViewName("mypage/pet_add.tiles");
         return mv;
     }
@@ -75,7 +75,7 @@ public class MypageController {
         String returnPage = "redirect:/mypage/pet_addX";
 
         // 기존에 동일한 정보가 없어야 하고 && 고양이 등록이 안료되면
-        if ((mysrv.checkCat(cvo) == null) && (mysrv.newCat(cvo, sess))) {
+        if ((mysrv.checkCat(cvo) == null) && (mysrv.addNewCat(cvo, sess))) {
             returnPage = "redirect:/mypage/main";
         }
         return returnPage;
@@ -84,7 +84,7 @@ public class MypageController {
     // 고양이 정보 등록 페이지
     @GetMapping("/mypage/pet_addX")
     public ModelAndView newCatX(ModelAndView mv) {
-        mv.addObject("kinds", mysrv.readSpecies());
+        mv.addObject("kinds", mysrv.readSpeciesList());
         mv.setViewName("mypage/pet_addX.tiles");
         return mv;
     }
@@ -92,8 +92,8 @@ public class MypageController {
     // 고양이 정보 수정
     @GetMapping("/mypage/pet_update")
     public ModelAndView updateCat(ModelAndView mv, String catno) {
-        mv.addObject("kinds", mysrv.readSpecies());
-        mv.addObject("cat", mysrv.readOneCat(catno));
+        mv.addObject("kinds", mysrv.readSpeciesList());
+        mv.addObject("cat", mysrv.readCatOne(catno));
         mv.setViewName("mypage/pet_update.tiles");
         return mv;
     }
@@ -103,7 +103,7 @@ public class MypageController {
         String returnPage = "redirect:/mypage/pet_updateX";
         System.out.println(cvo.getUno());
         // 기존에 동일한 정보가 없어야 하고 && 고양이 등록이 안료되면
-        if ((mysrv.modifyCat(cvo) > 0)) {
+        if ((mysrv.modifyCatOnt(cvo) > 0)) {
             returnPage = "redirect:/mypage/main";
         }
         return returnPage;

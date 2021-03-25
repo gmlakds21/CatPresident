@@ -66,4 +66,11 @@ public class OrdersController {
     }
 
 
+    @GetMapping("/Order/view")
+    public ModelAndView orderView(ModelAndView mv) {
+        mv.setViewName("products/OrderView.tiles");
+
+        return mv;
+    }
+
 }

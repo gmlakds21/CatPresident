@@ -17,34 +17,6 @@ public interface ProductsService {
     // 카테고리 타이틀 읽어오기
     String readCategoryCatename(String target);
 
-    // 카테고리 조건 정리
-    String categoryNeed(String cate);
-    String whereNeed(String where);
-    String orderNeed(String order);
-
-
-    // 제품 리스트 읽어오기
-    List<ProductsVO> readProductsList(String cp, String target);
-
-
-
-
-
-
-
-    // 제품 갯수 읽어오기
-    int countProducts(String target);
-
-
-    // 제품 한개 읽어오기
-    ProductsVO readProductOne(String pno);
-
-
-
-
-    ///
-
-
     // 기획전, 노하우 게시물 리스트 읽어오기
     List<BoardVO> readBoardList(String bgroup);
 
@@ -54,28 +26,17 @@ public interface ProductsService {
     // 기획전, 노하우 제품 리스트 읽어오기
     List<ProductsVO> readBoardProducts(String bno);
 
+    // 카테고리 조건 정리
+    String categoryNeed(String cate);
+    String whereNeed(String where);
+    String orderNeed(String order);
 
+    // 제품 리스트 읽어오기
+    List<ProductsVO> readProductsList(String cp, String target);
 
+    // 제품 갯수 읽어오기
+    int readCountProducts(String target);
 
-
-
-
-
-    // 5 - 재선 (기획전 + 노하우)
-
-    List<BoardVO> readKnowHow();
-    List<BoardVO> readEvent(String bno);
-    BoardVO readOneKnowView(String bno);
-
-    int countEvent(String bno);
-
-
-
-    // Step 3
-    // 메인 페이지
-    // 마이 페이지
-    // 장바구니
-    // 기획전 뷰 페이지
-    // 노하우 뷰 페이지
-    // ...
+    // 제품 한개 읽어오기
+    ProductsVO readProductOne(String pno);
 }

@@ -34,31 +34,6 @@ public class ProductsDAOImpl implements ProductsDAO {
         return sqlSession.selectOne("Products.readCategoryCatename", target);
     }
 
-
-
-
-
-    // 제품 갯수 읽어오기
-    @Override
-    public int selectCountProducts(String target) {
-        return sqlSession.selectOne("Products.countProducts", target);
-    }
-
-    // 제품 목록 읽어오기
-    @Override
-    public List<ProductsVO> selectProductsList(Map param) {
-        return sqlSession.selectList("Products.ProductsList", param); }
-
-    @Override
-    public ProductsVO selectProductsOne(String pno) {
-        return sqlSession.selectOne("Products.ProductsOne", pno);
-    }
-
-
-
-
-    ///
-
     // 기획전, 노하우 게시물 리스트 읽어오기
     @Override
     public List<BoardVO> selectBoardList(String bgroup) {
@@ -77,44 +52,20 @@ public class ProductsDAOImpl implements ProductsDAO {
         return sqlSession.selectOne("Products.readBoardProducts", bno);
     }
 
-
-
-
-
-
-
-
-
-
-
-
-    // 5 - 재선
-
-
+    // 제품 목록 읽어오기
     @Override
-    public List<BoardVO> selectKnowHow() {
-        return sqlSession.selectList("Products.knowhowList");
+    public List<ProductsVO> selectProductsList(Map param) {
+        return sqlSession.selectList("Products.readProductsList", param); }
+
+    // 제품 갯수 읽어오기
+    @Override
+    public int selectCountProducts(String target) {
+        return sqlSession.selectOne("Products.readCountProducts", target);
     }
 
+    // 제품 하나 읽어오기
     @Override
-    public BoardVO selectOneKnowHow(String bno) {
-        return sqlSession.selectOne("Products.knowhowView",bno);
+    public ProductsVO selectProductsOne(String pno) {
+        return sqlSession.selectOne("Products.readProductsOne", pno);
     }
-
-    @Override
-    public List<BoardVO> selectEvent(String bno) {
-        return sqlSession.selectList("Products.eventList",bno);
-    }
-
-    @Override
-    public int countProductEvent(String bno) {
-        return sqlSession.selectOne("Products.countEvent",bno);
-
-    }
-
-
-
-// Step 3
-
-
 }

@@ -6,8 +6,8 @@
 <fmt:parseNumber var="cp" value="${param.cp}"/>
 <fmt:parseNumber var="pp" value="30"/>
 
-<fmt:parseNumber var="tp" value="${PDcnt/pp}" integerOnly="true"/>
-<c:if test="${(PDcnt%pp) gt 0}">
+<fmt:parseNumber var="tp" value="${PDCount/pp}" integerOnly="true"/>
+<c:if test="${(PDCount%pp) gt 0}">
     <fmt:parseNumber var="tp" value="${tp + 1}"/>
 </c:if>
 
@@ -17,7 +17,7 @@
 
 <c:set var="navlink" value="/find/list?find=${param.find}&cate=${param.cate}&order=${param.order}&cp=" />
 
-<fmt:parseNumber var="snum" integerOnly="true" value="${PDcnt - (cp-1) * pp}"/>
+<fmt:parseNumber var="snum" integerOnly="true" value="${PDCount - (cp-1) * pp}"/>
 
 <div>
     <div class="page_header">
@@ -63,7 +63,7 @@
 
     <%-- 상세 정렬 --%>
     <div class="list_countNav">
-        <span class="list_countText1">${PDcnt}</span>
+        <span class="list_countText1">${PDCount}</span>
         <span class="list_countText2">개의 상품</span>
         <button type="button" class="dropdown" data-toggle="dropdown">
             <span class="list_countText2">정렬</span>

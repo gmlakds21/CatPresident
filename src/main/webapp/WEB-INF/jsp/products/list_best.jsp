@@ -47,7 +47,7 @@
 
     <%-- 상세 정렬 --%>
     <div class="list_countNav">
-        <span class="list_countText1">${PDcnt}</span>
+        <span class="list_countText1">${PDCount}</span>
         <span class="list_countText2">개의 상품</span>
     </div>
 

@@ -19,53 +19,50 @@ public class MypageServiceImpl implements MypageService {
     @Autowired
     private MypageDAO mydao;
 
-    // 고양이 목록
+    // 고양이 리스트 읽어오기
     @Override
-    public List<CatVO> catList(String uno) {
-        return mydao.selectCat(uno);
+    public List<CatVO> readCatList(String uno) {
+        return mydao.selectCatList(uno);
     }
 
-    // 고양이 품종 불러오기
+    // 고양이 품종 읽어오기
     @Override
-    public List<CatSpeciesVO> readSpecies() {
-        return mydao.selectCatSpecies();
+    public List<CatSpeciesVO> readSpeciesList() {
+        return mydao.selectSpeciesList();
     }
 
     // 고양이 이름 중복 체크
     @Override
     public String checkCat(CatVO cvo) {
-        return mydao.selectCatNo(cvo);
+        return mydao.selectCatCno(cvo);
     }
 
     // 고양이 정보 등록
     @Override
-    public boolean newCat(CatVO cvo, HttpSession sess) {
-        mydao.insertCat(cvo);
+    public boolean addNewCat(CatVO cvo, HttpSession sess) {
+        mydao.insertNewCat(cvo);
 
         // 대표 고양이 번호 지정
         if (cvo.getPrima().equals("Y")) {
             cvo.setPrima("N");
-            String catno = mydao.selectCatNo(cvo);
+            String catno = mydao.selectCatCno(cvo);
             MembersVO mvo = (MembersVO) sess.getAttribute("user");
             mvo.setCatno(catno);
-            mydao.updateCatNo(mvo);
+            mydao.updateMemberCno(mvo);
         }
-
         return true;
     }
 
-    // 고양이 정보 불러오기
+    // 고양이 정보 읽어오기
     @Override
-    public CatVO readOneCat(String catno) {
-        return mydao.selectOneCat(catno);
+    public CatVO readCatOne(String catno) {
+        return mydao.selectCatOne(catno);
     }
 
     // 고양이 정보 수정
     @Override
-    public int modifyCat(CatVO cvo) {
+    public int modifyCatOnt(CatVO cvo) {
         System.out.println(cvo.getCatname()+" "+cvo.getUno());
-        return mydao.updateCat(cvo);
+        return mydao.updateCatOne(cvo);
     }
-
-
 }

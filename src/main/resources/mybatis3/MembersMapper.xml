@@ -5,6 +5,7 @@
 
 <mapper namespace="Members">
 
+    <!-- 해당 아이디 존재 여부 확인 -->
     <select id="checkUserID" statementType="PREPARED"
             parameterType="String"
             resultType="int">
@@ -12,6 +13,7 @@
             where email like #{emforaddcat};
     </select>
 
+    <!-- 주소 검색 -->
     <select id="findZipcode" statementType="PREPARED"
             parameterType="String"
             resultType="teamproject.mvc.vo.ZipCodeVO">
@@ -19,13 +21,15 @@
             where dong like #{mydong};
     </select>
 
-    <insert id="newMember" statementType="PREPARED"
+    <!-- 신규 회원 등록 -->
+    <insert id="addNewMember" statementType="PREPARED"
             parameterType="teamproject.mvc.vo.MembersVO">
         insert into Members (username, email, passwd, zipcode, addr, alarm)
             values (#{username}, #{email}, #{passwd}, #{zipcode}, #{addr},#{alarm});
     </insert>
 
-    <select id="tryLogin" statementType="PREPARED"
+    <!-- 로그인 -->
+    <select id="readMemberOne" statementType="PREPARED"
             parameterType="teamproject.mvc.vo.MembersVO"
             resultType="teamproject.mvc.vo.MembersVO">
         select * from Members
@@ -35,7 +39,8 @@
 
 
 
-    <!-- 1 - 현우 -->
+
+
 
 
 

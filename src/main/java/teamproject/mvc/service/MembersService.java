@@ -16,10 +16,12 @@ public interface MembersService {
     String findZipCode(String dong);
 
     // 신규 회원 등록
-    int newMember(MembersVO mvo);
+    int addNewMember(MembersVO mvo);
 
     // 로그인
     String tryLogin(MembersVO mvo, HttpSession sess);
+
+
 
 
 
@@ -27,7 +29,4 @@ public interface MembersService {
 
 
     boolean modifyUser(MembersVO mvo);
-
-    // 승희
-
 }

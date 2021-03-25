@@ -21,7 +21,7 @@ public class MembersServiceImpl implements MembersService {
     // 해당 아이디 존재 여부 확인
     @Override
     public int checkUserid(String email) {
-        return mbdao.countUserid(email);
+        return mbdao.checkUserid(email);
     }
 
     // 주소 검색
@@ -31,7 +31,7 @@ public class MembersServiceImpl implements MembersService {
         String json = "";
         dong = "%" + dong + "%";
         try {
-            json = mapper.writeValueAsString(mbdao.selectZipCode(dong));
+            json = mapper.writeValueAsString(mbdao.findZipCode(dong));
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }
@@ -40,17 +40,17 @@ public class MembersServiceImpl implements MembersService {
 
     // 신규 회원 등록
     @Override
-    public int newMember(MembersVO mvo) {
+    public int addNewMember(MembersVO mvo) {
         return mbdao.insertMember(mvo);
     }
 
     // 로그인
     @Override
     public String tryLogin(MembersVO mvo, HttpSession sess) {
-        if (mbdao.selectLogin(mvo) == null) {
+        if (mbdao.selectMemberOne(mvo) == null) {
             mvo.setUno("X");
         } else {
-            mvo = mbdao.selectLogin(mvo);
+            mvo = mbdao.selectMemberOne(mvo);
             sess.setAttribute("user", mvo);
         }
         return mvo.getUno();
@@ -68,7 +68,7 @@ public class MembersServiceImpl implements MembersService {
         String json = "";
         email = email + "%";
         try {
-            json = mapper.writeValueAsString(mbdao.countUserid(email));
+            json = mapper.writeValueAsString(mbdao.checkUserid(email));
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }

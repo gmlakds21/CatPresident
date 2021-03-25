@@ -18,28 +18,31 @@ public class MembersDAOImpl implements MembersDAO {
 
     // 해당 아이디 존재 여부 확인
     @Override
-    public int countUserid(String email) {
+    public int checkUserid(String email) {
         return sqlSession.selectOne("Members.checkUserID", email);
     }
 
     // 주소 검색
     @Override
-    public List<ZipCodeVO> selectZipCode(String dong) {
+    public List<ZipCodeVO> findZipCode(String dong) {
         return sqlSession.selectList("Members.findZipcode", dong);
     }
 
     // 신규 회원 등록
     @Override
     public int insertMember(MembersVO mvo) {
-        return sqlSession.insert("Members.newMember", mvo);
+        return sqlSession.insert("Members.addNewMember", mvo);
     }
 
     // 로그인
     @Override
-    public MembersVO selectLogin(MembersVO mvo) {
-        mvo = sqlSession.selectOne("Members.tryLogin", mvo);
+    public MembersVO selectMemberOne(MembersVO mvo) {
+        mvo = sqlSession.selectOne("Members.readMemberOne", mvo);
         return mvo;
     }
+
+
+
 
 
 
@@ -61,10 +64,5 @@ public class MembersDAOImpl implements MembersDAO {
     public int updateUser(MembersVO mvo) {
         return sqlSession.update("Members.modifyuser",mvo);
     }
-
-    // 승희
-
-
-
 
 }

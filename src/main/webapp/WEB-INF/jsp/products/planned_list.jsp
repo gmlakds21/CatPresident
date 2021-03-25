@@ -31,7 +31,7 @@
         <img class="list_BDimg" src="${BD.imgmain}">
     </c:if>
     <div class="list_countNav">
-        <span class="list_countText1">${PDcnt}</span>
+        <span class="list_countText1">${PDCount}</span>
         <span class="list_countText2">개의 상품</span>
 <%--        <button type="button" class="dropdown" data-toggle="dropdown">--%>
 <%--            <span class="list_countText2">정렬</span>--%>
@@ -144,13 +144,13 @@
     // KnowhowView페이지가 호출되자마자 실행되어야 함
     window.onload = function() {
 
-        var PDcnt = ${PDcnt}
+        var PDCount = ${PDCount}
         var totalPrice = 0;
 
-        document.getElementById('cart_count').innerText = PDcnt + '개의 제품'
+        document.getElementById('cart_count').innerText = PDCount + '개의 제품'
         document.getElementById('cart_button').innerText = '장바구니에 담기'
 
-        for(var i = 1; i <= PDcnt; i++){
+        for(var i = 1; i <= PDCount; i++){
             if(document.getElementsByTagName('input')[i].getAttribute('type') == 'checkbox'){
                 document.getElementsByTagName('input')[i].checked = true;
             }

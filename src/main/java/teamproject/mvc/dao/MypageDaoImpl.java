@@ -15,48 +15,45 @@ public class MypageDaoImpl implements MypageDAO {
     @Autowired
     private SqlSession sqlSession;
 
-    // 고양이 목록
+    // 고양이 리스트 읽어오기
     @Override
-    public List<CatVO> selectCat(String uno) {
-        return sqlSession.selectList("Mypage.catList", uno);
+    public List<CatVO> selectCatList(String uno) {
+        return sqlSession.selectList("Mypage.readCatList", uno);
     }
 
-    // 고양이 품종 불러오기
+    // 고양이 품종 읽어오기
     @Override
-    public List<CatSpeciesVO> selectCatSpecies() {
-        return sqlSession.selectList("Mypage.speciesList");
+    public List<CatSpeciesVO> selectSpeciesList() {
+        return sqlSession.selectList("Mypage.readSpeciesList");
     }
 
-    // 회원의 대표고양이 번호 수정
+    // 고양이 번호 읽어오기
     @Override
-    public int updateCatNo(MembersVO mvo) {
-        return sqlSession.update("Mypage.modifyMember", mvo);
+    public String selectCatCno(CatVO cvo) {
+        return sqlSession.selectOne("Mypage.readCatCno", cvo);
     }
 
     // 고양이 정보 등록
     @Override
-    public int insertCat(CatVO cvo) {
-        return sqlSession.insert("Mypage.newCat", cvo);
+    public int insertNewCat(CatVO cvo) {
+        return sqlSession.insert("Mypage.addNewCat", cvo);
     }
 
-    // 고양이 번호 불러오기
+    // 대표고양이 번호 수정
     @Override
-    public String selectCatNo(CatVO cvo) {
-        return sqlSession.selectOne("Mypage.readCatNo", cvo);
+    public int updateMemberCno(MembersVO mvo) {
+        return sqlSession.update("Mypage.modifyMemberCno", mvo);
     }
 
-    // 고양이 정보 불러오기
+    // 고양이 정보 읽어오기
     @Override
-    public CatVO selectOneCat(String catno) {
-        return sqlSession.selectOne("Mypage.readOneCat", catno);
+    public CatVO selectCatOne(String catno) {
+        return sqlSession.selectOne("Mypage.readCatOne", catno);
     }
 
     // 고양이 정보 수정
     @Override
-    public int updateCat(CatVO cvo) {
-        return sqlSession.update("Mypage.modifyCat", cvo);
+    public int updateCatOne(CatVO cvo) {
+        return sqlSession.update("Mypage.modifyCatOne", cvo);
     }
-
-
-
 }

@@ -5,17 +5,7 @@
 
 <mapper namespace="Mypage">
 
-    <select id="speciesList" statementType="PREPARED"
-            resultType="teamproject.mvc.vo.CatSpeciesVO">
-        select catkind from Catspecies;
-    </select>
-
-    <insert id="newCat" statementType="PREPARED"
-            parameterType="teamproject.mvc.vo.CatVO">
-        insert into Cat (catname, uno, catkind, catyear, catmonth, catgender, catweight, prima)
-            values (#{catname},#{uno},#{catkind},#{catyear},#{catmonth},#{catgender},#{catweight},#{prima});
-    </insert>
-
+    <!-- 고양이 목록 읽어오기 -->
     <select id="catList" statementType="PREPARED"
             parameterType="String"
             resultType="teamproject.mvc.vo.CatVO">
@@ -23,31 +13,47 @@
             where uno = #{uno};
     </select>
 
-    <select id="readCatNo" statementType="PREPARED"
+    <!-- 고양이 품종 읽어오기 -->
+    <select id="readSpeciesList" statementType="PREPARED"
+            resultType="teamproject.mvc.vo.CatSpeciesVO">
+        select catkind from Catspecies;
+    </select>
+
+    <!-- 고양이 번호 읽어오기 -->
+    <select id="readCatCno" statementType="PREPARED"
             parameterType="teamproject.mvc.vo.CatVO"
             resultType="String">
         select catno from Cat
             where uno = #{uno} and catname = #{catname};
     </select>
 
-    <select id="readOneCat" statementType="PREPARED"
+    <!-- 고양이 정보 등록 -->
+    <insert id="addNewCat" statementType="PREPARED"
+            parameterType="teamproject.mvc.vo.CatVO">
+        insert into Cat (catname, uno, catkind, catyear, catmonth, catgender, catweight, prima)
+            values (#{catname},#{uno},#{catkind},#{catyear},#{catmonth},#{catgender},#{catweight},#{prima});
+    </insert>
+
+    <!-- 대표고양이 번호 수정 -->
+    <update id="modifyMemberCno" statementType="PREPARED"
+            parameterType="teamproject.mvc.vo.MembersVO">
+        update Members set catno = ${catno}
+            where uno = ${uno}
+    </update>
+
+    <!-- 고양이 정보 읽어오기 -->
+    <select id="readCatOne" statementType="PREPARED"
             parameterType="String"
             resultType="teamproject.mvc.vo.CatVO">
         select * from Cat
             where catno = ${catno}
     </select>
 
-    <update id="modifyCat" statementType="PREPARED"
+    <!-- 고양이 정보 수정 -->
+    <update id="modifyCatOne" statementType="PREPARED"
             parameterType="teamproject.mvc.vo.CatVO">
         update Cat set catname = #{catname}, set catkind = #{catkind}, set catyear = #{catyear}
             set catmonth = #{catmonth}, set catgender = #{catgender}, set catweight = #{catweight}
             where catno = #{catno};
     </update>
-
-    <update id="modifyMember" statementType="PREPARED"
-            parameterType="teamproject.mvc.vo.MembersVO">
-        update Members set catno = ${catno}
-            where uno = ${uno}
-    </update>
-
 </mapper>

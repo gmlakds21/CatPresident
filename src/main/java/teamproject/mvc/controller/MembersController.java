@@ -56,7 +56,7 @@ public class MembersController {
     @PostMapping("/member/info")
     public String newMemberInfoOK(MembersVO mvo, HttpSession sess) {
         String returnPage = "redirect:/member/info";
-        if(mbsrv.newMember(mvo) > 0 ) {
+        if(mbsrv.addNewMember(mvo) > 0 ) {
             mbsrv.tryLogin(mvo, sess);
             returnPage = "redirect:/member/join";
         }

@@ -19,23 +19,6 @@ public interface ProductsDAO {
     // 카테고리 타이틀 읽어오기
     String selectCategoryCatename(String target);
 
-
-
-
-
-
-    // 제품 갯수 읽어오기
-    int selectCountProducts(String target);
-
-    // 제품 목록 읽어오기
-    List<ProductsVO> selectProductsList(Map param);
-
-    // 제품 하나 읽어오기
-    ProductsVO selectProductsOne(String pno);
-
-
-
-
     // 기획전, 노하우 게시물 리스트 읽어오기
     List<BoardVO> selectBoardList(String bgroup);
 
@@ -45,13 +28,12 @@ public interface ProductsDAO {
     // 기획전, 노하우 제품 리스트 읽어오기
     String selectBoardProducts(String bno);
 
+    // 제품 목록 읽어오기
+    List<ProductsVO> selectProductsList(Map param);
 
+    // 제품 갯수 읽어오기
+    int selectCountProducts(String target);
 
-    // 기획전 상세
-    List<BoardVO> selectKnowHow(); // 노하우 list 출력
-    BoardVO selectOneKnowHow(String bno);
-
-    List<BoardVO> selectEvent(String bno);
-    int countProductEvent(String bno);
-
+    // 제품 하나 읽어오기
+    ProductsVO selectProductsOne(String pno);
 }

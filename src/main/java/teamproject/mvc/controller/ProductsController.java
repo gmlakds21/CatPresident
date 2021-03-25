@@ -1,9 +1,7 @@
 package teamproject.mvc.controller;
 
-import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
 import teamproject.mvc.service.ProductsService;
@@ -44,7 +42,7 @@ public class ProductsController {
         String target = need1 + need2;
 
         mv.addObject("PDs", pdsrv.readProductsList(cp, target));
-        mv.addObject("PDcnt", pdsrv. countProducts(target));
+        mv.addObject("PDCount", pdsrv.readCountProducts(target));
 
         return mv;
     }
@@ -63,7 +61,7 @@ public class ProductsController {
         mv.setViewName("products/planned_list.tiles");
         mv.addObject("BD", pdsrv.readBoardOne(bno));
         mv.addObject("PDs",pdsrv.readBoardProducts(bno));
-        mv.addObject("PDcnt",pdsrv.readBoardProducts(bno).size());
+        mv.addObject("PDCount",pdsrv.readBoardProducts(bno).size());
         return mv;
     }
 
@@ -81,7 +79,7 @@ public class ProductsController {
         mv.setViewName("products/knowHow_list.tiles");
         mv.addObject("BD", pdsrv.readBoardOne(bno));
         mv.addObject("PDs",pdsrv.readBoardProducts(bno));
-        mv.addObject("PDcnt",pdsrv.readBoardProducts(bno).size());
+        mv.addObject("PDCount",pdsrv.readBoardProducts(bno).size());
         return mv;
     }
 
@@ -91,7 +89,7 @@ public class ProductsController {
         mv.setViewName("products/list_today.tiles");
         mv.addObject("cates", pdsrv.readBigCategory());
         mv.addObject("PDs", pdsrv.readBoardProducts("2"));
-        mv.addObject("PDcnt", pdsrv.readBoardProducts("2").size());
+        mv.addObject("PDCount", pdsrv.readBoardProducts("2").size());
         return mv;
     }
 
@@ -107,7 +105,7 @@ public class ProductsController {
 
         mv.addObject("cates", pdsrv.readBigCategory());
         mv.addObject("PDs", pdsrv.readProductsList("1", target));
-        mv.addObject("PDcnt", pdsrv.readProductsList("1", target).size());
+        mv.addObject("PDCount", pdsrv.readProductsList("1", target).size());
         return mv;
     }
 
@@ -123,7 +121,7 @@ public class ProductsController {
 
         mv.addObject("cates", pdsrv.readBigCategory());
         mv.addObject("PDs", pdsrv.readProductsList(cp, target));
-        mv.addObject("PDcnt", pdsrv.countProducts(need1));
+        mv.addObject("PDCount", pdsrv.readCountProducts(need1));
         return mv;
     }
 
@@ -139,7 +137,7 @@ public class ProductsController {
 
         mv.addObject("cates", pdsrv.readBigCategory());
         mv.addObject("PDs", pdsrv.readProductsList(cp, target));
-        mv.addObject("PDcnt", pdsrv.countProducts(need1));
+        mv.addObject("PDCount", pdsrv.readCountProducts(need1));
         return mv;
     }
 
@@ -156,18 +154,9 @@ public class ProductsController {
 
         mv.addObject("cates", pdsrv.readBigCategory());
         mv.addObject("PDs", pdsrv.readProductsList(cp, target));
-        mv.addObject("PDcnt", pdsrv.countProducts(need1+need2));
+        mv.addObject("PDCount", pdsrv.readCountProducts(need1+need2));
         return mv;
     }
-
-
-
-
-
-
-
-
-
 
     // 제품 뷰 페이지
     @GetMapping("/products/view")
@@ -176,23 +165,6 @@ public class ProductsController {
         mv.addObject("PP", pdsrv.readProductOne(pno));
         // 리플은 미구현
         // mv.addObject("rp",pdsrv.readReply(pno));
-        return mv;
-    }
-
-    ///
-
-
-
-
-
-
-
-
-
-    @GetMapping("/Order/view")
-    public ModelAndView orderView(ModelAndView mv) {
-        mv.setViewName("products/OrderView.tiles");
-
         return mv;
     }
 }
