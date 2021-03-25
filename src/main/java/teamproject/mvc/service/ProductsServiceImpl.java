@@ -39,7 +39,7 @@ public class ProductsServiceImpl implements ProductsService {
     public String categoryNeed(String cate) {
         String need;
         if ( cate.equals("1000")) {
-            need = "";
+            need = "where ctno like \'%\' ";
         } else if ( cate.substring(2).equals("00")) {
             need = "where ctno like \'"+cate.substring(0,2)+"%\' ";
         } else {

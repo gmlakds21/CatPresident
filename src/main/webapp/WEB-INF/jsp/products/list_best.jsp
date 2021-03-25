@@ -56,7 +56,7 @@
         <ul>
             <c:set var="i" value="1"/>
             <c:forEach var="PD" items="${PDs}">
-                <li onclick="location.href='/Products/View?pno=${PD.pno}'">
+                <li onclick="location.href='/products/view?pno=${PD.pno}'">
                     <div class="badge pd_badgeBP">${i}위</div>
                     <div class="pd">
                         <img src="/img/List_img.jpg" onclick="">
@@ -103,6 +103,9 @@
                 <p>
                     랭킹 리스트에서는 판매량에 따라 제품 목록을 가져옵니다.<br>
                     ex) select * from Products order by sales desc<br>
+                    <br>
+                    상단의 카테고리를 선택하여 해당 카테고리에 해당하는<br>
+                    제품목록을 판매량 순으로 출력합니다.<br>
                     <br>
                     리스트에 해당되는 제품들은 List(ProductsVO) 형태로<Br>
                     foreach 문을 이용하여 화면에 배열합니다.<br>

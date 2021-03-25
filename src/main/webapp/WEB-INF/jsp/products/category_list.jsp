@@ -79,6 +79,7 @@
                 <img src="/img/CateThumb/arrow.png">
             </button>
             <div class="dropdown-menu">
+                <a class="dropdown-item" href="/category/list?cate=${param.cate}&order=time&cp=1">제품 등록순</a>
                 <a class="dropdown-item" href="/category/list?cate=${param.cate}&order=lowPrice&cp=1">낮은 가격순</a>
                 <a class="dropdown-item" href="/category/list?cate=${param.cate}&order=highPrice&cp=1">높은 가격순</a>
                 <a class="dropdown-item" href="/category/list?cate=${param.cate}&order=star&cp=1">별점 높은순</a>
@@ -90,7 +91,7 @@
         <div class="pd_list">
             <ul>
                 <c:forEach var="PD" items="${PDs}">
-                    <li onclick="location.href='/Products/View?pno=${PD.pno}'">
+                    <li onclick="location.href='/products/view?pno=${PD.pno}'">
                         <div class="pd">
                             <img src="/img/List_img.jpg" onclick="">
                             <p class="pd_title">${PD.pname}</p>

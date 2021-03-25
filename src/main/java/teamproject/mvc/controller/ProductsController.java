@@ -1,7 +1,9 @@
 package teamproject.mvc.controller;
 
+import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
 import teamproject.mvc.service.ProductsService;
@@ -125,32 +127,52 @@ public class ProductsController {
         return mv;
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
     // 스티커 리스트
     @GetMapping("/sticker/list")
-    public ModelAndView StickerShopList(ModelAndView mv, String cp) {
+    public ModelAndView StickerShopList(ModelAndView mv, String cate, String order, String cp) {
         mv.setViewName("products/list_sticker.tiles");
+
+        // 조건 정리
+        String need1 = pdsrv.categoryNeed(cate);
+        String need2 = pdsrv.orderNeed(order);
+        String target = need1 + need2;
+
         mv.addObject("cates", pdsrv.readBigCategory());
-        mv.addObject("PDs", pdsrv.readProductsList(cp, "order by pno desc"));
-        mv.addObject("PDcnt", pdsrv.countProducts(""));
+        mv.addObject("PDs", pdsrv.readProductsList(cp, target));
+        mv.addObject("PDcnt", pdsrv.countProducts(need1));
         return mv;
     }
 
+    // 제품 검색
+    @GetMapping("/find/list")
+    public ModelAndView FindList (ModelAndView mv, String find, String cate, String order, String cp) {
+        mv.setViewName("products/list_find.tiles");
+
+        // 조건 정리
+        String need1 = pdsrv.categoryNeed(cate);
+        String need2 = "and pname like \'%"+find+"%\' ";
+        String need3 = pdsrv.orderNeed(order);
+        String target = need1 + need2 + need3;
+
+        mv.addObject("cates", pdsrv.readBigCategory());
+        mv.addObject("PDs", pdsrv.readProductsList(cp, target));
+        mv.addObject("PDcnt", pdsrv.countProducts(need1+need2));
+        return mv;
+    }
+
+
+
+
+
+
+
+
+
+
     // 제품 뷰 페이지
-    @GetMapping("/Products/View")
+    @GetMapping("/products/view")
     public ModelAndView ProductsView(ModelAndView mv, String pno) {
-        mv.setViewName("products/ProductsView.tiles");
+        mv.setViewName("products/products_view.tiles");
         mv.addObject("PP", pdsrv.readProductOne(pno));
         // 리플은 미구현
         // mv.addObject("rp",pdsrv.readReply(pno));
@@ -173,17 +195,5 @@ public class ProductsController {
 
         return mv;
     }
-
-/* Step 3
-
-    @GetMapping("/Products/View")
-    public ModelAndView ProductsView( ) {
-        ModelAndView mv = null;
-
-        gsrv.readOneGallery(pdno)
-
-        return mv;
-    }
-*/
 }
 

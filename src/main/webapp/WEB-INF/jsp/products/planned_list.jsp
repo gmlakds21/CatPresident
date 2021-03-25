@@ -49,7 +49,7 @@
     <div class="pd_list">
         <ul>
             <c:forEach var="PD" items="${PDs}">
-                <li onclick="location.href='/Products/View?pno=${PD.pno}'">
+                <li onclick="location.href='/products/view?pno=${PD.pno}'">
                     <div class="pd">
                         <img src="/img/List_img.jpg">
                         <p class="pd_title">${PD.pname}</p>

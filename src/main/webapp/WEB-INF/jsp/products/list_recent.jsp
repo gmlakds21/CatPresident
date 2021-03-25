@@ -16,11 +16,6 @@
 <fmt:parseNumber var="ep" value="${sp+9}"/>
 
 <c:set var="navlink" value="/recent/list?where=recent&order=${param.order}&cp=" />
-<c:if test="${not empty param.findKey}">
-    <c:set var="navlink"
-           value="/Recent-Product/find?findType=${param.findType}&findKey=${param.findKey}&cp=">
-    </c:set>
-</c:if>
 
 <div>
     <div class="page_header">
@@ -47,6 +42,7 @@
             <img src="/img/CateThumb/arrow.png">
         </button>
         <div class="dropdown-menu">
+            <a class="dropdown-item" href="/recent/list?where=recent&order=time&cp=1">제품 등록순</a>
             <a class="dropdown-item" href="/recent/list?where=recent&order=lowPrice&cp=1">낮은 가격순</a>
             <a class="dropdown-item" href="/recent/list?where=recent&order=highPrice&cp=1">높은 가격순</a>
             <a class="dropdown-item" href="/recent/list?where=recent&order=star&cp=1">별점 높은순</a>
@@ -58,7 +54,7 @@
     <div class="pd_list">
         <ul>
             <c:forEach var="PD" items="${PDs}">
-                <li onclick="location.href='/Products/View?pno=${PD.pno}'">
+                <li onclick="location.href='/products/view?pno=${PD.pno}'">
                     <div class="pd">
                         <img src="/img/List_img.jpg">
                         <p class="pd_title">${PD.pname}</p>

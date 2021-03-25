@@ -63,7 +63,7 @@
                     <li>
                         <input type="checkbox" class="check-box pd_select" name="pd_select"
                                onclick="javascript:computePrice(this.form)" value="${PD.totprice}">
-                        <div class="pd" onclick="location.href='/Products/View?pno=${PD.pno}'">
+                        <div class="pd" onclick="location.href='/products/view?pno=${PD.pno}'">
                             <img src="/img/List_img.jpg">
                             <p class="pd_title">${PD.pname}</p>
                             <c:if test="${PD.price ne PD.totprice}">

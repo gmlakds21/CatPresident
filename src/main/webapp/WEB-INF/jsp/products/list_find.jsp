@@ -15,7 +15,7 @@
 <fmt:parseNumber var="sp" value="${sp*10+1}"/>
 <fmt:parseNumber var="ep" value="${sp+9}"/>
 
-<c:set var="navlink" value="/stciker/list?cate=${param.cate}&order=${param.order}&cp=" />
+<c:set var="navlink" value="/find/list?find=${param.find}&cate=${param.cate}&order=${param.order}&cp=" />
 
 <fmt:parseNumber var="snum" integerOnly="true" value="${PDcnt - (cp-1) * pp}"/>
 
@@ -24,16 +24,13 @@
         <div class="page_nav">
             <span> 홈 </span>
             <span class="page_nav_bi bi bi-chevron-right"> </span>
-            <span> 스티커 샵 </span>
+            <span>제품 검색</span>
         </div>
     </div>
     <div class="page_title">
-        <span>스티커 샵</span>
+        <span>제품 검색 - ${param.find} </span>
     </div>
 </div>
-
-
-
 
 <div class="body">
 
@@ -46,11 +43,11 @@
         </a>
         <ul>
             <span id="list_cateLeft"></span>
-            <li onclick="location.href='/sticker/list?cate=1000&order=${param.order}&cp=1'">
+            <li onclick="location.href='/find/list?find=${param.find}&cate=1000&order=${param.order}&cp=1'">
                 <button type="button" class="list_cateBtn2">전체</button>
             </li>
             <c:forEach var="cate" items="${cates}">
-                <li onclick="location.href='/sticker/list?cate=${cate.ctno}&order=${param.order}&cp=1'">
+                <li onclick="location.href='/find/list?find=${param.find}&cate=${cate.ctno}&order=${param.order}&cp=1'">
                     <button type="button" class="list_cateBtn2">${cate.catename}</button>
                 </li>
             </c:forEach>
@@ -74,11 +71,11 @@
             <img src="/img/CateThumb/arrow.png">
         </button>
         <div class="dropdown-menu">
-            <a class="dropdown-item" href="/sticker/list?cate=${param.cate}&order=time&cp=1">제품 등록순</a>
-            <a class="dropdown-item" href="/sticker/list?cate=${param.cate}&order=lowPrice&cp=1">낮은 가격순</a>
-            <a class="dropdown-item" href="/sticker/list?cate=${param.cate}&order=highPrice&cp=1">높은 가격순</a>
-            <a class="dropdown-item" href="/sticker/list?cate=${param.cate}&order=star&cp=1">별점 높은순</a>
-            <a class="dropdown-item" href="/sticker/list?cate=${param.cate}&order=reply&cp=1">후기 많은순</a>
+            <a class="dropdown-item" href="/find/list?find=${param.find}&cate=${param.cate}&order=time&cp=1">제품 등록순</a>
+            <a class="dropdown-item" href="/find/list?find=${param.find}&cate=${param.cate}&order=lowPrice&cp=1">낮은 가격순</a>
+            <a class="dropdown-item" href="/find/list?find=${param.find}&cate=${param.cate}&order=highPrice&cp=1">높은 가격순</a>
+            <a class="dropdown-item" href="/find/list?find=${param.find}&cate=${param.cate}&order=star&cp=1">별점 가격순</a>
+            <a class="dropdown-item" href="/find/list?find=${param.find}&cate=${param.cate}&order=reply&cp=1">후기 가격순</a>
         </div>
     </div>
 

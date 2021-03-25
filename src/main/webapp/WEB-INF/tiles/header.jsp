@@ -74,13 +74,12 @@
 
     <%-- 검색 --%>
     <div class="hd_list3 input-group">
-        <input type="text" class="form-control" placeholder="3만원 이상 구매 시, 무료배송">
+        <input type="text" class="form-control" id="hd_findText" placeholder="3만원 이상 구매 시, 무료배송">
         <div class="input-group-append">
-            <button class="btn" type="button">
+            <button class="btn" type="button" id="hd_find">
                 <i class="bi bi-search"></i></button>
         </div>
     </div>
-
 
     <%-- 알림 메시지 --%>
     <div class="hd_list4">
@@ -121,7 +120,7 @@
                 <li class="nav-item"><a class="nav-link" href="/recent/list?where=recent&order=time&cp=1">신상품</a></li>
                 <li class="nav-item"><a class="nav-link" href="/planned/page">기획전</a></li>
                 <li class="nav-item"><a class="nav-link" href="/knowHow/page">노하우</a></li>
-                <li class="nav-item"><a class="nav-link" href="/sticker/list?cp=1">스티커샵</a></li>
+                <li class="nav-item"><a class="nav-link" href="/sticker/list?cate=1000&order=time&cp=1">스티커샵</a></li>
             </ul>
         </span>
     </div>

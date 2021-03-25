@@ -28,7 +28,7 @@
     <div class="pd_list">
         <ul>
             <c:forEach var="PD" items="${PDs}">
-                <li onclick="location.href='/Products/View?pno=${PD.pno}'">
+                <li onclick="location.href='/products/view?pno=${PD.pno}'">
                     <div class="pd">
                         <img src="/img/List_img.jpg" onclick="">
                         <p class="pd_title">${PD.pname}</p>
@@ -75,7 +75,8 @@
                     ex) select products from Board where bno = ?<br>
                     <br>
                     오늘의 딜 리스트는 기획전 및 노하우 게시글과 마찬가지로<br>
-                    오늘의 딜 이라는 게시글 안에 제품 목록을 포함하고 있습니다.<br>
+                    오늘의 딜 게시글 안에 제품 목록을 포함하고 있습니다.<br>
+                    <br>
                     해당 게시물에 지정된 제품들은 String 형태로<Br>
                     2027, 3013, 3029, ... 형식으로 저장되어 있습니다.<br>
                     이것을 split 하여 제품 고유 번호인 pno로 분리<br>
