@@ -12,15 +12,12 @@
     <link rel="stylesheet" href="/css/template/footer.css">
     <link rel="stylesheet" href="/css/register.css">
     <link rel="stylesheet" href="/css/category.css">
-    <link rel="stylesheet" href="/css/list.css">
+    <link rel="stylesheet" href="/css/products.css">
     <link rel="stylesheet" href="/css/board.css">
 
-    <%-- 현우 --%>
+
     <link rel="stylesheet" href="/css/mypage.css">
-    <%-- 재선 --%>
-    <link rel="stylesheet" href="/css/planned.css">
     <link rel="stylesheet" href="/css/orderview.css">
-    <%-- 승희--%>
     <link rel="stylesheet" href="/css/order.css">
 
 

@@ -160,3 +160,197 @@
     color: white;
     border-radius: 5px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*////////////////////////////////////////////////*/
+
+.VI_main {
+    border: 1px solid #f4f4f4;
+}
+
+.VI_img {
+    width: 700px;
+    height: 700px;
+    border: none;
+    float: left;
+}
+.VI_imgs img {
+    /*text-align: center;*/
+    margin: 0 auto;
+}
+.VI_info {
+    padding: 40px;
+    width: 600px;
+    height: 700px;
+    float: left;
+}
+.VI_pname {
+    font-size: 25px;
+    font-weight: bold;
+}
+.VI_star {
+    margin-left: 0px;
+    margin-bottom: 30px;
+}
+.VI_price {
+    height : 50px;
+    width: 600px;
+    vertical-align: center;
+}
+.VI_price1 {
+    float: left;
+}
+.VI_price2 {
+    float: right;
+    font-size: 25px;
+    font-weight: bold;
+}
+.VI_setInfo {
+    width: 600px;
+    border: 1px solid #dbdbdb;
+    border-right: none;
+    border-left: none;
+    margin : 10px 0;
+}
+.VI_setInfo img {
+    margin: 5px 20px;
+}
+.VI_setInfo2 {
+    margin : 20px 0;
+    font-size: 14px;
+    color: #8d8d8d;
+}
+.VI_setInfo2 li {
+    margin-left: -20px;
+}
+.VI_setInfo2 b {
+    color : black;
+}
+.VI_count {
+    width : 600px;
+    background: #F4F4F4;
+    padding: 20px;
+    margin-top : 100px;
+    margin-bottom: 20px;
+}
+.VI_count1 {
+    float:left;
+}
+.VI_count2 {
+    float: right;
+}
+.VI_count3 {
+    margin-top: 15px;
+    float: right;
+    font-size: 25px;
+    font-weight: bold;
+}
+.VI_count button {
+    margin-top: 15px;
+    border: 1px solid #b1b1b1;
+    background: white;
+    width: 50px;
+    height: 50px;
+    outline: none;
+    font-size: 20px;
+}
+.VI_button {
+    width : 600px;
+}
+.VI_button button {
+    width : 295px;
+    height : 50px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+.VI_button1 {
+    border: 1px solid #A200C7;
+    background: none;
+    color : #A200C7;
+}
+.VI_button2 {
+    margin-left: 5px;
+    border: none;
+    background: #A200C7;
+    color : white;
+}
+.VI_detail {
+    margin : 20px 0 50px 0;
+}
+
+.VI_detail2 {
+    padding: 20px;
+}
+
+.VI_detail h4 {
+    font-weight: bold;
+}
+.VI_detail h6 {
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+.VI_detail p {
+    font-size: 14px;
+    margin-bottom: 70px;
+}
+.VI_detail li {
+    font-size: 14px;
+    margin-left: -20px;
+}
+.VI_contents {
+    width: 1300px;
+    text-align: center;
+    margin-bottom: 70px;
+}
+.VI_contents h4 {
+    text-align: left;
+    font-weight: bold;
+    margin-top: 50px;
+}
+
+.basket_h2 {
+    margin: 0;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.basket_order {
+    bottom: 32px;
+    margin-bottom: -20px;
+    margin: 20px auto;
+    text-align: right;
+    padding-top: 0px;
+}
+
+.basket_order_span1 {
+    font-weight: bold;
+    font-size: 16px;
+    color: #A200C7;
+}
+
+.basket_order_span2 {
+
+    font-weight: bold;
+    font-size: 16px;
+    color: #95999c
+}
+
+
+.basket_icon{
+    font-size: 60px;
+}

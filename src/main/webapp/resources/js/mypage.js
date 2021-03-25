@@ -67,6 +67,12 @@ $('#ap_upbtn').on('click', function () {
 
 
 
+
+
+
+
+
+
 $("#MY_updpwbtn").on('click', function () {
     if ($('#MY_inputoldpw').val() == "") alert('기존 비밀번호를 입력하세요.');
     else if ($('#MY_inputoldpw').val() != $('#passwd').val()) alert('입력하신 기존 비밀번호가 일치하지 않습니다.');
@@ -88,7 +94,6 @@ $('#MY_updphbtn').on('click', function () {
     }
 
 });
-
 
 $("#MY_updcompbtn").on('click', function () {
     $('#uno').val()

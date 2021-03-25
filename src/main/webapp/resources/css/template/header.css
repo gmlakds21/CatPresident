@@ -198,35 +198,3 @@
     font-weight: bold;
     font-size: 23px;
 }
-
-
-
-
-
-/* 삭제 될 부분 */
-.list_header {
-    background-color: #f4f4f5;
-    clear: both;
-}
-
-.list_nav {
-    padding: 10px;
-    margin: 0 auto;
-}
-.list_nav span {
-    color: #717171;
-    font-size: 12px;
-}
-.list_nav_bi {
-    position: relative;
-    top: -2px;
-}
-
-.list_title {
-    margin: 20px auto;
-}
-.list_title span {
-    font-weight: bold;
-    margin: 0 10px;
-    font-size: 23px;
-}
